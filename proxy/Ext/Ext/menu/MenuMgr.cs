@@ -9,7 +9,7 @@ namespace Ext.menu {
 	///     */
 	///     Ext.menu.MenuMgr = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\menu\MenuMgr.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\MenuMgr.js</jssource>
 	public class MenuMgr : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

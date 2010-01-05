@@ -7,7 +7,7 @@ namespace Ext {
 	///     /**
 	///     Simple date picker class.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\DatePicker.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\DatePicker.js</jssource>
 	public class DatePicker : Ext.Component {
 
 		/// <summary>Create a new DatePicker</summary>

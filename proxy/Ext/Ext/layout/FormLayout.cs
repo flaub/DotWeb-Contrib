@@ -87,7 +87,7 @@ namespace Ext.layout {
 	///     */
 	///     Ext.layout.FormLayout = Ext.extend(Ext.layout.AnchorLayout, {
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\layout\FormLayout.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\layout\FormLayout.js</jssource>
 	public class FormLayout : Ext.layout.AnchorLayout {
 
 		/// <summary>Auto-generated default constructor</summary>

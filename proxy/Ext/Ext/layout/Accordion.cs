@@ -41,7 +41,7 @@ namespace Ext.layout {
 	///     */
 	///     Ext.layout.Accordion = Ext.extend(Ext.layout.FitLayout, {
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\layout\AccordionLayout.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\layout\AccordionLayout.js</jssource>
 	public class Accordion : Ext.layout.FitLayout {
 
 		/// <summary>Auto-generated default constructor</summary>

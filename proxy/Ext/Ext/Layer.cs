@@ -16,7 +16,7 @@ namespace Ext {
 	///     @cfg {Number} zindex Starting z-index (defaults to 11000)
 	///     @cfg {Number} shadowOffset Number of pixels to offset the shadow (defaults to 3)
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\Layer.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Layer.js</jssource>
 	public class Layer : Ext.Element {
 
 		/// <summary></summary>

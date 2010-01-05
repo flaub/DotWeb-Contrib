@@ -34,7 +34,7 @@ namespace Ext.data {
 	///     @cfg {Array} fields  Either an Array of field definition objects as passed to
 	///     {@link Ext.data.Record#create}, or a {@link Ext.data.Record Record} constructor created using {@link Ext.data.Record#create}.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\data\JsonStore.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\JsonStore.js</jssource>
 	public class JsonStore : Ext.data.Store {
 
 		/// <summary></summary>

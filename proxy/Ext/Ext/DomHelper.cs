@@ -32,7 +32,7 @@ namespace Ext {
 	///     */
 	///     Ext.DomHelper = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\core\DomHelper.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\DomHelper.js</jssource>
 	public class DomHelper : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

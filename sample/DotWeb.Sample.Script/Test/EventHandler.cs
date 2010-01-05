@@ -22,12 +22,12 @@ using DotWeb.Client.Dom.Events;
 
 namespace DotWeb.Sample.Script.Test
 {
-	public class EventHandler : JsScript
+	public class EventHandler 
 	{
 		private HtmlDivElement box;
 
 		public EventHandler() {
-			var element = Window.document.getElementById("box");
+			var element = Global.Window.document.getElementById("box");
 			box = (HtmlDivElement)element;
 			box.onmouseover = box_OnMouseOver;
 			box.onmouseout = box_OnMouseOut;

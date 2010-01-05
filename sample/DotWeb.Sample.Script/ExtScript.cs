@@ -23,7 +23,7 @@ using Ext.data;
 
 namespace DotWeb.Sample.Script
 {
-	public class ExtScript : JsScript
+	public class ExtScript 
 	{
 		private int id = NextId();
 		private GridPanel grid;

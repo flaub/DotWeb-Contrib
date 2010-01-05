@@ -8,7 +8,7 @@ namespace Ext.form {
 	///     Basic text field.  Can be used as a direct replacement for traditional text inputs, or as the base
 	///     class for more sophisticated input controls (like {@link Ext.form.TextArea} and {@link Ext.form.ComboBox}).
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\form\TextField.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\TextField.js</jssource>
 	public class TextField : Ext.form.Field {
 
 		/// <summary>Creates a new TextField</summary>

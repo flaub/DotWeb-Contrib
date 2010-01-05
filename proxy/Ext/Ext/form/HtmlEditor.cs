@@ -39,7 +39,7 @@ namespace Ext.form {
 	///     });
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\form\HtmlEditor.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\HtmlEditor.js</jssource>
 	public class HtmlEditor : Ext.form.Field {
 
 		/// <summary>Create a new HtmlEditor</summary>

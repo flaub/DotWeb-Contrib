@@ -18,7 +18,7 @@ namespace Ext.grid {
 	///     ]);
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\grid\RowNumberer.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\RowNumberer.js</jssource>
 	public class RowNumberer : System.DotWeb.JsObject {
 
 		/// <summary></summary>

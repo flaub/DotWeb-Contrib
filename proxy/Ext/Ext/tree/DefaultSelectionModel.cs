@@ -9,7 +9,7 @@ namespace Ext.tree {
 	///     */
 	///     Ext.tree.DefaultSelectionModel = function(config){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\tree\TreeSelectionModel.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tree\TreeSelectionModel.js</jssource>
 	public class DefaultSelectionModel : Ext.util.Observable {
 
 		/// <summary>Auto-generated default constructor</summary>

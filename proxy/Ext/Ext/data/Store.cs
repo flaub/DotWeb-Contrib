@@ -15,7 +15,7 @@ namespace Ext.data {
 	///     to create {@link Ext.data.Record Record} instances from the data object. These Records
 	///     are cached and made available through accessor functions.</p>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\data\Store.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\Store.js</jssource>
 	public class Store : Ext.util.Observable {
 
 		/// <summary>

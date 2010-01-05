@@ -21,7 +21,7 @@ namespace Ext.util {
 	///     */
 	///     Ext.util.Observable = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\util\Observable.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\Observable.js</jssource>
 	public class Observable : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

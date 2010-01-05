@@ -20,7 +20,7 @@ using System;
 
 namespace DotWeb.Sample.Script.Test
 {
-	public class Sandbox : JsScript
+	public class Sandbox
 	{
 		public Sandbox() {
 			int x = 1;
@@ -31,7 +31,7 @@ namespace DotWeb.Sample.Script.Test
 			Console.WriteLine("{0}", 1);
 			Console.WriteLine(Math.Sin(1));
 
-			Window.alert("hi");
+			Global.Window.alert("hi");
 		}
 
 		public void Foo(string value) {

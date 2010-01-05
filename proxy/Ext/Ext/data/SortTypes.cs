@@ -9,7 +9,7 @@ namespace Ext.data {
 	///     */
 	///     Ext.data.SortTypes = {
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\data\SortTypes.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\SortTypes.js</jssource>
 	public class SortTypes : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

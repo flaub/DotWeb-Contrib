@@ -70,7 +70,7 @@ namespace Ext {
 	///     */
 	///     Ext.QuickTips = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\tips\QuickTips.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tips\QuickTips.js</jssource>
 	public class QuickTips : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

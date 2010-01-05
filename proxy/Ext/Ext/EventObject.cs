@@ -23,7 +23,7 @@ namespace Ext {
 	///     */
 	///     Ext.EventObject = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\core\EventManager.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\EventManager.js</jssource>
 	public class EventObject : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

@@ -26,7 +26,7 @@ namespace Ext.form {
 	///     }
 	///     });</code></pre><br>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\form\Form.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\Form.js</jssource>
 	public class FormPanel : Ext.Panel {
 
 		/// <summary></summary>

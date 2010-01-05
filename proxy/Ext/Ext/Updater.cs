@@ -36,7 +36,7 @@ namespace Ext {
 	///     });
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\core\UpdateManager.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\UpdateManager.js</jssource>
 	public class UpdaterClass : Ext.util.Observable {
 
 		/// <summary>

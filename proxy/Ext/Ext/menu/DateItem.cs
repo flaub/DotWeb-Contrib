@@ -7,7 +7,7 @@ namespace Ext.menu {
 	///     /**
 	///     A menu item that wraps the {@link Ext.DatePicker} component.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\menu\DateItem.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\DateItem.js</jssource>
 	public class DateItem : Ext.menu.Adapter {
 
 		/// <summary>Creates a new DateItem</summary>

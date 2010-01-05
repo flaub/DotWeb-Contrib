@@ -68,7 +68,7 @@ namespace Ext.layout {
 	///     */
 	///     Ext.layout.CardLayout = Ext.extend(Ext.layout.FitLayout, {
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\layout\CardLayout.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\layout\CardLayout.js</jssource>
 	public class CardLayout : Ext.layout.FitLayout {
 
 		/// <summary>Auto-generated default constructor</summary>

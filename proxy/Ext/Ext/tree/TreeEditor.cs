@@ -8,7 +8,7 @@ namespace Ext.tree {
 	///     Provides editor functionality for inline tree node editing.  Any valid {@link Ext.form.Field} subclass can be used
 	///     as the editor field.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\tree\TreeEditor.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tree\TreeEditor.js</jssource>
 	public class TreeEditor : Ext.Editor {
 
 		/// <summary>that will be applied to the default field instance (defaults to a {@link Ext.form.TextField}).</summary>

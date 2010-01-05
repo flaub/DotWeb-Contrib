@@ -10,7 +10,7 @@ namespace Ext.grid {
 	///     as selections and returned by {@link #getSelected}, and {@link #getSelections} are
 	///     the {@link Ext.data.Record Record}s which provide the data for the selected rows.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\grid\RowSelectionModel.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\RowSelectionModel.js</jssource>
 	public class RowSelectionModel : Ext.grid.AbstractSelectionModel {
 
 		/// <summary></summary>

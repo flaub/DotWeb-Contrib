@@ -8,7 +8,7 @@ namespace Ext.form {
 	///     Single radio field.  Same as Checkbox, but provided as a convenience for automatically setting the input type.
 	///     Radio grouping is handled automatically by the browser if you give each radio in a group the same name.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\form\Radio.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\Radio.js</jssource>
 	public class Radio : Ext.form.Checkbox {
 
 		/// <summary>Creates a new Radio</summary>

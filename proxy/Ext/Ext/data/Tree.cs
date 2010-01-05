@@ -8,7 +8,7 @@ namespace Ext.data {
 	///     Represents a tree data structure and bubbles all the events for its nodes. The nodes
 	///     in the tree have most standard DOM functionality.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\data\Tree.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\Tree.js</jssource>
 	public class Tree : Ext.util.Observable {
 
 		/// <summary></summary>

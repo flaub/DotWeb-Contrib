@@ -26,7 +26,7 @@ namespace Ext.grid {
 	///     The config options <b>defined by</b< this class are options which may appear in each
 	///     individual column definition.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\grid\ColumnModel.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\ColumnModel.js</jssource>
 	public class ColumnModel : Ext.util.Observable {
 
 		/// <summary>config objects for details.</summary>

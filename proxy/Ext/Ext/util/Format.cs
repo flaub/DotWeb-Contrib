@@ -9,7 +9,7 @@ namespace Ext.util {
 	///     */
 	///     Ext.util.Format = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\util\Format.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\Format.js</jssource>
 	public class Format : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

@@ -8,7 +8,7 @@ namespace Ext.menu {
 	///     A menu object.  This is the container to which you add all other menu items.  Menu can also serve as a base class
 	///     when you want a specialized menu based off of another component (like {@link Ext.menu.DateMenu} for example).
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\menu\Menu.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\Menu.js</jssource>
 	public class Menu : Ext.util.Observable {
 
 		/// <summary>Creates a new Menu</summary>

@@ -7,7 +7,7 @@ namespace Ext.form {
 	///     /**
 	///     A basic hidden field for storing hidden values in forms that need to be passed in the form submit.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\form\Hidden.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\Hidden.js</jssource>
 	public class Hidden : Ext.form.Field {
 
 		/// <summary>Create a new Hidden field.</summary>

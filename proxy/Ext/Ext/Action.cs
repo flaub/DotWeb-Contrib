@@ -45,7 +45,7 @@ namespace Ext {
 	///     action.setText('Something else');
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\Action.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Action.js</jssource>
 	public class Action : System.DotWeb.JsObject {
 
 		/// <summary></summary>

@@ -25,7 +25,7 @@ using DotWeb.Client.Dom.Helper;
 
 namespace DotWeb.Sample.Script
 {
-	public class ConsoleScript : JsScript
+	public class ConsoleScript 
 	{
 		/*
 		#fauxconsole{
@@ -75,7 +75,7 @@ namespace DotWeb.Sample.Script
 			this.inner = ElementFactory.CreateDiv();
 			this.div.appendChild(this.inner);
 
-			var content = Document.getElementById("content");
+			var content = Global.Document.getElementById("content");
 			content.appendChild(this.div);
 
 			Log("Test1");
@@ -113,7 +113,7 @@ namespace DotWeb.Sample.Script
 		}
 
 		private Text Text(string text) {
-			return Document.createTextNode(text);
+			return Global.Document.createTextNode(text);
 		}
 
 		public void Log(string value) {

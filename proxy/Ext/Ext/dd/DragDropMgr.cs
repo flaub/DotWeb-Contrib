@@ -12,7 +12,7 @@ namespace Ext.dd {
 	///     */
 	///     Ext.dd.DragDropMgr = function() {
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\dd\DDCore.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\dd\DDCore.js</jssource>
 	public class DragDropMgr : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

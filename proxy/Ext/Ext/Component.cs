@@ -67,7 +67,7 @@ namespace Ext {
 	///     trigger          Ext.form.TriggerField
 	///     </pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\Component.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Component.js</jssource>
 	public class Component : Ext.util.Observable {
 
 		/// <summary>

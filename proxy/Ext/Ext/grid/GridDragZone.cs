@@ -14,7 +14,7 @@ namespace Ext.grid {
 	///     */
 	///     Ext.grid.GridDragZone = function(grid, config){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\grid\GridDD.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\GridDD.js</jssource>
 	public class GridDragZone : Ext.dd.DragZone {
 
 		/// <summary>Auto-generated default constructor</summary>

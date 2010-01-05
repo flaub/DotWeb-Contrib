@@ -22,7 +22,7 @@ using DotWeb.Client.Dom.Events;
 
 namespace DotWeb.Sample.Script
 {
-	public class SimpleScript : JsScript
+	public class SimpleScript
 	{
 		public SimpleScript() {
 			Config config = new Config {
@@ -44,7 +44,7 @@ namespace DotWeb.Sample.Script
 			Tuple t2 = Tuple.Factory();
 			Console.WriteLine(t2.id);
 
-			Window.onblur = this.OnEvent;
+			Global.Window.onblur = this.OnEvent;
 		}
 
 		private void OnEvent(Event evt) {

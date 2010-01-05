@@ -10,7 +10,7 @@ namespace Ext {
 	///     container classes should subclass BoxComponent so that they will work consistently when nested within other Ext
 	///     layout containers.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\BoxComponent.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\BoxComponent.js</jssource>
 	public class BoxComponent : Ext.Component {
 
 		/// <summary></summary>

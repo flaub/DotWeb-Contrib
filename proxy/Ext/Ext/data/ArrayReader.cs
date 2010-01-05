@@ -27,7 +27,7 @@ namespace Ext.data {
 	///     </code></pre>
 	///     @cfg {String} id (optional) The subscript within row Array that provides an ID for the Record
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\data\ArrayReader.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\ArrayReader.js</jssource>
 	public class ArrayReader : Ext.data.JsonReader {
 
 		/// <summary>

@@ -11,7 +11,7 @@ namespace Ext {
 	///     variety of prebuilt tool buttons that can be wired up to provide other customized behavior.  Panels can be easily
 	///     dropped into any Container or layout, and the layout and rendering pipeline is completely managed by the framework.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\Panel.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Panel.js</jssource>
 	public class Panel : Ext.Container {
 
 		/// <summary></summary>

@@ -38,7 +38,7 @@ namespace Ext.tree {
 	///     This would pass an HTTP parameter called "category" to the server containing
 	///     the value of the Node's "category" attribute.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\tree\TreeLoader.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tree\TreeLoader.js</jssource>
 	public class TreeLoader : Ext.util.Observable {
 
 		/// <summary>Creates a new Treeloader.</summary>

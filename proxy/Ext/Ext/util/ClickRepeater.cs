@@ -23,7 +23,7 @@ namespace Ext.util {
 	///     2007-02-02 jvs Renamed to ClickRepeater
 	///     2007-02-03 jvs Modifications for FF Mac and Safari
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\util\ClickRepeater.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\ClickRepeater.js</jssource>
 	public class ClickRepeater : Ext.util.Observable {
 
 		/// <summary></summary>

@@ -38,7 +38,7 @@ namespace Ext.data {
 	///     }
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\data\ScriptTagProxy.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\ScriptTagProxy.js</jssource>
 	public class ScriptTagProxy : Ext.data.DataProxy {
 
 		/// <summary></summary>

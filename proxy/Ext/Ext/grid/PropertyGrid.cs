@@ -24,7 +24,7 @@ namespace Ext.grid {
 	///     });
 	///     </pre></code>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\grid\PropertyGrid.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\PropertyGrid.js</jssource>
 	public class PropertyGrid : Ext.grid.EditorGridPanel {
 
 		/// <summary></summary>

@@ -34,7 +34,7 @@ namespace DotWeb.Sample.Script.Test
 		public extern void ExpandMethod();
 	}
 
-	public class Expando : JsScript
+	public class Expando
 	{
 		[JsAnonymous]
 		private class Config : JsDynamic
@@ -58,7 +58,7 @@ namespace DotWeb.Sample.Script.Test
 		}
 
 		public void HostedMethod(string msg) {
-			Window.alert(msg);
+			Global.Window.alert(msg);
 		}
 	}
 }

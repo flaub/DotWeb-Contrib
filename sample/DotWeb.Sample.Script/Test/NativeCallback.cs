@@ -36,7 +36,7 @@ namespace DotWeb.Sample.Script.Test
 		public extern void NativeCall();
 	}
 
-	public class NativeCallback : JsScript
+	public class NativeCallback 
 	{
 		public NativeCallback() {
 			Console.Write("Hi");

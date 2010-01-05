@@ -23,7 +23,7 @@ namespace Ext.state {
 	///     domain the page is running on including the 'www' like 'www.extjs.com')
 	///     @cfg {Boolean} secure True if the site is using SSL (defaults to false)
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\state\CookieProvider.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\state\CookieProvider.js</jssource>
 	public class CookieProvider : Ext.state.Provider {
 
 		/// <summary>Create a new CookieProvider</summary>

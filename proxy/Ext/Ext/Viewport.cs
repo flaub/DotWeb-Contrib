@@ -69,7 +69,7 @@ namespace Ext {
 	///     });
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\Viewport.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Viewport.js</jssource>
 	public class Viewport : Ext.Container {
 
 		/// <summary>Create a new Viewport</summary>
