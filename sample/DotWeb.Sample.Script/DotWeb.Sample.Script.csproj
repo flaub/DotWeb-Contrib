@@ -35,9 +35,6 @@
     <NoWarn>626,824</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\..\CommonAssemblyInfo.cs">
-      <Link>Properties\CommonAssemblyInfo.cs</Link>
-    </Compile>
     <Compile Include="ConsoleScript.cs" />
     <Compile Include="ExtScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -50,16 +47,6 @@
     <Compile Include="Tuple.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DotWeb.Client\DotWeb.Client.csproj">
-      <Project>{0A46B99F-8A61-4544-8B1D-E5117DABBD90}</Project>
-      <Name>DotWeb.Client</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\DotWeb.System\DotWeb.System.csproj">
-      <Project>{45AD857D-00EA-44CF-A3D4-8355DDFE1623}</Project>
-      <Name>DotWeb.System</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="build.cmd" />
   </ItemGroup>
   <ItemGroup>
@@ -67,10 +54,15 @@
     <Content Include="fauxconsole.js" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Ext, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="DotWeb.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\proxy\Ext\bin\Debug\Ext.dll</HintPath>
+      <HintPath>..\..\..\build\bin\Debug\DotWeb.Client.dll</HintPath>
     </Reference>
+    <Reference Include="DotWeb.System, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\bin\Debug\DotWeb.System.dll</HintPath>
+    </Reference>
+    <Reference Include="Ext, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

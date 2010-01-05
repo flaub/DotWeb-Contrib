@@ -231,14 +231,14 @@
     <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DotWeb.Client\DotWeb.Client.csproj">
-      <Project>{0A46B99F-8A61-4544-8B1D-E5117DABBD90}</Project>
-      <Name>DotWeb.Client</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\DotWeb.System\DotWeb.System.csproj">
-      <Project>{45AD857D-00EA-44CF-A3D4-8355DDFE1623}</Project>
-      <Name>DotWeb.System</Name>
-    </ProjectReference>
+    <Reference Include="DotWeb.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\bin\Debug\DotWeb.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="DotWeb.System, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\bin\Debug\DotWeb.System.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!--<Import Project="$(ProgramFiles)\nStuff\ScriptSharp\v1.0\nStuff.ScriptSharp.targets" />

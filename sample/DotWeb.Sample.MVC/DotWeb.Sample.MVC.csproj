@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotWeb.Web.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\bin\Debug\DotWeb.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Cecil, Version=0.6.9.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Depends\Mono.Cecil.dll</HintPath>
@@ -38,13 +42,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Depends\Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
-    <Reference Include="NHaml, Version=1.5.0.0, Culture=neutral, PublicKeyToken=d603208bac452365, processorArchitecture=MSIL">
+    <Reference Include="NHaml, Version=1.5.0.2, Culture=neutral, PublicKeyToken=d603208bac452365, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Depends\NHaml.dll</HintPath>
+      <HintPath>..\Depends\NHaml.dll</HintPath>
     </Reference>
-    <Reference Include="NHaml.Web.Mvc, Version=1.5.0.0, Culture=neutral, PublicKeyToken=d603208bac452365, processorArchitecture=MSIL">
+    <Reference Include="NHaml.Web.Mvc, Version=1.5.0.2, Culture=neutral, PublicKeyToken=d603208bac452365, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Depends\NHaml.Web.Mvc.dll</HintPath>
+      <HintPath>..\Depends\NHaml.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -75,9 +79,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\CommonAssemblyInfo.cs">
-      <Link>Properties\CommonAssemblyInfo.cs</Link>
-    </Compile>
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -443,20 +444,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DotWeb.Sample.Script\DotWeb.Sample.Script.csproj">
-      <Project>{1D730EA2-0129-47B6-AA92-9D2C14EF38CD}</Project>
-      <Name>DotWeb.Sample.Script</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\DotWeb.Web.Mvc\DotWeb.Web.Mvc.csproj">
-      <Project>{0EA77083-0F93-43EA-AB3D-52FE0FEE4599}</Project>
-      <Name>DotWeb.Web.Mvc</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\DotWeb.Web\DotWeb.Web.csproj">
-      <Project>{81320140-BA96-4316-AF77-34CD16952DB0}</Project>
-      <Name>DotWeb.Web</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="js\ExtJs\resources\images\default\form\clear-trigger.psd" />
     <None Include="js\ExtJs\resources\images\default\form\date-trigger.psd" />
     <None Include="js\ExtJs\resources\images\default\form\search-trigger.psd" />
@@ -475,6 +462,12 @@
     <None Include="Views\Test\NativeCallback.haml" />
     <None Include="Views\Test\EventHandler.haml" />
     <None Include="Views\Test\Sanity.haml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DotWeb.Sample.Script\DotWeb.Sample.Script.csproj">
+      <Project>{1D730EA2-0129-47B6-AA92-9D2C14EF38CD}</Project>
+      <Name>DotWeb.Sample.Script</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -34,3 +34,10 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("c5f8d9c3-74c1-47cf-96f6-e5fd8af05a89")]
 
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Blue Tree Labs")]
+[assembly: AssemblyCopyright("Copyright © Frank Laub 2009-2010")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
