@@ -9,7 +9,7 @@ namespace Ext {
 	///     and the shadow does not provide any shimming.  This should be used only in simple cases -- for more advanced
 	///     functionality that can also provide the same shadow effect, see the {@link Ext.Layer} class.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\Shadow.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\Shadow.js</jssource>
 	public class Shadow : System.DotWeb.JsObject {
 
 		/// <summary>Create a new Shadow</summary>

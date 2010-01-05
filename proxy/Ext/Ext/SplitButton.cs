@@ -34,7 +34,7 @@ namespace Ext {
 	///     @cfg {Function} arrowHandler A function called when the arrow button is clicked (can be used instead of click event)
 	///     @cfg {String} arrowTooltip The title attribute of the arrow
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\SplitButton.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\SplitButton.js</jssource>
 	public class SplitButton : Ext.Button {
 
 		/// <summary>Create a new menu button</summary>

@@ -9,7 +9,7 @@ namespace Ext.util {
 	///     */
 	///     Ext.util.CSS = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\util\CSS.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\util\CSS.js</jssource>
 	public class CSS : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

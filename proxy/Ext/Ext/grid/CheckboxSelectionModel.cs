@@ -7,7 +7,7 @@ namespace Ext.grid {
 	///     /**
 	///     A custom selection model that renders a column of checkboxes that can be toggled to select or deselect rows.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\grid\CheckboxSelectionModel.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\grid\CheckboxSelectionModel.js</jssource>
 	public class CheckboxSelectionModel : Ext.grid.RowSelectionModel {
 
 		/// <summary></summary>

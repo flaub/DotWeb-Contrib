@@ -72,7 +72,7 @@ namespace Ext.data {
 	///     @cfg {String} root name of the property which contains the Array of row objects.
 	///     @cfg {String} id Name of the property within a row object that contains a record identifier value.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\data\JsonReader.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\data\JsonReader.js</jssource>
 	public class JsonReader : Ext.data.DataReader {
 
 		/// <summary>

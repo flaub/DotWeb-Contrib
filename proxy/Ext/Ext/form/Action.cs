@@ -18,7 +18,7 @@ namespace Ext.form {
 	///     */
 	///     Ext.form.Action = function(form, options){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\form\Action.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\form\Action.js</jssource>
 	public class ActionClass : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

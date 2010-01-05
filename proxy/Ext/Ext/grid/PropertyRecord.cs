@@ -19,7 +19,7 @@ namespace Ext.grid {
 	///     grid.store.addSorted(rec);
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\grid\PropertyGrid.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\grid\PropertyGrid.js</jssource>
 	public class PropertyRecord : System.DotWeb.JsObject {
 
 		/// <summary>will be read automatically by the grid to determine the type of editor to use when displaying it.</summary>

@@ -32,7 +32,7 @@ namespace Ext.tree {
 	///     @cfg {String} pathSeparator The token used to separate sub-paths in path strings (defaults to '/')
 	///     @cfg {Boolean} useArrows True to use Vista-style arrows in the tree (defaults to false)
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\tree\TreePanel.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\tree\TreePanel.js</jssource>
 	public class TreePanel : Ext.Panel {
 
 		/// <summary></summary>

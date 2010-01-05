@@ -10,7 +10,7 @@ namespace Ext.layout.BorderLayout {
 	///     Ext layout types.  Region size is managed automatically and cannot be changed by the user -- for resizable
 	///     regions, see {@link Ext.layout.BorderLayout.SplitRegion}.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\layout\BorderLayout.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\layout\BorderLayout.js</jssource>
 	public class Region : System.DotWeb.JsObject {
 
 		/// <summary>

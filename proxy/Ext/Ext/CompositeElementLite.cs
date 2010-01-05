@@ -21,7 +21,7 @@ namespace Ext {
 	///     */
 	///     Ext.CompositeElementLite = function(els){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\core\CompositeElement.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\core\CompositeElement.js</jssource>
 	public class CompositeElementLite : Ext.CompositeElement {
 
 		/// <summary>Auto-generated default constructor</summary>

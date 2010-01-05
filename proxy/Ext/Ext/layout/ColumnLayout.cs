@@ -61,7 +61,7 @@ namespace Ext.layout {
 	///     */
 	///     Ext.layout.ColumnLayout = Ext.extend(Ext.layout.ContainerLayout, {
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\layout\ColumnLayout.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\layout\ColumnLayout.js</jssource>
 	public class ColumnLayout : Ext.layout.ContainerLayout {
 
 		/// <summary>Auto-generated default constructor</summary>

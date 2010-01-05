@@ -11,7 +11,7 @@ namespace Ext.state {
 	///     */
 	///     Ext.state.Provider = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\state\Provider.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\state\Provider.js</jssource>
 	public class Provider : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

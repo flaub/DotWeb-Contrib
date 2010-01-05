@@ -7,7 +7,7 @@ namespace Ext.menu {
 	///     /**
 	///     Adds a menu item that contains a checkbox by default, but can also be part of a radio group.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\menu\CheckItem.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\menu\CheckItem.js</jssource>
 	public class CheckItem : Ext.menu.Item {
 
 		/// <summary>Creates a new CheckItem</summary>

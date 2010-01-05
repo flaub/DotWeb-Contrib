@@ -16,7 +16,7 @@ namespace Ext {
 	///     myMask.show();
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\LoadMask.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\LoadMask.js</jssource>
 	public class LoadMask : System.DotWeb.JsObject {
 
 		/// <summary>Create a new LoadMask</summary>

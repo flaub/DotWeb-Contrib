@@ -19,7 +19,7 @@ namespace Ext.state {
 	///     */
 	///     Ext.state.Manager = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\state\StateManager.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\state\StateManager.js</jssource>
 	public class Manager : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

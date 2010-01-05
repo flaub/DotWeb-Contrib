@@ -39,7 +39,7 @@ namespace Ext.grid {
 	///     by the {@link #store Store}. See the {@link #cellclick} event.</li>
 	///     </ul>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\grid\GridPanel.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\grid\GridPanel.js</jssource>
 	public class GridPanel : Ext.Panel {
 
 		/// <summary></summary>

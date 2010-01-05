@@ -17,7 +17,7 @@ namespace Ext.data {
 	///     */
 	///     Ext.data.DataProxy = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\data\DataProxy.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\data\DataProxy.js</jssource>
 	public class DataProxy : Ext.util.Observable {
 
 		/// <summary>Auto-generated default constructor</summary>

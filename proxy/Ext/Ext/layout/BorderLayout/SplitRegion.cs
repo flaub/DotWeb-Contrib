@@ -7,7 +7,7 @@ namespace Ext.layout.BorderLayout {
 	///     /**
 	///     This is a specialized type of BorderLayout region that has a built-in {@link Ext.SplitBar} for user resizing of regions.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\layout\BorderLayout.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\layout\BorderLayout.js</jssource>
 	public class SplitRegion : Ext.layout.BorderLayout.Region {
 
 		/// <summary>

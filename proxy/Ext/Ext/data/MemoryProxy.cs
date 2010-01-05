@@ -8,7 +8,7 @@ namespace Ext.data {
 	///     An implementation of Ext.data.DataProxy that simply passes the data specified in its constructor
 	///     to the Reader when its load method is called.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\data\MemoryProxy.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\data\MemoryProxy.js</jssource>
 	public class MemoryProxy : Ext.data.DataProxy {
 
 		/// <summary></summary>

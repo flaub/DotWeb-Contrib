@@ -7,7 +7,7 @@ namespace Ext.form {
 	///     /**
 	///     Provides a date input field with a {@link Ext.DatePicker} dropdown and automatic date validation.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\form\DateField.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\form\DateField.js</jssource>
 	public class DateField : Ext.form.TriggerField {
 
 		/// <summary>Create a new DateField</summary>

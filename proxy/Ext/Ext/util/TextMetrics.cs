@@ -10,7 +10,7 @@ namespace Ext.util {
 	///     */
 	///     Ext.util.TextMetrics = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\util\TextMetrics.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\util\TextMetrics.js</jssource>
 	public class TextMetrics : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

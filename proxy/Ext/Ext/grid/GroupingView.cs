@@ -36,7 +36,7 @@ namespace Ext.grid {
 	///     renderTo: document.body
 	///     });</code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\grid\GroupingView.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\grid\GroupingView.js</jssource>
 	public class GroupingView : Ext.grid.GridView {
 
 		/// <summary></summary>

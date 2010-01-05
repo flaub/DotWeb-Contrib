@@ -7,7 +7,7 @@ namespace Ext.form {
 	///     /**
 	///     Basic Label field.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\form\Label.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\form\Label.js</jssource>
 	public class Label : Ext.BoxComponent {
 
 		/// <summary>

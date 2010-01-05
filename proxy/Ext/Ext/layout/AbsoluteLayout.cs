@@ -10,7 +10,7 @@ namespace Ext.layout {
 	///     */
 	///     Ext.layout.AbsoluteLayout = Ext.extend(Ext.layout.AnchorLayout, {
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\layout\AbsoluteLayout.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\layout\AbsoluteLayout.js</jssource>
 	public class AbsoluteLayout : Ext.layout.AnchorLayout {
 
 		/// <summary>Auto-generated default constructor</summary>

@@ -10,7 +10,7 @@ namespace Ext.grid {
 	///     required for compatibility with the underlying store. Generally this class should not need to be used directly --
 	///     the grid's data should be accessed from the underlying store via the {@link #store} property.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\grid\PropertyGrid.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\grid\PropertyGrid.js</jssource>
 	public class PropertyStore : Ext.util.Observable {
 
 		/// <summary></summary>

@@ -7,7 +7,7 @@ namespace Ext.form {
 	///     /**
 	///     A grouping container for {@link Ext.form.Radio} controls.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\form\RadioGroup.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\form\RadioGroup.js</jssource>
 	public class RadioGroup : Ext.form.CheckboxGroup {
 
 		/// <summary>Creates a new CheckboxGroup</summary>

@@ -7,7 +7,7 @@ namespace Ext.form {
 	///     /**
 	///     Single checkbox field.  Can be used as a direct replacement for traditional checkbox fields.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\form\Checkbox.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\form\Checkbox.js</jssource>
 	public class Checkbox : Ext.form.Field {
 
 		/// <summary>Creates a new Checkbox</summary>

@@ -10,7 +10,7 @@ namespace Ext.data {
 	///     @cfg {Array} fields An array of field definition objects, or field name strings.
 	///     @cfg {Array} data The multi-dimensional array of data
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\data\SimpleStore.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\data\SimpleStore.js</jssource>
 	public class SimpleStore : Ext.data.Store {
 
 		/// <summary></summary>

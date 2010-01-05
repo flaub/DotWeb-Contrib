@@ -32,7 +32,7 @@ namespace Ext {
 	///     */
 	///     Ext.Ajax = new Ext.data.Connection({
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\data\Connection.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\data\Connection.js</jssource>
 	public class Ajax : Ext.data.Connection {
 
 		/// <summary>Auto-generated default constructor</summary>

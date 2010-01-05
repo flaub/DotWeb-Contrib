@@ -8,7 +8,7 @@ namespace Ext.dd {
 	///     A simple class that provides the basic implementation needed to make any element a drop target that can have
 	///     draggable items dropped onto it.  The drop has no effect until an implementation of notifyDrop is provided.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\dd\DropTarget.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\dd\DropTarget.js</jssource>
 	public class DropTarget : Ext.dd.DDTarget {
 
 		/// <summary></summary>

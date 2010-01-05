@@ -10,7 +10,7 @@ namespace Ext {
 	///     */
 	///     Ext.WindowMgr = new Ext.WindowGroup();
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\WindowManager.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\WindowManager.js</jssource>
 	public class WindowMgr : Ext.WindowGroup {
 
 		/// <summary>Auto-generated default constructor</summary>

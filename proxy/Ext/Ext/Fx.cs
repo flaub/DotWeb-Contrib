@@ -50,7 +50,7 @@ namespace Ext {
 	///     */
 	///     Ext.Fx = {
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\core\Fx.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\core\Fx.js</jssource>
 	public class Fx : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

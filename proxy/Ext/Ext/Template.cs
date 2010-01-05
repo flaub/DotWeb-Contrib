@@ -18,7 +18,7 @@ namespace Ext {
 	///     </code></pre>
 	///     For more information see this blog post with examples: <a href="http://www.jackslocum.com/blog/2006/10/06/domhelper-create-elements-using-dom-html-fragments-or-templates/">DomHelper - Create Elements using DOM, HTML fragments and Templates</a>.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\core\Template.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\core\Template.js</jssource>
 	public class Template : System.DotWeb.JsObject {
 
 		/// <summary></summary>

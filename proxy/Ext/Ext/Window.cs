@@ -10,7 +10,7 @@ namespace Ext {
 	///     minimize behavior is application-specific).  Windows can also be linked to a {@link Ext.WindowGroup} or managed
 	///     by the {@link Ext.WindowManager} to provide grouping, activation, to front/back and other application-specific behavior.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\Window.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\Window.js</jssource>
 	public class WindowClass : Ext.Panel {
 
 		/// <summary></summary>

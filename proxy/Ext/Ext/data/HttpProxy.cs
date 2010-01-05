@@ -16,7 +16,7 @@ namespace Ext.data {
 	///     Be aware that to enable the browser to parse an XML document, the server must set
 	///     the Content-Type header in the HTTP response to "text/xml".
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\data\HttpProxy.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\data\HttpProxy.js</jssource>
 	public class HttpProxy : Ext.data.DataProxy {
 
 		/// <summary>If an options parameter is passed, the singleton {@link Ext.Ajax} object will be used to make the request.</summary>

@@ -18,7 +18,7 @@ namespace Ext {
 	///     split.on('moved', splitterMoved);
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\SplitBar.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\SplitBar.js</jssource>
 	public class SplitBarClass : Ext.util.Observable {
 
 		/// <summary>

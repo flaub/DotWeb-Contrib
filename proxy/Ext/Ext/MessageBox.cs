@@ -33,7 +33,7 @@ namespace Ext {
 	///     */
 	///     Ext.MessageBox = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\MessageBox.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\MessageBox.js</jssource>
 	public class MessageBox : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

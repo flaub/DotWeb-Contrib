@@ -8,7 +8,7 @@ namespace Ext.menu {
 	///     The base class for all items that render into menus.  BaseItem provides default rendering, activated state
 	///     management and base configuration options shared by all menu components.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\menu\BaseItem.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\menu\BaseItem.js</jssource>
 	public class BaseItem : Ext.Component {
 
 		/// <summary>Creates a new BaseItem</summary>

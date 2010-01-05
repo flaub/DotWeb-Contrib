@@ -24,7 +24,7 @@ namespace Ext.grid {
 	///     </ul></div></p></li>
 	///     </ul></div>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\grid\CellSelectionModel.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\grid\CellSelectionModel.js</jssource>
 	public class CellSelectionModel : Ext.grid.AbstractSelectionModel {
 
 		/// <summary></summary>

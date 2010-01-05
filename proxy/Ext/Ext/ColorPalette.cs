@@ -15,7 +15,7 @@ namespace Ext {
 	///     });
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\ColorPalette.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\ColorPalette.js</jssource>
 	public class ColorPalette : Ext.Component {
 
 		/// <summary>Create a new ColorPalette</summary>

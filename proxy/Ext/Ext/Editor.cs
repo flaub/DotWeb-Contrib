@@ -7,7 +7,7 @@ namespace Ext {
 	///     /**
 	///     A base editor field that handles displaying/hiding on demand and has some built-in sizing and event handling logic.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\Editor.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\Editor.js</jssource>
 	public class Editor : Ext.Component {
 
 		/// <summary>Create a new Editor</summary>

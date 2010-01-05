@@ -7,7 +7,7 @@ namespace Ext.form {
 	///     /**
 	///     Base class for form fields that provides default event handling, sizing, value handling and other functionality.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\form\Field.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\form\Field.js</jssource>
 	public class Field : Ext.BoxComponent {
 
 		/// <summary>Creates a new Field</summary>

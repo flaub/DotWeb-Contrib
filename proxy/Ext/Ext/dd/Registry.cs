@@ -10,7 +10,7 @@ namespace Ext.dd {
 	///     */
 	///     Ext.dd.Registry = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\dd\Registry.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\dd\Registry.js</jssource>
 	public class Registry : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

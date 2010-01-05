@@ -8,7 +8,7 @@ namespace Ext {
 	///     An object that represents a group of {@link Ext.Window} instances and provides z-order management
 	///     and window activation behavior.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\WindowManager.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\WindowManager.js</jssource>
 	public class WindowGroup : System.DotWeb.JsObject {
 
 		/// <summary></summary>

@@ -9,7 +9,7 @@ namespace Ext.Updater {
 	///     */
 	///     Ext.Updater.BasicRenderer = function(){};
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\core\UpdateManager.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\core\UpdateManager.js</jssource>
 	public class BasicRenderer : System.DotWeb.JsObject {
 
 		/// <summary>Auto-generated default constructor</summary>

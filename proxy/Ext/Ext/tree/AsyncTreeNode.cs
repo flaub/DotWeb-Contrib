@@ -7,7 +7,7 @@ namespace Ext.tree {
 	///     /**
 	///     @cfg {TreeLoader} loader A TreeLoader to be used by this node (defaults to the loader defined on the tree)
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\proxy\ExtJsParser\ext-2.2\source\widgets\tree\AsyncTreeNode.js</jssource>
+	/// <jssource>F:\src\git\DotWeb\contrib\ExtJsParser\ext-2.2\source\widgets\tree\AsyncTreeNode.js</jssource>
 	public class AsyncTreeNode : Ext.tree.TreeNode {
 
 		/// <summary></summary>
