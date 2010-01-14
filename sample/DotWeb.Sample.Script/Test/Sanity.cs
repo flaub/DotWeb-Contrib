@@ -19,13 +19,13 @@ using DotWeb.Client;
 
 namespace DotWeb.Sample.Script.Test
 {
-	public class Sanity
+	public class Sanity : JsScript
 	{
 		public Sanity() {
-			if (Global.Window["__$helper"] != null)
-				Global.Window.alert("Hosted-Mode: OK");
+			if (Window["__$helper"] != null)
+				Window.alert("Hosted-Mode: OK");
 			else
-				Global.Window.alert("Web-Mode: OK");
+				Window.alert("Web-Mode: OK");
 		}
 	}
 }

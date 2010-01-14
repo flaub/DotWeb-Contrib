@@ -30,7 +30,7 @@ namespace DotWeb.Sample.MVC
 			routes.MapRoute(
 				"Default", // Route name
 				"{controller}/{action}/{id}", // URL with parameters
-				new {controller = "Home", action = "Tests", id = ""} // Parameter defaults
+				new {controller = "Home", action = "Hello", id = ""} // Parameter defaults
 				);
 		}
 

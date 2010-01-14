@@ -88,6 +88,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Home\Hello.aspx.cs">
+      <DependentUpon>Hello.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Home\Hello.aspx.designer.cs">
+      <DependentUpon>Hello.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home\ExtJs.aspx.cs">
       <DependentUpon>ExtJs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -435,6 +442,7 @@
     <Content Include="js\Tuple.js" />
     <None Include="Views\Home\Tests.haml" />
     <None Include="Views\Home\Simple.haml" />
+    <Content Include="Views\Home\Hello.aspx" />
     <Content Include="Web.config" />
     <Content Include="Content\Site.css" />
     <Content Include="Views\Home\ExtJs.aspx" />

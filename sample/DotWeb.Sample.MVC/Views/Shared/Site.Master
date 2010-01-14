@@ -8,12 +8,14 @@
 		<%= Html.Encode(ViewData["Title"]) %></title>
 	<link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="<%= ResolveUrl("~/js/ExtJs/resources/css/ext-all.css") %>" />
+
+	<asp:ContentPlaceHolder ID="Header" runat="server" />
 </head>
 <body>
 	<div class="page">
 		<div id="header">
 			<div id="title">
-				<h1>.Web Toolkit</h1>
+				<h1>DotWeb Toolkit</h1>
 			</div>
 			<div id="menucontainer">
 				<ul id="menu">

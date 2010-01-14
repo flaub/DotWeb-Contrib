@@ -25,13 +25,7 @@ namespace DotWeb.Sample.Script
 {
 	public class ExtScript 
 	{
-		private int id = NextId();
 		private GridPanel grid;
-
-		private static int counter = 0;
-		private static int NextId() {
-			return counter++;
-		}
 
 		[JsAnonymous]
 		class Schema : JsDynamic

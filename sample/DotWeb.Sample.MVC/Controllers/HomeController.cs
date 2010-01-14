@@ -23,6 +23,11 @@ namespace DotWeb.Sample.MVC.Controllers
 	[HandleError]
 	public class HomeController : BaseController
 	{
+		public ActionResult Hello() {
+			ViewData["Title"] = "Hello DotWeb!";
+			return View();
+		}
+
 		public ActionResult Simple() {
 			ViewData["Title"] = "DotWeb Simple Sample";
 			return View();
