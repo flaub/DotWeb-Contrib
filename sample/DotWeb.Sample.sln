@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotWeb.Sample.MVC", "DotWeb.Sample.MVC\DotWeb.Sample.MVC.csproj", "{2350D2AD-CE9D-41F7-AB47-18D2824FADD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotWeb.Sample.Script", "DotWeb.Sample.Script\DotWeb.Sample.Script.csproj", "{1D730EA2-0129-47B6-AA92-9D2C14EF38CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotWeb.Sample.Client", "DotWeb.Sample.Script\DotWeb.Sample.Client.csproj", "{1D730EA2-0129-47B6-AA92-9D2C14EF38CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

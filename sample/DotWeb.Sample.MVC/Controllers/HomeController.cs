@@ -55,5 +55,10 @@ namespace DotWeb.Sample.MVC.Controllers
 			Response.Cookies.Set(mode);
 			return Redirect(Request.UrlReferrer.ToString());
 		}
+
+		public ActionResult Sticky() {
+			ViewData["Title"] = "Sticky Sample";
+			return View();
+		}
 	}
 }

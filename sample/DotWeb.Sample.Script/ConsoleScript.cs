@@ -113,7 +113,7 @@ namespace DotWeb.Sample.Script
 		}
 
 		private Text Text(string text) {
-			return Global.Document.createTextNode(text);
+			return ElementFactory.CreateText(text);
 		}
 
 		public void Log(string value) {

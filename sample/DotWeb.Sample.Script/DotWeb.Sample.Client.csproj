@@ -8,7 +8,7 @@
     <ProjectGuid>{1D730EA2-0129-47B6-AA92-9D2C14EF38CD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DotWeb.Sample.Script</RootNamespace>
+    <RootNamespace>DotWeb.Sample.Client</RootNamespace>
     <AssemblyName>DotWeb.Sample.Script</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -38,8 +38,12 @@
     <Compile Include="ConsoleScript.cs" />
     <Compile Include="ExtScript.cs" />
     <Compile Include="HelloDotWeb.cs" />
+    <Compile Include="Mail\TopPanel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleScript.cs" />
+    <Compile Include="Sticky\Main.cs" />
+    <Compile Include="Sticky\Model\Model.cs" />
+    <Compile Include="Sticky\NoteView.cs" />
     <Compile Include="Test\Sandbox.cs" />
     <Compile Include="Test\Expando.cs" />
     <Compile Include="Test\NativeCallback.cs" />

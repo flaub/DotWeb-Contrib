@@ -26,6 +26,7 @@
 					<li><%= Html.ActionLink("Console", "Console", "Home")%></li>
 					<li><%= Html.ActionLink("ExtJs Sample", "ExtJs", "Home")%></li>
 					<li><%= Html.ActionLink("Tests", "Tests", "Home") %></li>
+					<li><%= Html.ActionLink("Sticky", "Sticky", "Home")%></li>
 				</ul>
 			</div>
 		</div>
