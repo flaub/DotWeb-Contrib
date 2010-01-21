@@ -127,16 +127,16 @@ namespace Ext.data {
 	[JsAnonymous]
 	public class XmlReaderConfig : System.DotWeb.JsDynamic {
 		/// <summary> The DomQuery path from which to retrieve the total number of records</summary>
-		public string totalRecords { get { return (string)this["totalRecords"]; } set { this["totalRecords"] = value; } }
+		public extern string totalRecords { get; set; }
 
 		/// <summary> The DomQuery path to the repeated element which contains record information.</summary>
-		public string record { get { return (string)this["record"]; } set { this["record"] = value; } }
+		public extern string record { get; set; }
 
 		/// <summary> The DomQuery path to the success attribute used by forms.</summary>
-		public string success { get { return (string)this["success"]; } set { this["success"] = value; } }
+		public extern string success { get; set; }
 
 		/// <summary> The DomQuery path relative from the record element to the element that contains</summary>
-		public string id { get { return (string)this["id"]; } set { this["id"] = value; } }
+		public extern string id { get; set; }
 
 	}
 }

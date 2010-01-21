@@ -117,10 +117,10 @@ namespace Ext {
 	[JsAnonymous]
 	public class ShadowConfig : System.DotWeb.JsDynamic {
 		/// <summary>  The shadow display mode.  Supports the following options:<br /> sides: Shadow displays on both sides and bottom only<br /> frame: Shadow displays equally on all four sides<br /> drop: Traditional bottom-right drop shadow (default)</summary>
-		public string mode { get { return (string)this["mode"]; } set { this["mode"] = value; } }
+		public extern string mode { get; set; }
 
 		/// <summary>  The number of pixels to offset the shadow from the element (defaults to 4)</summary>
-		public string offset { get { return (string)this["offset"]; } set { this["offset"] = value; } }
+		public extern string offset { get; set; }
 
 	}
 }

@@ -374,13 +374,13 @@ namespace Ext.data {
 	[JsAnonymous]
 	public class NodeConfig : System.DotWeb.JsDynamic {
 		/// <summary> true if this node is a leaf and does not have children</summary>
-		public bool leaf { get { return (bool)this["leaf"]; } set { this["leaf"] = value; } }
+		public extern bool leaf { get; set; }
 
 		/// <summary> The id for this node. If one is not specified, one is generated.</summary>
-		public string id { get { return (string)this["id"]; } set { this["id"] = value; } }
+		public extern string id { get; set; }
 
 		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
-		public object listeners { get { return (object)this["listeners"]; } set { this["listeners"] = value; } }
+		public extern object listeners { get; set; }
 
 	}
 

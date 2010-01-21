@@ -84,16 +84,16 @@ namespace Ext {
 	[JsAnonymous]
 	public class LoadMaskConfig : System.DotWeb.JsDynamic {
 		/// <summary>  Optional Store to which the mask is bound. The mask is displayed when a load request is issued, and hidden on either load sucess, or load fail.</summary>
-		public Ext.data.Store store { get { return (Ext.data.Store)this["store"]; } set { this["store"] = value; } }
+		public extern Ext.data.Store store { get; set; }
 
 		/// <summary>  True to create a single-use mask that is automatically destroyed after loading (useful for page loads), False to persist the mask element reference for multiple uses (e.g., for paged data widgets).  Defaults to false.</summary>
-		public bool removeMask { get { return (bool)this["removeMask"]; } set { this["removeMask"] = value; } }
+		public extern bool removeMask { get; set; }
 
 		/// <summary>  The text to display in a centered loading message box (defaults to 'Loading...')</summary>
-		public string msg { get { return (string)this["msg"]; } set { this["msg"] = value; } }
+		public extern string msg { get; set; }
 
 		/// <summary>  The CSS class to apply to the loading message element (defaults to "x-mask-loading")</summary>
-		public string msgCls { get { return (string)this["msgCls"]; } set { this["msgCls"] = value; } }
+		public extern string msgCls { get; set; }
 
 	}
 }

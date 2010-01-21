@@ -255,34 +255,34 @@ namespace Ext.grid {
 	[JsAnonymous]
 	public class GridViewConfig : System.DotWeb.JsDynamic {
 		/// <summary> True to add a second TR element per row that can be used to provide a row body that spans beneath the data row.  Use the {@link #getRowClass} method's rowParams config to customize the row body.</summary>
-		public bool enableRowBody { get { return (bool)this["enableRowBody"]; } set { this["enableRowBody"] = value; } }
+		public extern bool enableRowBody { get; set; }
 
 		/// <summary> Default text to display in the grid body when no rows are available (defaults to '').</summary>
-		public string emptyText { get { return (string)this["emptyText"]; } set { this["emptyText"] = value; } }
+		public extern string emptyText { get; set; }
 
 		/// <summary> True to defer emptyText being applied until the store's first load</summary>
-		public bool deferEmptyText { get { return (bool)this["deferEmptyText"]; } set { this["deferEmptyText"] = value; } }
+		public extern bool deferEmptyText { get; set; }
 
 		/// <summary> True to auto expand the columns to fit the grid <b>when the grid is created</b>.</summary>
-		public bool autoFill { get { return (bool)this["autoFill"]; } set { this["autoFill"] = value; } }
+		public extern bool autoFill { get; set; }
 
 		/// <summary> True to auto expand/contract the size of the columns to fit the grid width and prevent horizontal scrolling.</summary>
-		public bool forceFit { get { return (bool)this["forceFit"]; } set { this["forceFit"] = value; } }
+		public extern bool forceFit { get; set; }
 
 		/// <summary> The number of levels to search for cells in event delegation (defaults to 4)</summary>
-		public double cellSelectorDepth { get { return (double)this["cellSelectorDepth"]; } set { this["cellSelectorDepth"] = value; } }
+		public extern double cellSelectorDepth { get; set; }
 
 		/// <summary> The number of levels to search for rows in event delegation (defaults to 10)</summary>
-		public double rowSelectorDepth { get { return (double)this["rowSelectorDepth"]; } set { this["rowSelectorDepth"] = value; } }
+		public extern double rowSelectorDepth { get; set; }
 
 		/// <summary> The selector used to find cells internally</summary>
-		public string cellSelector { get { return (string)this["cellSelector"]; } set { this["cellSelector"] = value; } }
+		public extern string cellSelector { get; set; }
 
 		/// <summary> The selector used to find rows internally</summary>
-		public string rowSelector { get { return (string)this["rowSelector"]; } set { this["rowSelector"] = value; } }
+		public extern string rowSelector { get; set; }
 
 		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
-		public object listeners { get { return (object)this["listeners"]; } set { this["listeners"] = value; } }
+		public extern object listeners { get; set; }
 
 	}
 

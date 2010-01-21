@@ -53,13 +53,13 @@ namespace Ext.grid {
 	[JsAnonymous]
 	public class RowNumbererConfig : System.DotWeb.JsDynamic {
 		/// <summary> Any valid text or HTML fragment to display in the header cell for the row number column (defaults to '').</summary>
-		public string header { get { return (string)this["header"]; } set { this["header"] = value; } }
+		public extern string header { get; set; }
 
 		/// <summary> The default width in pixels of the row number column (defaults to 23).</summary>
-		public double width { get { return (double)this["width"]; } set { this["width"] = value; } }
+		public extern double width { get; set; }
 
 		/// <summary> True if the row number column is sortable (defaults to false).</summary>
-		public bool sortable { get { return (bool)this["sortable"]; } set { this["sortable"] = value; } }
+		public extern bool sortable { get; set; }
 
 	}
 }

@@ -192,19 +192,19 @@ namespace Ext.data {
 	[JsAnonymous]
 	public class ScriptTagProxyConfig : System.DotWeb.JsDynamic {
 		/// <summary> The URL from which to request the data object.</summary>
-		public string url { get { return (string)this["url"]; } set { this["url"] = value; } }
+		public extern string url { get; set; }
 
 		/// <summary> (optional) The number of milliseconds to wait for a response. Defaults to 30 seconds.</summary>
-		public double timeout { get { return (double)this["timeout"]; } set { this["timeout"] = value; } }
+		public extern double timeout { get; set; }
 
 		/// <summary> (Optional) The name of the parameter to pass to the server which tells the server the name of the callback function set up by the load call to process the returned data object. Defaults to "callback".<p>The server-side processing must read this parameter value, and generate javascript output which calls this named function passing the data object as its only parameter.</summary>
-		public string callbackParam { get { return (string)this["callbackParam"]; } set { this["callbackParam"] = value; } }
+		public extern string callbackParam { get; set; }
 
 		/// <summary> (optional) Defaults to true. Disable caching by adding a unique parameter name to the request.</summary>
-		public bool nocache { get { return (bool)this["nocache"]; } set { this["nocache"] = value; } }
+		public extern bool nocache { get; set; }
 
 		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
-		public object listeners { get { return (object)this["listeners"]; } set { this["listeners"] = value; } }
+		public extern object listeners { get; set; }
 
 	}
 

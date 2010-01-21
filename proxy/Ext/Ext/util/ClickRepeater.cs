@@ -57,28 +57,28 @@ namespace Ext.util {
 	[JsAnonymous]
 	public class ClickRepeaterConfig : System.DotWeb.JsDynamic {
 		/// <summary> The element to act as a button.</summary>
-		public object el { get { return (object)this["el"]; } set { this["el"] = value; } }
+		public extern object el { get; set; }
 
 		/// <summary> The initial delay before the repeating event begins firing.</summary>
-		public double delay { get { return (double)this["delay"]; } set { this["delay"] = value; } }
+		public extern double delay { get; set; }
 
 		/// <summary> The interval between firings of the "click" event. Default 20 ms.</summary>
-		public double interval { get { return (double)this["interval"]; } set { this["interval"] = value; } }
+		public extern double interval { get; set; }
 
 		/// <summary> A CSS class name to be applied to the element while pressed.</summary>
-		public string pressClass { get { return (string)this["pressClass"]; } set { this["pressClass"] = value; } }
+		public extern string pressClass { get; set; }
 
 		/// <summary> True if autorepeating should start slowly and accelerate.</summary>
-		public bool accelerate { get { return (bool)this["accelerate"]; } set { this["accelerate"] = value; } }
+		public extern bool accelerate { get; set; }
 
 		/// <summary> True to prevent the default click event</summary>
-		public bool preventDefault { get { return (bool)this["preventDefault"]; } set { this["preventDefault"] = value; } }
+		public extern bool preventDefault { get; set; }
 
 		/// <summary> True to stop the default click event</summary>
-		public bool stopDefault { get { return (bool)this["stopDefault"]; } set { this["stopDefault"] = value; } }
+		public extern bool stopDefault { get; set; }
 
 		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
-		public object listeners { get { return (object)this["listeners"]; } set { this["listeners"] = value; } }
+		public extern object listeners { get; set; }
 
 	}
 

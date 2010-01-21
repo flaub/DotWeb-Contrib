@@ -244,22 +244,22 @@ namespace Ext {
 	[JsAnonymous]
 	public class ActionConfig : System.DotWeb.JsDynamic {
 		/// <summary> The text to set for all components using this action (defaults to '').</summary>
-		public string text { get { return (string)this["text"]; } set { this["text"] = value; } }
+		public extern string text { get; set; }
 
 		/// <summary> The icon CSS class for all components using this action (defaults to ''). The class should supply a background image that will be used as the icon image.</summary>
-		public string iconCls { get { return (string)this["iconCls"]; } set { this["iconCls"] = value; } }
+		public extern string iconCls { get; set; }
 
 		/// <summary> True to disable all components using this action, false to enable them (defaults to false).</summary>
-		public bool disabled { get { return (bool)this["disabled"]; } set { this["disabled"] = value; } }
+		public extern bool disabled { get; set; }
 
 		/// <summary> True to hide all components using this action, false to show them (defaults to false).</summary>
-		public bool hidden { get { return (bool)this["hidden"]; } set { this["hidden"] = value; } }
+		public extern bool hidden { get; set; }
 
 		/// <summary> The function that will be invoked by each component tied to this action when the component's primary event is triggered (defaults to undefined).</summary>
-		public Delegate handler { get { return (Delegate)this["handler"]; } set { this["handler"] = value; } }
+		public extern Delegate handler { get; set; }
 
 		/// <summary> The scope in which the {@link #handler} function will execute.</summary>
-		public object scope { get { return (object)this["scope"]; } set { this["scope"] = value; } }
+		public extern object scope { get; set; }
 
 	}
 }

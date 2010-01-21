@@ -192,70 +192,70 @@ namespace Ext.tree {
 	[JsAnonymous]
 	public class TreeNodeConfig : System.DotWeb.JsDynamic {
 		/// <summary> The text for this node</summary>
-		public string text { get { return (string)this["text"]; } set { this["text"] = value; } }
+		public extern string text { get; set; }
 
 		/// <summary> true to start the node expanded</summary>
-		public bool expanded { get { return (bool)this["expanded"]; } set { this["expanded"] = value; } }
+		public extern bool expanded { get; set; }
 
 		/// <summary> False to make this node undraggable if {@link #draggable} = true (defaults to true)</summary>
-		public bool allowDrag { get { return (bool)this["allowDrag"]; } set { this["allowDrag"] = value; } }
+		public extern bool allowDrag { get; set; }
 
 		/// <summary> False if this node cannot have child nodes dropped on it (defaults to true)</summary>
-		public bool allowDrop { get { return (bool)this["allowDrop"]; } set { this["allowDrop"] = value; } }
+		public extern bool allowDrop { get; set; }
 
 		/// <summary> true to start the node disabled</summary>
-		public bool disabled { get { return (bool)this["disabled"]; } set { this["disabled"] = value; } }
+		public extern bool disabled { get; set; }
 
 		/// <summary> The path to an icon for the node. The preferred way to do this</summary>
-		public string icon { get { return (string)this["icon"]; } set { this["icon"] = value; } }
+		public extern string icon { get; set; }
 
 		/// <summary> A css class to be added to the node</summary>
-		public string cls { get { return (string)this["cls"]; } set { this["cls"] = value; } }
+		public extern string cls { get; set; }
 
 		/// <summary> A css class to be added to the nodes icon element for applying css background images</summary>
-		public string iconCls { get { return (string)this["iconCls"]; } set { this["iconCls"] = value; } }
+		public extern string iconCls { get; set; }
 
 		/// <summary> URL of the link used for the node (defaults to #)</summary>
-		public string href { get { return (string)this["href"]; } set { this["href"] = value; } }
+		public extern string href { get; set; }
 
 		/// <summary> target frame for the link</summary>
-		public string hrefTarget { get { return (string)this["hrefTarget"]; } set { this["hrefTarget"] = value; } }
+		public extern string hrefTarget { get; set; }
 
 		/// <summary> An Ext QuickTip for the node</summary>
-		public string qtip { get { return (string)this["qtip"]; } set { this["qtip"] = value; } }
+		public extern string qtip { get; set; }
 
 		/// <summary> If set to true, the node will always show a plus/minus icon, even when empty</summary>
-		public bool expandable { get { return (bool)this["expandable"]; } set { this["expandable"] = value; } }
+		public extern bool expandable { get; set; }
 
 		/// <summary> An Ext QuickTip config for the node (used instead of qtip)</summary>
-		public string qtipCfg { get { return (string)this["qtipCfg"]; } set { this["qtipCfg"] = value; } }
+		public extern string qtipCfg { get; set; }
 
 		/// <summary> True for single click expand on this node</summary>
-		public bool singleClickExpand { get { return (bool)this["singleClickExpand"]; } set { this["singleClickExpand"] = value; } }
+		public extern bool singleClickExpand { get; set; }
 
 		/// <summary> A UI <b>class</b> to use for this node (defaults to Ext.tree.TreeNodeUI)</summary>
-		public Delegate uiProvider { get { return (Delegate)this["uiProvider"]; } set { this["uiProvider"] = value; } }
+		public extern Delegate uiProvider { get; set; }
 
 		/// <summary> True to render a checked checkbox for this node, false to render an unchecked checkbox</summary>
-		public bool checked_ { get { return (bool)this["checked_"]; } set { this["checked_"] = value; } }
+		public extern bool checked_ { get; set; }
 
 		/// <summary> True to make this node draggable (defaults to false)</summary>
-		public bool draggable { get { return (bool)this["draggable"]; } set { this["draggable"] = value; } }
+		public extern bool draggable { get; set; }
 
 		/// <summary> False to not allow this node to act as a drop target (defaults to true)</summary>
-		public bool isTarget { get { return (bool)this["isTarget"]; } set { this["isTarget"] = value; } }
+		public extern bool isTarget { get; set; }
 
 		/// <summary> False to not allow this node to have child nodes (defaults to true)</summary>
-		public bool allowChildren { get { return (bool)this["allowChildren"]; } set { this["allowChildren"] = value; } }
+		public extern bool allowChildren { get; set; }
 
 		/// <summary> true if this node is a leaf and does not have children</summary>
-		public bool leaf { get { return (bool)this["leaf"]; } set { this["leaf"] = value; } }
+		public extern bool leaf { get; set; }
 
 		/// <summary> The id for this node. If one is not specified, one is generated.</summary>
-		public string id { get { return (string)this["id"]; } set { this["id"] = value; } }
+		public extern string id { get; set; }
 
 		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
-		public object listeners { get { return (object)this["listeners"]; } set { this["listeners"] = value; } }
+		public extern object listeners { get; set; }
 
 	}
 

@@ -506,34 +506,34 @@ namespace Ext.form {
 	[JsAnonymous]
 	public class BasicFormConfig : System.DotWeb.JsDynamic {
 		/// <summary>  The request method to use (GET or POST) for form actions if one isn't supplied in the action options.</summary>
-		public string method { get { return (string)this["method"]; } set { this["method"] = value; } }
+		public extern string method { get; set; }
 
 		/// <summary>  An Ext.data.DataReader (e.g. {@link Ext.data.XmlReader}) to be used to read data when executing "load" actions. This is optional as there is built-in support for processing JSON.</summary>
-		public Ext.data.DataReader reader { get { return (Ext.data.DataReader)this["reader"]; } set { this["reader"] = value; } }
+		public extern Ext.data.DataReader reader { get; set; }
 
 		/// <summary>  An Ext.data.DataReader (e.g. {@link Ext.data.XmlReader}) to be used to read data when reading validation errors on "submit" actions. This is completely optional as there is built-in support for processing JSON.</summary>
-		public Ext.data.DataReader errorReader { get { return (Ext.data.DataReader)this["errorReader"]; } set { this["errorReader"] = value; } }
+		public extern Ext.data.DataReader errorReader { get; set; }
 
 		/// <summary>  The URL to use for form actions if one isn't supplied in the action options.</summary>
-		public string url { get { return (string)this["url"]; } set { this["url"] = value; } }
+		public extern string url { get; set; }
 
 		/// <summary>  Set to true if this form is a file upload. <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b> performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the DOM <tt>&lt;form></tt> element temporarily modified to have its <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer to a dynamically generated, hidden <tt>&lt;iframe></tt> which is inserted into the document but removed after the return data has been gathered.</p> <p>The server response is parsed by the browser to create the document for the IFRAME. If the server is using JSON to send the return object, then the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a> header must be set to "text/html" in order to tell the browser to insert the text unchanged into the document body.</p> <p>The response text is retrieved from the document, and a fake XMLHttpRequest object is created containing a <tt>responseText</tt> property in order to conform to the requirements of event handlers and callbacks.</p> <p>Be aware that file upload packets are sent with the content type <a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form</a> and some server technologies (notably JEE) may require some custom processing in order to retrieve parameter names and parameter values from the packet content.</p></summary>
-		public bool fileUpload { get { return (bool)this["fileUpload"]; } set { this["fileUpload"] = value; } }
+		public extern bool fileUpload { get; set; }
 
 		/// <summary>  Parameters to pass with all requests. e.g. baseParams: {id: '123', foo: 'bar'}.</summary>
-		public object baseParams { get { return (object)this["baseParams"]; } set { this["baseParams"] = value; } }
+		public extern object baseParams { get; set; }
 
 		/// <summary> Timeout for form actions in seconds (default is 30 seconds).</summary>
-		public double timeout { get { return (double)this["timeout"]; } set { this["timeout"] = value; } }
+		public extern double timeout { get; set; }
 
 		/// <summary> If set to true, form.reset() resets to the last loaded or setValues() data instead of when the form was first created.</summary>
-		public bool trackResetOnLoad { get { return (bool)this["trackResetOnLoad"]; } set { this["trackResetOnLoad"] = value; } }
+		public extern bool trackResetOnLoad { get; set; }
 
 		/// <summary> If set to true, standard HTML form submits are used instead of XHR (Ajax) style form submissions. (defaults to false)</summary>
-		public bool standardSubmit { get { return (bool)this["standardSubmit"]; } set { this["standardSubmit"] = value; } }
+		public extern bool standardSubmit { get; set; }
 
 		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
-		public object listeners { get { return (object)this["listeners"]; } set { this["listeners"] = value; } }
+		public extern object listeners { get; set; }
 
 	}
 

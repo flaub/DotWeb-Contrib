@@ -119,28 +119,28 @@ namespace Ext.tree {
 	[JsAnonymous]
 	public class TreeDropZoneConfig : System.DotWeb.JsDynamic {
 		/// <summary>  Allow inserting a dragged node between an expanded parent node and its first child that will become a sibling of the parent when dropped (defaults to false)</summary>
-		public bool allowParentInsert { get { return (bool)this["allowParentInsert"]; } set { this["allowParentInsert"] = value; } }
+		public extern bool allowParentInsert { get; set; }
 
 		/// <summary>  True if drops on the tree container (outside of a specific tree node) are allowed (defaults to false)</summary>
-		public string allowContainerDrop { get { return (string)this["allowContainerDrop"]; } set { this["allowContainerDrop"] = value; } }
+		public extern string allowContainerDrop { get; set; }
 
 		/// <summary>  True if the tree should only allow append drops (use for trees which are sorted, defaults to false)</summary>
-		public string appendOnly { get { return (string)this["appendOnly"]; } set { this["appendOnly"] = value; } }
+		public extern string appendOnly { get; set; }
 
 		/// <summary>  A named drag drop group to which this object belongs.  If a group is specified, then this object will only interact with other drag drop objects in the same group (defaults to 'TreeDD').</summary>
-		public string ddGroup { get { return (string)this["ddGroup"]; } set { this["ddGroup"] = value; } }
+		public extern string ddGroup { get; set; }
 
 		/// <summary>  The delay in milliseconds to wait before expanding a target tree node while dragging a droppable node over the target (defaults to 1000)</summary>
-		public string expandDelay { get { return (string)this["expandDelay"]; } set { this["expandDelay"] = value; } }
+		public extern string expandDelay { get; set; }
 
 		/// <summary>  The CSS class applied to the drop target element while the drag source is over it (defaults to "").</summary>
-		public string overClass { get { return (string)this["overClass"]; } set { this["overClass"] = value; } }
+		public extern string overClass { get; set; }
 
 		/// <summary>  The CSS class returned to the drag source when drop is allowed (defaults to "x-dd-drop-ok").</summary>
-		public string dropAllowed { get { return (string)this["dropAllowed"]; } set { this["dropAllowed"] = value; } }
+		public extern string dropAllowed { get; set; }
 
 		/// <summary>  The CSS class returned to the drag source when drop is not allowed (defaults to "x-dd-drop-nodrop").</summary>
-		public string dropNotAllowed { get { return (string)this["dropNotAllowed"]; } set { this["dropNotAllowed"] = value; } }
+		public extern string dropNotAllowed { get; set; }
 
 	}
 }

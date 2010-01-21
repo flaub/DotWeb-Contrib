@@ -60,10 +60,10 @@ namespace Ext.layout {
 	[JsAnonymous]
 	public class AnchorLayoutConfig : System.DotWeb.JsDynamic {
 		/// <summary>  An optional extra CSS class that will be added to the container (defaults to '').  This can be useful for adding customized styles to the container or any of its children using standard CSS rules.</summary>
-		public string extraCls { get { return (string)this["extraCls"]; } set { this["extraCls"] = value; } }
+		public extern string extraCls { get; set; }
 
 		/// <summary>  True to hide each contained item on render (defaults to false).</summary>
-		public bool renderHidden { get { return (bool)this["renderHidden"]; } set { this["renderHidden"] = value; } }
+		public extern bool renderHidden { get; set; }
 
 	}
 }

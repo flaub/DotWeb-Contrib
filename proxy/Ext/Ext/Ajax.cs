@@ -102,31 +102,31 @@ namespace Ext {
 	[JsAnonymous]
 	public class AjaxConfig : System.DotWeb.JsDynamic {
 		/// <summary> (Optional) The default URL to be used for requests to the server. (defaults to undefined)</summary>
-		public string url { get { return (string)this["url"]; } set { this["url"] = value; } }
+		public extern string url { get; set; }
 
 		/// <summary> (Optional) An object containing properties which are used as extra parameters to each request made by this object. (defaults to undefined)</summary>
-		public object extraParams { get { return (object)this["extraParams"]; } set { this["extraParams"] = value; } }
+		public extern object extraParams { get; set; }
 
 		/// <summary> (Optional) An object containing request headers which are added to each request made by this object. (defaults to undefined)</summary>
-		public object defaultHeaders { get { return (object)this["defaultHeaders"]; } set { this["defaultHeaders"] = value; } }
+		public extern object defaultHeaders { get; set; }
 
 		/// <summary> (Optional) The default HTTP method to be used for requests. (defaults to undefined; if not set, but {@link #request} params are present, POST will be used; otherwise, GET will be used.)</summary>
-		public string method { get { return (string)this["method"]; } set { this["method"] = value; } }
+		public extern string method { get; set; }
 
 		/// <summary> (Optional) The timeout in milliseconds to be used for requests. (defaults to 30000)</summary>
-		public double timeout { get { return (double)this["timeout"]; } set { this["timeout"] = value; } }
+		public extern double timeout { get; set; }
 
 		/// <summary> (Optional) Whether this request should abort any pending requests. (defaults to false) @type Boolean</summary>
-		public bool autoAbort { get { return (bool)this["autoAbort"]; } set { this["autoAbort"] = value; } }
+		public extern bool autoAbort { get; set; }
 
 		/// <summary> (Optional) True to add a unique cache-buster param to GET requests. (defaults to true) @type Boolean</summary>
-		public bool disableCaching { get { return (bool)this["disableCaching"]; } set { this["disableCaching"] = value; } }
+		public extern bool disableCaching { get; set; }
 
 		/// <summary> (Optional) Change the parameter which is sent went disabling caching through a cache buster. Defaults to '_dc' @type String</summary>
-		public string disableCachingParam { get { return (string)this["disableCachingParam"]; } set { this["disableCachingParam"] = value; } }
+		public extern string disableCachingParam { get; set; }
 
 		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
-		public object listeners { get { return (object)this["listeners"]; } set { this["listeners"] = value; } }
+		public extern object listeners { get; set; }
 
 	}
 }

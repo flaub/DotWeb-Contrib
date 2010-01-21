@@ -65,10 +65,10 @@ namespace Ext.data {
 	[JsAnonymous]
 	public class TreeConfig : System.DotWeb.JsDynamic {
 		/// <summary>  The token used to separate paths in node ids (defaults to '/').</summary>
-		public string pathSeparator { get { return (string)this["pathSeparator"]; } set { this["pathSeparator"] = value; } }
+		public extern string pathSeparator { get; set; }
 
 		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
-		public object listeners { get { return (object)this["listeners"]; } set { this["listeners"] = value; } }
+		public extern object listeners { get; set; }
 
 	}
 

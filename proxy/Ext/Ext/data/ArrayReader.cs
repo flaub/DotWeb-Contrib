@@ -91,16 +91,16 @@ namespace Ext.data {
 	[JsAnonymous]
 	public class ArrayReaderConfig : System.DotWeb.JsDynamic {
 		/// <summary> (optional) The subscript within row Array that provides an ID for the Record</summary>
-		public string id { get { return (string)this["id"]; } set { this["id"] = value; } }
+		public extern string id { get; set; }
 
 		/// <summary> Name of the property from which to retrieve the total number of records</summary>
-		public string totalProperty { get { return (string)this["totalProperty"]; } set { this["totalProperty"] = value; } }
+		public extern string totalProperty { get; set; }
 
 		/// <summary> Name of the property from which to retrieve the success attribute used by forms.</summary>
-		public string successProperty { get { return (string)this["successProperty"]; } set { this["successProperty"] = value; } }
+		public extern string successProperty { get; set; }
 
 		/// <summary> name of the property which contains the Array of row objects.</summary>
-		public string root { get { return (string)this["root"]; } set { this["root"] = value; } }
+		public extern string root { get; set; }
 
 	}
 }

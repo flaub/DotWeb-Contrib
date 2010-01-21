@@ -161,16 +161,16 @@ namespace Ext.data {
 	[JsAnonymous]
 	public class JsonReaderConfig : System.DotWeb.JsDynamic {
 		/// <summary> Name of the property from which to retrieve the total number of records</summary>
-		public string totalProperty { get { return (string)this["totalProperty"]; } set { this["totalProperty"] = value; } }
+		public extern string totalProperty { get; set; }
 
 		/// <summary> Name of the property from which to retrieve the success attribute used by forms.</summary>
-		public string successProperty { get { return (string)this["successProperty"]; } set { this["successProperty"] = value; } }
+		public extern string successProperty { get; set; }
 
 		/// <summary> name of the property which contains the Array of row objects.</summary>
-		public string root { get { return (string)this["root"]; } set { this["root"] = value; } }
+		public extern string root { get; set; }
 
 		/// <summary> Name of the property within a row object that contains a record identifier value.</summary>
-		public string id { get { return (string)this["id"]; } set { this["id"] = value; } }
+		public extern string id { get; set; }
 
 	}
 }

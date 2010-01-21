@@ -150,10 +150,10 @@ namespace Ext.dd {
 	[JsAnonymous]
 	public class StatusProxyConfig : System.DotWeb.JsDynamic {
 		/// <summary>  The CSS class to apply to the status element when drop is allowed (defaults to "x-dd-drop-ok").</summary>
-		public string dropAllowed { get { return (string)this["dropAllowed"]; } set { this["dropAllowed"] = value; } }
+		public extern string dropAllowed { get; set; }
 
 		/// <summary>  The CSS class to apply to the status element when drop is not allowed (defaults to "x-dd-drop-nodrop").</summary>
-		public string dropNotAllowed { get { return (string)this["dropNotAllowed"]; } set { this["dropNotAllowed"] = value; } }
+		public extern string dropNotAllowed { get; set; }
 
 	}
 }

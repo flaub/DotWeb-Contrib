@@ -133,31 +133,31 @@ namespace Ext.tree {
 	[JsAnonymous]
 	public class TreeLoaderConfig : System.DotWeb.JsDynamic {
 		/// <summary> The URL from which to request a Json string which specifies an array of node definition objects representing the child nodes to be loaded.</summary>
-		public string dataUrl { get { return (string)this["dataUrl"]; } set { this["dataUrl"] = value; } }
+		public extern string dataUrl { get; set; }
 
 		/// <summary> The HTTP request method for loading data (defaults to the value of {@link Ext.Ajax#method}).</summary>
-		public string requestMethod { get { return (string)this["requestMethod"]; } set { this["requestMethod"] = value; } }
+		public extern string requestMethod { get; set; }
 
 		/// <summary> Equivalent to {@link #dataUrl}.</summary>
-		public string url { get { return (string)this["url"]; } set { this["url"] = value; } }
+		public extern string url { get; set; }
 
 		/// <summary> If set to true, the loader recursively loads "children" attributes when doing the first load on nodes.</summary>
-		public bool preloadChildren { get { return (bool)this["preloadChildren"]; } set { this["preloadChildren"] = value; } }
+		public extern bool preloadChildren { get; set; }
 
 		/// <summary> (optional) An object containing properties which specify HTTP parameters to be passed to each request for child nodes.</summary>
-		public object baseParams { get { return (object)this["baseParams"]; } set { this["baseParams"] = value; } }
+		public extern object baseParams { get; set; }
 
 		/// <summary> (optional) An object containing attributes to be added to all nodes created by this loader. If the attributes sent by the server have an attribute in this object, they take priority.</summary>
-		public object baseAttrs { get { return (object)this["baseAttrs"]; } set { this["baseAttrs"] = value; } }
+		public extern object baseAttrs { get; set; }
 
 		/// <summary> (optional) An object containing properties which specify custom {@link Ext.tree.TreeNodeUI} implementations. If the optional <i>uiProvider</i> attribute of a returned child node is a string rather than a reference to a TreeNodeUI implementation, then that string value is used as a property name in the uiProviders object.</summary>
-		public object uiProviders { get { return (object)this["uiProviders"]; } set { this["uiProviders"] = value; } }
+		public extern object uiProviders { get; set; }
 
 		/// <summary> (optional) Default to true. Remove previously existing child nodes before loading.</summary>
-		public bool clearOnLoad { get { return (bool)this["clearOnLoad"]; } set { this["clearOnLoad"] = value; } }
+		public extern bool clearOnLoad { get; set; }
 
 		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
-		public object listeners { get { return (object)this["listeners"]; } set { this["listeners"] = value; } }
+		public extern object listeners { get; set; }
 
 	}
 

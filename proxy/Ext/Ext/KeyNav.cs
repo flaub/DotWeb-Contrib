@@ -81,13 +81,13 @@ namespace Ext {
 	[JsAnonymous]
 	public class KeyNavConfig : System.DotWeb.JsDynamic {
 		/// <summary>  True to disable this KeyNav instance (defaults to false)</summary>
-		public bool disabled { get { return (bool)this["disabled"]; } set { this["disabled"] = value; } }
+		public extern bool disabled { get; set; }
 
 		/// <summary>  The method to call on the {@link Ext.EventObject} after this KeyNav intercepts a key.  Valid values are {@link Ext.EventObject#stopEvent}, {@link Ext.EventObject#preventDefault} and {@link Ext.EventObject#stopPropagation} (defaults to 'stopEvent')</summary>
-		public string defaultEventAction { get { return (string)this["defaultEventAction"]; } set { this["defaultEventAction"] = value; } }
+		public extern string defaultEventAction { get; set; }
 
 		/// <summary>  Handle the keydown event instead of keypress (defaults to false).  KeyNav automatically does this for IE since IE does not propagate special keys on keypress, but setting this to true will force other browsers to also handle keydown instead of keypress.</summary>
-		public bool forceKeyDown { get { return (bool)this["forceKeyDown"]; } set { this["forceKeyDown"] = value; } }
+		public extern bool forceKeyDown { get; set; }
 
 	}
 }

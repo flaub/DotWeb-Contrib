@@ -39,31 +39,31 @@ namespace Ext.menu {
 	[JsAnonymous]
 	public class DateMenuConfig : System.DotWeb.JsDynamic {
 		/// <summary>  A config object that will be applied to all items added to this container either via the {@link #items} config or via the {@link #add} method.  The defaults config can contain any number of name/value property pairs to be added to each item, and should be valid for the types of items being added to the menu.</summary>
-		public object defaults { get { return (object)this["defaults"]; } set { this["defaults"] = value; } }
+		public extern object defaults { get; set; }
 
 		/// <summary>  An array of items to be added to this menu.  See {@link #add} for a list of valid item types.</summary>
-		public object items { get { return (object)this["items"]; } set { this["items"] = value; } }
+		public extern object items { get; set; }
 
 		/// <summary> The minimum width of the menu in pixels (defaults to 120)</summary>
-		public double minWidth { get { return (double)this["minWidth"]; } set { this["minWidth"] = value; } }
+		public extern double minWidth { get; set; }
 
 		/// <summary>{Boolean/String} True or "sides" for the default effect, "frame" for 4-way shadow, and "drop" for bottom-right shadow (defaults to "sides")</summary>
-		public object shadow { get { return (object)this["shadow"]; } set { this["shadow"] = value; } }
+		public extern object shadow { get; set; }
 
 		/// <summary> The {@link Ext.Element#alignTo} anchor position value to use for submenus of this menu (defaults to "tl-tr?")</summary>
-		public string subMenuAlign { get { return (string)this["subMenuAlign"]; } set { this["subMenuAlign"] = value; } }
+		public extern string subMenuAlign { get; set; }
 
 		/// <summary> The default {@link Ext.Element#alignTo} anchor position value for this menu relative to its element of origin (defaults to "tl-bl?")</summary>
-		public string defaultAlign { get { return (string)this["defaultAlign"]; } set { this["defaultAlign"] = value; } }
+		public extern string defaultAlign { get; set; }
 
 		/// <summary> True to allow multiple menus to be displayed at the same time (defaults to false)</summary>
-		public bool allowOtherMenus { get { return (bool)this["allowOtherMenus"]; } set { this["allowOtherMenus"] = value; } }
+		public extern bool allowOtherMenus { get; set; }
 
 		/// <summary> True to ignore clicks on any item in this menu that is a parent item (displays a submenu) so that the submenu is not dismissed when clicking the parent item (defaults to false).</summary>
-		public bool ignoreParentClicks { get { return (bool)this["ignoreParentClicks"]; } set { this["ignoreParentClicks"] = value; } }
+		public extern bool ignoreParentClicks { get; set; }
 
 		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
-		public object listeners { get { return (object)this["listeners"]; } set { this["listeners"] = value; } }
+		public extern object listeners { get; set; }
 
 	}
 

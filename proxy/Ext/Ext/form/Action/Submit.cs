@@ -90,40 +90,40 @@ namespace Ext.form.Action {
 	[JsAnonymous]
 	public class SubmitConfig : System.DotWeb.JsDynamic {
 		/// <summary> <b>Optional. JSON is interpreted with no need for an errorReader.</b> <p>A Reader which reads a single record from the returned data. The DataReader's <b>success</b> property specifies how submission success is determined. The Record's data provides the error messages to apply to any invalid form Fields.</p>.</summary>
-		public Ext.data.DataReader errorReader { get { return (Ext.data.DataReader)this["errorReader"]; } set { this["errorReader"] = value; } }
+		public extern Ext.data.DataReader errorReader { get; set; }
 
 		/// <summary> Determines whether a Form's fields are validated in a final call to {@link Ext.form.BasicForm#isValid isValid} prior to submission. Pass <tt>false</tt> in the Form's submit options to prevent this. If not defined, pre-submission field validation is performed.</summary>
-		public bool clientValidation { get { return (bool)this["clientValidation"]; } set { this["clientValidation"] = value; } }
+		public extern bool clientValidation { get; set; }
 
 		/// <summary> The URL that the Action is to invoke.</summary>
-		public string url { get { return (string)this["url"]; } set { this["url"] = value; } }
+		public extern string url { get; set; }
 
 		/// <summary> When set to <tt><b>true</b></tt>, causes the Form to be {@link Ext.form.BasicForm.reset reset} on Action success. If specified, this happens <b>before</b> the {@link #success} callback is called and before the Form's {@link Ext.form.BasicForm.actioncomplete actioncomplete} event fires.</summary>
-		public bool reset { get { return (bool)this["reset"]; } set { this["reset"] = value; } }
+		public extern bool reset { get; set; }
 
 		/// <summary> The HTTP method to use to access the requested URL. Defaults to the {@link Ext.form.BasicForm}'s method, or if that is not specified, the underlying DOM form's method.</summary>
-		public string method { get { return (string)this["method"]; } set { this["method"] = value; } }
+		public extern string method { get; set; }
 
 		/// <summary> Extra parameter values to pass. These are added to the Form's {@link Ext.form.BasicForm#baseParams} and passed to the specified URL along with the Form's input fields.</summary>
-		public object params_ { get { return (object)this["params_"]; } set { this["params_"] = value; } }
+		public extern object params_ { get; set; }
 
 		/// <summary> The number of milliseconds to wait for a server response before failing with the {@link #failureType} as {@link #CONNECT_FAILURE}.</summary>
-		public double timeout { get { return (double)this["timeout"]; } set { this["timeout"] = value; } }
+		public extern double timeout { get; set; }
 
 		/// <summary> The function to call when a valid success return packet is recieved. The function is passed the following parameters:<ul class="mdetail-params"> <li><b>form</b> : Ext.form.BasicForm<div class="sub-desc">The form that requested the action</div></li> <li><b>action</b> : Ext.form.Action<div class="sub-desc">The Action class. The {@link #result} property of this object may be examined to perform custom postprocessing.</div></li> </ul></summary>
-		public Delegate success { get { return (Delegate)this["success"]; } set { this["success"] = value; } }
+		public extern Delegate success { get; set; }
 
 		/// <summary> The function to call when a failure packet was recieved, or when an error ocurred in the Ajax communication. The function is passed the following parameters:<ul class="mdetail-params"> <li><b>form</b> : Ext.form.BasicForm<div class="sub-desc">The form that requested the action</div></li> <li><b>action</b> : Ext.form.Action<div class="sub-desc">The Action class. If an Ajax error ocurred, the failure type will be in {@link #failureType}. The {@link #result} property of this object may be examined to perform custom postprocessing.</div></li> </ul></summary>
-		public Delegate failure { get { return (Delegate)this["failure"]; } set { this["failure"] = value; } }
+		public extern Delegate failure { get; set; }
 
 		/// <summary> The scope in which to call the callback functions (The <tt>this</tt> reference for the callback functions).</summary>
-		public object scope { get { return (object)this["scope"]; } set { this["scope"] = value; } }
+		public extern object scope { get; set; }
 
 		/// <summary> The message to be displayed by a call to {@link Ext.MessageBox#wait} during the time the action is being processed.</summary>
-		public string waitMsg { get { return (string)this["waitMsg"]; } set { this["waitMsg"] = value; } }
+		public extern string waitMsg { get; set; }
 
 		/// <summary> The title to be displayed by a call to {@link Ext.MessageBox#wait} during the time the action is being processed.</summary>
-		public string waitTitle { get { return (string)this["waitTitle"]; } set { this["waitTitle"] = value; } }
+		public extern string waitTitle { get; set; }
 
 	}
 }

@@ -115,13 +115,13 @@ namespace Ext.layout {
 	[JsAnonymous]
 	public class CardLayoutConfig : System.DotWeb.JsDynamic {
 		/// <summary>  True to render each contained item at the time it becomes active, false to render all contained items as soon as the layout is rendered (defaults to false).  If there is a significant amount of content or a lot of heavy controls being rendered into panels that are not displayed by default, setting this to true might improve performance.</summary>
-		public bool deferredRender { get { return (bool)this["deferredRender"]; } set { this["deferredRender"] = value; } }
+		public extern bool deferredRender { get; set; }
 
 		/// <summary>  An optional extra CSS class that will be added to the container (defaults to '').  This can be useful for adding customized styles to the container or any of its children using standard CSS rules.</summary>
-		public string extraCls { get { return (string)this["extraCls"]; } set { this["extraCls"] = value; } }
+		public extern string extraCls { get; set; }
 
 		/// <summary>  True to hide each contained item on render (defaults to false).</summary>
-		public bool renderHidden { get { return (bool)this["renderHidden"]; } set { this["renderHidden"] = value; } }
+		public extern bool renderHidden { get; set; }
 
 	}
 }

@@ -90,25 +90,25 @@ namespace Ext {
 	[JsAnonymous]
 	public class LayerConfig : System.DotWeb.JsDynamic {
 		/// <summary> False to disable the iframe shim in browsers which need one (defaults to true)</summary>
-		public bool shim { get { return (bool)this["shim"]; } set { this["shim"] = value; } }
+		public extern bool shim { get; set; }
 
 		/// <summary>{String/Boolean} True to create a shadow element with default class "x-layer-shadow", or</summary>
-		public object shadow { get { return (object)this["shadow"]; } set { this["shadow"] = value; } }
+		public extern object shadow { get; set; }
 
 		/// <summary> DomHelper object config to create element with (defaults to {tag: "div", cls: "x-layer"}).</summary>
-		public object dh { get { return (object)this["dh"]; } set { this["dh"] = value; } }
+		public extern object dh { get; set; }
 
 		/// <summary> False to disable constrain to viewport (defaults to true)</summary>
-		public bool constrain { get { return (bool)this["constrain"]; } set { this["constrain"] = value; } }
+		public extern bool constrain { get; set; }
 
 		/// <summary> CSS class to add to the element</summary>
-		public string cls { get { return (string)this["cls"]; } set { this["cls"] = value; } }
+		public extern string cls { get; set; }
 
 		/// <summary> Starting z-index (defaults to 11000)</summary>
-		public double zindex { get { return (double)this["zindex"]; } set { this["zindex"] = value; } }
+		public extern double zindex { get; set; }
 
 		/// <summary> Number of pixels to offset the shadow (defaults to 3)</summary>
-		public double shadowOffset { get { return (double)this["shadowOffset"]; } set { this["shadowOffset"] = value; } }
+		public extern double shadowOffset { get; set; }
 
 	}
 }

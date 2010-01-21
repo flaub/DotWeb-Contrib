@@ -52,16 +52,16 @@ namespace Ext.state {
 	[JsAnonymous]
 	public class CookieProviderConfig : System.DotWeb.JsDynamic {
 		/// <summary> The path for which the cookie is active (defaults to root '/' which makes it active for all pages in the site)</summary>
-		public string path { get { return (string)this["path"]; } set { this["path"] = value; } }
+		public extern string path { get; set; }
 
 		/// <summary> The cookie expiration date (defaults to 7 days from now)</summary>
-		public System.DateTime expires { get { return (System.DateTime)this["expires"]; } set { this["expires"] = value; } }
+		public extern System.DateTime expires { get; set; }
 
 		/// <summary> The domain to save the cookie for.  Note that you cannot specify a different domain than</summary>
-		public string domain { get { return (string)this["domain"]; } set { this["domain"] = value; } }
+		public extern string domain { get; set; }
 
 		/// <summary> True if the site is using SSL (defaults to false)</summary>
-		public bool secure { get { return (bool)this["secure"]; } set { this["secure"] = value; } }
+		public extern bool secure { get; set; }
 
 	}
 }

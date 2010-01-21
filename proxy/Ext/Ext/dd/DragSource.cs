@@ -478,13 +478,13 @@ namespace Ext.dd {
 	[JsAnonymous]
 	public class DragSourceConfig : System.DotWeb.JsDynamic {
 		/// <summary>  A named drag drop group to which this object belongs.  If a group is specified, then this object will only interact with other drag drop objects in the same group (defaults to undefined).</summary>
-		public string ddGroup { get { return (string)this["ddGroup"]; } set { this["ddGroup"] = value; } }
+		public extern string ddGroup { get; set; }
 
 		/// <summary>  The CSS class returned to the drag source when drop is allowed (defaults to "x-dd-drop-ok").</summary>
-		public string dropAllowed { get { return (string)this["dropAllowed"]; } set { this["dropAllowed"] = value; } }
+		public extern string dropAllowed { get; set; }
 
 		/// <summary>  The CSS class returned to the drag source when drop is not allowed (defaults to "x-dd-drop-nodrop").</summary>
-		public string dropNotAllowed { get { return (string)this["dropNotAllowed"]; } set { this["dropNotAllowed"] = value; } }
+		public extern string dropNotAllowed { get; set; }
 
 	}
 }
