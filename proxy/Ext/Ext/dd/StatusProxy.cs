@@ -8,7 +8,7 @@ namespace Ext.dd {
 	///     A specialized drag proxy that supports a drop status icon, {@link Ext.Layer} styles and auto-repair.  This is the
 	///     default drag proxy used by all Ext.dd components.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\dd\StatusProxy.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\dd\StatusProxy.js</jssource>
 	[JsObject]
 	public class StatusProxy  {
 

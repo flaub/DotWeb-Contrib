@@ -161,7 +161,7 @@ namespace Ext {
 	///     tpl.overwrite(panel.body, data);
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\XTemplate.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\util\XTemplate.js</jssource>
 	public class XTemplate : Ext.Template {
 
 		/// <summary>to join("") that can also include a config object</summary>

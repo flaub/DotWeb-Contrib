@@ -8,15 +8,15 @@ namespace Ext {
 	///     An extended {@link Ext.Element} object that supports a shadow and shim, constrain to viewport and
 	///     automatic maintaining of shadow/shim positions.
 	///     @cfg {Boolean} shim False to disable the iframe shim in browsers which need one (defaults to true)
-	///     @cfg {String/Boolean} shadow True to create a shadow element with default class "x-layer-shadow", or
-	///     you can pass a string with a CSS class name. False turns off the shadow.
+	///     @cfg {String/Boolean} shadow True to automatically create an {@link Ext.Shadow}, or a string indicating the
+	///     shadow's display {@link Ext.Shadow#mode}. False to disable the shadow. (defaults to false)
 	///     @cfg {Object} dh DomHelper object config to create element with (defaults to {tag: "div", cls: "x-layer"}).
 	///     @cfg {Boolean} constrain False to disable constrain to viewport (defaults to true)
 	///     @cfg {String} cls CSS class to add to the element
 	///     @cfg {Number} zindex Starting z-index (defaults to 11000)
 	///     @cfg {Number} shadowOffset Number of pixels to offset the shadow (defaults to 3)
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Layer.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\Layer.js</jssource>
 	public class Layer : Ext.Element {
 
 		/// <summary></summary>
@@ -92,7 +92,7 @@ namespace Ext {
 		/// <summary> False to disable the iframe shim in browsers which need one (defaults to true)</summary>
 		public extern bool shim { get; set; }
 
-		/// <summary>{String/Boolean} True to create a shadow element with default class "x-layer-shadow", or</summary>
+		/// <summary>{String/Boolean} True to automatically create an {@link Ext.Shadow}, or a string indicating the</summary>
 		public extern object shadow { get; set; }
 
 		/// <summary> DomHelper object config to create element with (defaults to {tag: "div", cls: "x-layer"}).</summary>

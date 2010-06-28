@@ -5,12 +5,30 @@ using DotWeb.Client;
 namespace Ext.form {
 	/// <summary>
 	///     /**
-	///     Supplies the functionality to do "actions" on forms and initialize Ext.form.Field types on existing markup.
-	///     <br><br>
-	///     By default, Ext Forms are submitted through Ajax, using {@link Ext.form.Action}.
-	///     To enable normal browser submission of an Ext Form, use the {@link #standardSubmit} config option.
+	///     <p>Encapsulates the DOM &lt;form> element at the heart of the {@link Ext.form.FormPanel FormPanel} class, and provides
+	///     input field management, validation, submission, and form loading services.</p>
+	///     <p>By default, Ext Forms are submitted through Ajax, using an instance of {@link Ext.form.Action.Submit}.
+	///     To enable normal browser submission of an Ext Form, use the {@link #standardSubmit} config option.</p>
+	///     <p><h2>File Uploads</h2>{@link #fileUpload File uploads} are not performed using Ajax submission, that
+	///     is they are <b>not</b> performed using XMLHttpRequests. Instead the form is submitted in the standard
+	///     manner with the DOM <tt>&lt;form></tt> element temporarily modified to have its
+	///     <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer
+	///     to a dynamically generated, hidden <tt>&lt;iframe></tt> which is inserted into the document
+	///     but removed after the return data has been gathered.</p>
+	///     <p>The server response is parsed by the browser to create the document for the IFRAME. If the
+	///     server is using JSON to send the return object, then the
+	///     <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a> header
+	///     must be set to "text/html" in order to tell the browser to insert the text unchanged into the document body.</p>
+	///     <p>Characters which are significant to an HTML parser must be sent as HTML entities, so encode
+	///     "&lt;" as "&amp;lt;", "&amp;" as "&amp;amp;" etc.</p>
+	///     <p>The response text is retrieved from the document, and a fake XMLHttpRequest object
+	///     is created containing a <tt>responseText</tt> property in order to conform to the
+	///     requirements of event handlers and callbacks.</p>
+	///     <p>Be aware that file upload packets are sent with the content type <a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form</a>
+	///     and some server technologies (notably JEE) may require some custom processing in order to
+	///     retrieve parameter names and parameter values from the packet content.</p>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\BasicForm.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\form\BasicForm.js</jssource>
 	public class BasicForm : Ext.util.Observable {
 
 		/// <summary></summary>
@@ -46,8 +64,16 @@ namespace Ext.form {
 		public extern Ext.data.DataReader reader { get; set; }
 
 		/// <summary>
-		///     An Ext.data.DataReader (e.g. {@link Ext.data.XmlReader}) to be used to read data when reading validation errors on "submit" actions.
-		///     This is completely optional as there is built-in support for processing JSON.
+		///     <p>An Ext.data.DataReader (e.g. {@link Ext.data.XmlReader}) to be used to read field error messages returned from "submit" actions.
+		///     This is completely optional as there is built-in support for processing JSON.</p>
+		///     <p>The Records which provide messages for the invalid Fields must use the Field name (or id) as the Record ID,
+		///     and must contain a field called "msg" which contains the error message.</p>
+		///     <p>The errorReader does not have to be a full-blown implementation of a DataReader. It simply needs to implement a
+		///     <tt>read(xhr)</tt> function which returns an Array of Records in an object with the following structure:<pre><code>
+		///     {
+		///     records: recordArray
+		///     }
+		///     </code></pre>
 		/// </summary>
 		public extern Ext.data.DataReader errorReader { get; set; }
 
@@ -66,6 +92,8 @@ namespace Ext.form {
 		///     server is using JSON to send the return object, then the
 		///     <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a> header
 		///     must be set to "text/html" in order to tell the browser to insert the text unchanged into the document body.</p>
+		///     <p>Characters which are significant to an HTML parser must be sent as HTML entities, so encode
+		///     "&lt;" as "&amp;lt;", "&amp;" as "&amp;amp;" etc.</p>
 		///     <p>The response text is retrieved from the document, and a fake XMLHttpRequest object
 		///     is created containing a <tt>responseText</tt> property in order to conform to the
 		///     requirements of event handlers and callbacks.</p>
@@ -75,7 +103,10 @@ namespace Ext.form {
 		/// </summary>
 		public extern bool fileUpload { get; set; }
 
-		/// <summary>Parameters to pass with all requests. e.g. baseParams: {id: '123', foo: 'bar'}.</summary>
+		/// <summary>
+		///     <p>Parameters to pass with all requests. e.g. baseParams: {id: '123', foo: 'bar'}.</p>
+		///     <p>Parameters are encoded as standard HTTP parameters using {@link Ext#urlEncode}.</p>
+		/// </summary>
 		public extern object baseParams { get; set; }
 
 		/// <summary>Timeout for form actions in seconds (default is 30 seconds).</summary>
@@ -84,7 +115,12 @@ namespace Ext.form {
 		/// <summary>If set to true, form.reset() resets to the last loadedor setValues() data instead of when the form was first created.</summary>
 		public extern bool trackResetOnLoad { get; set; }
 
-		/// <summary>If set to true, standard HTML form submits are used instead of XHR (Ajax) styleform submissions. (defaults to false)</summary>
+		/// <summary>
+		///     If set to true, standard HTML form submits are used instead of XHR (Ajax) styleform submissions. (defaults to false)<br>
+		///     <p><b>Note:</b> When using standardSubmit, any the options to {@link #submit} are
+		///     ignored because Ext's Ajax infrastracture is bypassed. To pass extra parameters, you will need to create
+		///     hidden fields within the form.</p>
+		/// </summary>
 		public extern bool standardSubmit { get; set; }
 
 		/// <summary>
@@ -102,7 +138,11 @@ namespace Ext.form {
 		/// <returns>Boolean</returns>
 		public extern virtual void isValid();
 
-		/// <summary>Returns true if any fields in this form have changed since their original load.</summary>
+		/// <summary>
+		///     <p>Returns true if any fields in this form have changed from their original values.</p>
+		///     <p>Note that if this BasicForm was configured with {@link #trackResetOnLoad}
+		///     then the Fields' <i>original values</i> are updated when the values are loaded by {@link #setValues}.</p>
+		/// </summary>
 		/// <returns>Boolean</returns>
 		public extern virtual void isDirty();
 
@@ -119,23 +159,21 @@ namespace Ext.form {
 		///     <li><b>method</b> : String<p style="margin-left:1em">The form method to use (defaults
 		///     to the form's method, or POST if not defined)</p></li>
 		///     <li><b>params</b> : String/Object<p style="margin-left:1em">The params to pass
-		///     (defaults to the form's baseParams, or none if not defined)</p></li>
+		///     (defaults to the form's baseParams, or none if not defined)</p>
+		///     <p>Parameters are encoded as standard HTTP parameters using {@link Ext#urlEncode}.</p></li>
 		///     <li><b>headers</b> : Object<p style="margin-left:1em">Request headers to set for the action
 		///     (defaults to the form's default headers)</p></li>
 		///     <li><b>success</b> : Function<p style="margin-left:1em">The callback that will
-		///     be invoked after a successful response.  Note that this is HTTP success
-		///     (the transaction was sent and received correctly), but the resulting response data
-		///     can still contain data errors. The function is passed the following parameters:<ul>
+		///     be invoked after a successful response.  The function is passed the following parameters:<ul>
 		///     <li><code>form</code> : Ext.form.BasicForm<div class="sub-desc">The form that requested the action</div></li>
-		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The Action class. The {@link Ext.form.Action#result result}
+		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The {@link Ext.form.Action Action} object which performed the operation. The {@link Ext.form.Action#result result}
 		///     property of this object may be examined to perform custom postprocessing.</div></li>
 		///     </ul></p></li>
 		///     <li><b>failure</b> : Function<p style="margin-left:1em">The callback that will
-		///     be invoked after a failed transaction attempt.  Note that this is HTTP failure,
-		///     which means a non-successful HTTP code was returned from the server. The function
+		///     be invoked after a failed transaction attempt.  The function
 		///     is passed the following parameters:<ul>
 		///     <li><code>form</code> : Ext.form.BasicForm<div class="sub-desc">The form that requested the action</div></li>
-		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The Action class. If an Ajax
+		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The {@link Ext.form.Action Action} object which performed the operation. If an Ajax
 		///     error ocurred, the failure type will be in {@link Ext.form.Action#failureType failureType}. The {@link Ext.form.Action#result result}
 		///     property of this object may be examined to perform custom postprocessing.</div></li>
 		///     </ul></p></li>
@@ -162,23 +200,21 @@ namespace Ext.form {
 		///     <li><b>method</b> : String<p style="margin-left:1em">The form method to use (defaults
 		///     to the form's method, or POST if not defined)</p></li>
 		///     <li><b>params</b> : String/Object<p style="margin-left:1em">The params to pass
-		///     (defaults to the form's baseParams, or none if not defined)</p></li>
+		///     (defaults to the form's baseParams, or none if not defined)</p>
+		///     <p>Parameters are encoded as standard HTTP parameters using {@link Ext#urlEncode}.</p></li>
 		///     <li><b>headers</b> : Object<p style="margin-left:1em">Request headers to set for the action
 		///     (defaults to the form's default headers)</p></li>
 		///     <li><b>success</b> : Function<p style="margin-left:1em">The callback that will
-		///     be invoked after a successful response.  Note that this is HTTP success
-		///     (the transaction was sent and received correctly), but the resulting response data
-		///     can still contain data errors. The function is passed the following parameters:<ul>
+		///     be invoked after a successful response.  The function is passed the following parameters:<ul>
 		///     <li><code>form</code> : Ext.form.BasicForm<div class="sub-desc">The form that requested the action</div></li>
-		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The Action class. The {@link Ext.form.Action#result result}
+		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The {@link Ext.form.Action Action} object which performed the operation. The {@link Ext.form.Action#result result}
 		///     property of this object may be examined to perform custom postprocessing.</div></li>
 		///     </ul></p></li>
 		///     <li><b>failure</b> : Function<p style="margin-left:1em">The callback that will
-		///     be invoked after a failed transaction attempt.  Note that this is HTTP failure,
-		///     which means a non-successful HTTP code was returned from the server. The function
+		///     be invoked after a failed transaction attempt.  The function
 		///     is passed the following parameters:<ul>
 		///     <li><code>form</code> : Ext.form.BasicForm<div class="sub-desc">The form that requested the action</div></li>
-		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The Action class. If an Ajax
+		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The {@link Ext.form.Action Action} object which performed the operation. If an Ajax
 		///     error ocurred, the failure type will be in {@link Ext.form.Action#failureType failureType}. The {@link Ext.form.Action#result result}
 		///     property of this object may be examined to perform custom postprocessing.</div></li>
 		///     </ul></p></li>
@@ -206,23 +242,21 @@ namespace Ext.form {
 		///     <li><b>method</b> : String<p style="margin-left:1em">The form method to use (defaults
 		///     to the form's method, or POST if not defined)</p></li>
 		///     <li><b>params</b> : String/Object<p style="margin-left:1em">The params to pass
-		///     (defaults to the form's baseParams, or none if not defined)</p></li>
+		///     (defaults to the form's baseParams, or none if not defined)</p>
+		///     <p>Parameters are encoded as standard HTTP parameters using {@link Ext#urlEncode}.</p></li>
 		///     <li><b>headers</b> : Object<p style="margin-left:1em">Request headers to set for the action
 		///     (defaults to the form's default headers)</p></li>
 		///     <li><b>success</b> : Function<p style="margin-left:1em">The callback that will
-		///     be invoked after a successful response.  Note that this is HTTP success
-		///     (the transaction was sent and received correctly), but the resulting response data
-		///     can still contain data errors. The function is passed the following parameters:<ul>
+		///     be invoked after a successful response.  The function is passed the following parameters:<ul>
 		///     <li><code>form</code> : Ext.form.BasicForm<div class="sub-desc">The form that requested the action</div></li>
-		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The Action class. The {@link Ext.form.Action#result result}
+		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The {@link Ext.form.Action Action} object which performed the operation. The {@link Ext.form.Action#result result}
 		///     property of this object may be examined to perform custom postprocessing.</div></li>
 		///     </ul></p></li>
 		///     <li><b>failure</b> : Function<p style="margin-left:1em">The callback that will
-		///     be invoked after a failed transaction attempt.  Note that this is HTTP failure,
-		///     which means a non-successful HTTP code was returned from the server. The function
+		///     be invoked after a failed transaction attempt.  The function
 		///     is passed the following parameters:<ul>
 		///     <li><code>form</code> : Ext.form.BasicForm<div class="sub-desc">The form that requested the action</div></li>
-		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The Action class. If an Ajax
+		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The {@link Ext.form.Action Action} object which performed the operation. If an Ajax
 		///     error ocurred, the failure type will be in {@link Ext.form.Action#failureType failureType}. The {@link Ext.form.Action#result result}
 		///     property of this object may be examined to perform custom postprocessing.</div></li>
 		///     </ul></p></li>
@@ -251,23 +285,21 @@ namespace Ext.form {
 		///     <li><b>method</b> : String<p style="margin-left:1em">The form method to use (defaults
 		///     to the form's method, or POST if not defined)</p></li>
 		///     <li><b>params</b> : String/Object<p style="margin-left:1em">The params to pass
-		///     (defaults to the form's baseParams, or none if not defined)</p></li>
+		///     (defaults to the form's baseParams, or none if not defined)</p>
+		///     <p>Parameters are encoded as standard HTTP parameters using {@link Ext#urlEncode}.</p></li>
 		///     <li><b>headers</b> : Object<p style="margin-left:1em">Request headers to set for the action
 		///     (defaults to the form's default headers)</p></li>
 		///     <li><b>success</b> : Function<p style="margin-left:1em">The callback that will
-		///     be invoked after a successful response.  Note that this is HTTP success
-		///     (the transaction was sent and received correctly), but the resulting response data
-		///     can still contain data errors. The function is passed the following parameters:<ul>
+		///     be invoked after a successful response.  The function is passed the following parameters:<ul>
 		///     <li><code>form</code> : Ext.form.BasicForm<div class="sub-desc">The form that requested the action</div></li>
-		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The Action class. The {@link Ext.form.Action#result result}
+		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The {@link Ext.form.Action Action} object which performed the operation. The {@link Ext.form.Action#result result}
 		///     property of this object may be examined to perform custom postprocessing.</div></li>
 		///     </ul></p></li>
 		///     <li><b>failure</b> : Function<p style="margin-left:1em">The callback that will
-		///     be invoked after a failed transaction attempt.  Note that this is HTTP failure,
-		///     which means a non-successful HTTP code was returned from the server. The function
+		///     be invoked after a failed transaction attempt.  The function
 		///     is passed the following parameters:<ul>
 		///     <li><code>form</code> : Ext.form.BasicForm<div class="sub-desc">The form that requested the action</div></li>
-		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The Action class. If an Ajax
+		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The {@link Ext.form.Action Action} object which performed the operation. If an Ajax
 		///     error ocurred, the failure type will be in {@link Ext.form.Action#failureType failureType}. The {@link Ext.form.Action#result result}
 		///     property of this object may be examined to perform custom postprocessing.</div></li>
 		///     </ul></p></li>
@@ -295,23 +327,21 @@ namespace Ext.form {
 		///     <li><b>method</b> : String<p style="margin-left:1em">The form method to use (defaults
 		///     to the form's method, or POST if not defined)</p></li>
 		///     <li><b>params</b> : String/Object<p style="margin-left:1em">The params to pass
-		///     (defaults to the form's baseParams, or none if not defined)</p></li>
+		///     (defaults to the form's baseParams, or none if not defined)</p>
+		///     <p>Parameters are encoded as standard HTTP parameters using {@link Ext#urlEncode}.</p></li>
 		///     <li><b>headers</b> : Object<p style="margin-left:1em">Request headers to set for the action
 		///     (defaults to the form's default headers)</p></li>
 		///     <li><b>success</b> : Function<p style="margin-left:1em">The callback that will
-		///     be invoked after a successful response.  Note that this is HTTP success
-		///     (the transaction was sent and received correctly), but the resulting response data
-		///     can still contain data errors. The function is passed the following parameters:<ul>
+		///     be invoked after a successful response.  The function is passed the following parameters:<ul>
 		///     <li><code>form</code> : Ext.form.BasicForm<div class="sub-desc">The form that requested the action</div></li>
-		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The Action class. The {@link Ext.form.Action#result result}
+		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The {@link Ext.form.Action Action} object which performed the operation. The {@link Ext.form.Action#result result}
 		///     property of this object may be examined to perform custom postprocessing.</div></li>
 		///     </ul></p></li>
 		///     <li><b>failure</b> : Function<p style="margin-left:1em">The callback that will
-		///     be invoked after a failed transaction attempt.  Note that this is HTTP failure,
-		///     which means a non-successful HTTP code was returned from the server. The function
+		///     be invoked after a failed transaction attempt.  The function
 		///     is passed the following parameters:<ul>
 		///     <li><code>form</code> : Ext.form.BasicForm<div class="sub-desc">The form that requested the action</div></li>
-		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The Action class. If an Ajax
+		///     <li><code>action</code> : Ext.form.Action<div class="sub-desc">The {@link Ext.form.Action Action} object which performed the operation. If an Ajax
 		///     error ocurred, the failure type will be in {@link Ext.form.Action#failureType failureType}. The {@link Ext.form.Action#result result}
 		///     property of this object may be examined to perform custom postprocessing.</div></li>
 		///     </ul></p></li>
@@ -327,12 +357,90 @@ namespace Ext.form {
 		/// <returns>BasicForm</returns>
 		public extern virtual void doAction(object actionName, object options);
 
-		/// <summary>Shortcut to do a submit action.</summary>
+		/// <summary>
+		///     Shortcut to do a submit action.
+		///     <p><b>Note:</b> this is ignored when using the {@link #standardSubmit} option.</p>
+		///     <p>The following code:</p><pre><code>
+		///     myFormPanel.getForm().submit({
+		///     clientValidation: true,
+		///     url: 'updateConsignment.php',
+		///     params: {
+		///     newStatus: 'delivered'
+		///     },
+		///     success: function(form, action) {
+		///     Ext.Msg.alert("Success", action.result.msg);
+		///     },
+		///     failure: function(form, action) {
+		///     switch (action.failureType) {
+		///     case Ext.form.Action.CLIENT_INVALID:
+		///     Ext.Msg.alert("Failure", "Form fields may not be submitted with invalid values");
+		///     break;
+		///     case Ext.form.Action.CONNECT_FAILURE:
+		///     Ext.Msg.alert("Failure", "Ajax communication failed");
+		///     break;
+		///     case Ext.form.Action.SERVER_INVALID:
+		///     Ext.Msg.alert("Failure", action.result.msg);
+		///     }
+		///     }
+		///     });
+		///     </code></pre>
+		///     would process the following server response for a successful submission:<pre><code>
+		///     {
+		///     success: true,
+		///     msg: 'Consignment updated'
+		///     }
+		///     </code></pre>
+		///     and the following server response for a failed submission:<pre><code>
+		///     {
+		///     success: false,
+		///     msg: 'You do not have permission to perform this operation'
+		///     }
+		///     </code></pre>
+		/// </summary>
 		/// <returns>BasicForm</returns>
 		public extern virtual void submit();
 
-		/// <summary>Shortcut to do a submit action.</summary>
-		/// <param name="options">The options to pass to the action (see {@link #doAction} for details)</param>
+		/// <summary>
+		///     Shortcut to do a submit action.
+		///     <p><b>Note:</b> this is ignored when using the {@link #standardSubmit} option.</p>
+		///     <p>The following code:</p><pre><code>
+		///     myFormPanel.getForm().submit({
+		///     clientValidation: true,
+		///     url: 'updateConsignment.php',
+		///     params: {
+		///     newStatus: 'delivered'
+		///     },
+		///     success: function(form, action) {
+		///     Ext.Msg.alert("Success", action.result.msg);
+		///     },
+		///     failure: function(form, action) {
+		///     switch (action.failureType) {
+		///     case Ext.form.Action.CLIENT_INVALID:
+		///     Ext.Msg.alert("Failure", "Form fields may not be submitted with invalid values");
+		///     break;
+		///     case Ext.form.Action.CONNECT_FAILURE:
+		///     Ext.Msg.alert("Failure", "Ajax communication failed");
+		///     break;
+		///     case Ext.form.Action.SERVER_INVALID:
+		///     Ext.Msg.alert("Failure", action.result.msg);
+		///     }
+		///     }
+		///     });
+		///     </code></pre>
+		///     would process the following server response for a successful submission:<pre><code>
+		///     {
+		///     success: true,
+		///     msg: 'Consignment updated'
+		///     }
+		///     </code></pre>
+		///     and the following server response for a failed submission:<pre><code>
+		///     {
+		///     success: false,
+		///     msg: 'You do not have permission to perform this operation'
+		///     }
+		///     </code></pre>
+		/// </summary>
+		/// <param name="options">The options to pass to the action (see {@link #doAction} for details).<br></param>
 		/// <returns>BasicForm</returns>
 		public extern virtual void submit(object options);
 
@@ -434,17 +542,23 @@ namespace Ext.form {
 		public extern virtual void setValues(object values);
 
 		/// <summary>
-		///     Returns the fields in this form as an object with key/value pairs as they would be submitted using a standard form submit.
-		///     If multiple fields exist with the same name they are returned as an array.
+		///     <p>Returns the fields in this form as an object with key/value pairs as they would be submitted using a standard form submit.
+		///     If multiple fields exist with the same name they are returned as an array.</p>
+		///     <p><b>Note:</b> The values are collected from all enabled HTML input elements within the form, <u>not</u> from
+		///     the Ext Field objects. This means that all returned values are Strings (or Arrays of Strings) and that the the
+		///     value can potentionally be the emptyText of a field.</p>
 		/// </summary>
 		/// <returns>String/Object</returns>
 		public extern virtual void getValues();
 
 		/// <summary>
-		///     Returns the fields in this form as an object with key/value pairs as they would be submitted using a standard form submit.
-		///     If multiple fields exist with the same name they are returned as an array.
+		///     <p>Returns the fields in this form as an object with key/value pairs as they would be submitted using a standard form submit.
+		///     If multiple fields exist with the same name they are returned as an array.</p>
+		///     <p><b>Note:</b> The values are collected from all enabled HTML input elements within the form, <u>not</u> from
+		///     the Ext Field objects. This means that all returned values are Strings (or Arrays of Strings) and that the the
+		///     value can potentionally be the emptyText of a field.</p>
 		/// </summary>
-		/// <param name="asString">(optional) false to return the values as an object (defaults to returning as a string)</param>
+		/// <param name="asString">(optional) Pass true to return the values as a string. (defaults to false, returning an Object)</param>
 		/// <returns>String/Object</returns>
 		public extern virtual void getValues(bool asString);
 
@@ -456,11 +570,27 @@ namespace Ext.form {
 		/// <returns>BasicForm</returns>
 		public extern virtual void reset();
 
-		/// <summary>Add Ext.form components to this form.</summary>
+		/// <summary>
+		///     Add Ext.form Components to this form's Collection. This does not result in rendering of
+		///     the passed Component, it just enables the form to validate Fields, and distribute values to
+		///     Fields.
+		///     <p><b>You will not usually call this function. In order to be rendered, a Field must be added
+		///     to a {@link Ext.Container Container}, usually an {@link Ext.form.FormPanel FormPanel}.
+		///     The FormPanel to which the field is added takes care of adding the Field to the BasicForm's
+		///     collection.</b></p>
+		/// </summary>
 		/// <returns>BasicForm</returns>
 		public extern virtual void add();
 
-		/// <summary>Add Ext.form components to this form.</summary>
+		/// <summary>
+		///     Add Ext.form Components to this form's Collection. This does not result in rendering of
+		///     the passed Component, it just enables the form to validate Fields, and distribute values to
+		///     Fields.
+		///     <p><b>You will not usually call this function. In order to be rendered, a Field must be added
+		///     to a {@link Ext.Container Container}, usually an {@link Ext.form.FormPanel FormPanel}.
+		///     The FormPanel to which the field is added takes care of adding the Field to the BasicForm's
+		///     collection.</b></p>
+		/// </summary>
 		/// <param name="args">(optional)</param>
 		/// <returns>BasicForm</returns>
 		public extern virtual void add(params Field[] args);
@@ -511,16 +641,16 @@ namespace Ext.form {
 		/// <summary>  An Ext.data.DataReader (e.g. {@link Ext.data.XmlReader}) to be used to read data when executing "load" actions. This is optional as there is built-in support for processing JSON.</summary>
 		public extern Ext.data.DataReader reader { get; set; }
 
-		/// <summary>  An Ext.data.DataReader (e.g. {@link Ext.data.XmlReader}) to be used to read data when reading validation errors on "submit" actions. This is completely optional as there is built-in support for processing JSON.</summary>
+		/// <summary>  <p>An Ext.data.DataReader (e.g. {@link Ext.data.XmlReader}) to be used to read field error messages returned from "submit" actions. This is completely optional as there is built-in support for processing JSON.</p> <p>The Records which provide messages for the invalid Fields must use the Field name (or id) as the Record ID, and must contain a field called "msg" which contains the error message.</p> <p>The errorReader does not have to be a full-blown implementation of a DataReader. It simply needs to implement a <tt>read(xhr)</tt> function which returns an Array of Records in an object with the following structure:<pre><code> { records: recordArray } </code></pre></summary>
 		public extern Ext.data.DataReader errorReader { get; set; }
 
 		/// <summary>  The URL to use for form actions if one isn't supplied in the action options.</summary>
 		public extern string url { get; set; }
 
-		/// <summary>  Set to true if this form is a file upload. <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b> performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the DOM <tt>&lt;form></tt> element temporarily modified to have its <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer to a dynamically generated, hidden <tt>&lt;iframe></tt> which is inserted into the document but removed after the return data has been gathered.</p> <p>The server response is parsed by the browser to create the document for the IFRAME. If the server is using JSON to send the return object, then the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a> header must be set to "text/html" in order to tell the browser to insert the text unchanged into the document body.</p> <p>The response text is retrieved from the document, and a fake XMLHttpRequest object is created containing a <tt>responseText</tt> property in order to conform to the requirements of event handlers and callbacks.</p> <p>Be aware that file upload packets are sent with the content type <a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form</a> and some server technologies (notably JEE) may require some custom processing in order to retrieve parameter names and parameter values from the packet content.</p></summary>
+		/// <summary>  Set to true if this form is a file upload. <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b> performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the DOM <tt>&lt;form></tt> element temporarily modified to have its <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer to a dynamically generated, hidden <tt>&lt;iframe></tt> which is inserted into the document but removed after the return data has been gathered.</p> <p>The server response is parsed by the browser to create the document for the IFRAME. If the server is using JSON to send the return object, then the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a> header must be set to "text/html" in order to tell the browser to insert the text unchanged into the document body.</p> <p>Characters which are significant to an HTML parser must be sent as HTML entities, so encode "&lt;" as "&amp;lt;", "&amp;" as "&amp;amp;" etc.</p> <p>The response text is retrieved from the document, and a fake XMLHttpRequest object is created containing a <tt>responseText</tt> property in order to conform to the requirements of event handlers and callbacks.</p> <p>Be aware that file upload packets are sent with the content type <a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form</a> and some server technologies (notably JEE) may require some custom processing in order to retrieve parameter names and parameter values from the packet content.</p></summary>
 		public extern bool fileUpload { get; set; }
 
-		/// <summary>  Parameters to pass with all requests. e.g. baseParams: {id: '123', foo: 'bar'}.</summary>
+		/// <summary>  <p>Parameters to pass with all requests. e.g. baseParams: {id: '123', foo: 'bar'}.</p> <p>Parameters are encoded as standard HTTP parameters using {@link Ext#urlEncode}.</p></summary>
 		public extern object baseParams { get; set; }
 
 		/// <summary> Timeout for form actions in seconds (default is 30 seconds).</summary>
@@ -529,10 +659,10 @@ namespace Ext.form {
 		/// <summary> If set to true, form.reset() resets to the last loaded or setValues() data instead of when the form was first created.</summary>
 		public extern bool trackResetOnLoad { get; set; }
 
-		/// <summary> If set to true, standard HTML form submits are used instead of XHR (Ajax) style form submissions. (defaults to false)</summary>
+		/// <summary> If set to true, standard HTML form submits are used instead of XHR (Ajax) style form submissions. (defaults to false)<br> <p><b>Note:</b> When using standardSubmit, any the options to {@link #submit} are ignored because Ext's Ajax infrastracture is bypassed. To pass extra parameters, you will need to create hidden fields within the form.</p></summary>
 		public extern bool standardSubmit { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

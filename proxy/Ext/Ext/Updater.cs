@@ -36,7 +36,7 @@ namespace Ext {
 	///     });
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\UpdateManager.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\core\UpdateManager.js</jssource>
 	public class UpdaterClass : Ext.util.Observable {
 
 		/// <summary>
@@ -243,9 +243,18 @@ namespace Ext {
 		public extern virtual void update(object options);
 
 		/// <summary>
-		///     Performs an async form post, updating this element with the response. If the form has the attribute
-		///     enctype="multipart/form-data", it assumes it's a file upload.
-		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.
+		///     <p>Performs an async form post, updating this element with the response. If the form has the attribute
+		///     enctype="<a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>", it assumes it's a file upload.
+		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.</p>
+		///     <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b>
+		///     performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the
+		///     DOM <tt>&lt;form></tt> element temporarily modified to have its
+		///     <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer
+		///     to a dynamically generated, hidden <tt>&lt;iframe></tt> which is inserted into the document
+		///     but removed after the return data has been gathered.</p>
+		///     <p>Be aware that file upload packets, sent with the content type <a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>
+		///     and some server technologies (notably JEE) may require some custom processing in order to
+		///     retrieve parameter names and parameter values from the packet content.</p>
 		///     parameters are passed:<ul>
 		///     <li><b>el</b> : Ext.Element<p class="sub-desc">The Element being updated.</p></li>
 		///     <li><b>success</b> : Boolean<p class="sub-desc">True for success, false for failure.</p></li>
@@ -255,9 +264,18 @@ namespace Ext {
 		public extern virtual void formUpdate();
 
 		/// <summary>
-		///     Performs an async form post, updating this element with the response. If the form has the attribute
-		///     enctype="multipart/form-data", it assumes it's a file upload.
-		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.
+		///     <p>Performs an async form post, updating this element with the response. If the form has the attribute
+		///     enctype="<a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>", it assumes it's a file upload.
+		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.</p>
+		///     <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b>
+		///     performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the
+		///     DOM <tt>&lt;form></tt> element temporarily modified to have its
+		///     <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer
+		///     to a dynamically generated, hidden <tt>&lt;iframe></tt> which is inserted into the document
+		///     but removed after the return data has been gathered.</p>
+		///     <p>Be aware that file upload packets, sent with the content type <a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>
+		///     and some server technologies (notably JEE) may require some custom processing in order to
+		///     retrieve parameter names and parameter values from the packet content.</p>
 		///     parameters are passed:<ul>
 		///     <li><b>el</b> : Ext.Element<p class="sub-desc">The Element being updated.</p></li>
 		///     <li><b>success</b> : Boolean<p class="sub-desc">True for success, false for failure.</p></li>
@@ -268,9 +286,18 @@ namespace Ext {
 		public extern virtual void formUpdate(string form);
 
 		/// <summary>
-		///     Performs an async form post, updating this element with the response. If the form has the attribute
-		///     enctype="multipart/form-data", it assumes it's a file upload.
-		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.
+		///     <p>Performs an async form post, updating this element with the response. If the form has the attribute
+		///     enctype="<a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>", it assumes it's a file upload.
+		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.</p>
+		///     <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b>
+		///     performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the
+		///     DOM <tt>&lt;form></tt> element temporarily modified to have its
+		///     <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer
+		///     to a dynamically generated, hidden <tt>&lt;iframe></tt> which is inserted into the document
+		///     but removed after the return data has been gathered.</p>
+		///     <p>Be aware that file upload packets, sent with the content type <a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>
+		///     and some server technologies (notably JEE) may require some custom processing in order to
+		///     retrieve parameter names and parameter values from the packet content.</p>
 		///     parameters are passed:<ul>
 		///     <li><b>el</b> : Ext.Element<p class="sub-desc">The Element being updated.</p></li>
 		///     <li><b>success</b> : Boolean<p class="sub-desc">True for success, false for failure.</p></li>
@@ -282,9 +309,18 @@ namespace Ext {
 		public extern virtual void formUpdate(string form, string url);
 
 		/// <summary>
-		///     Performs an async form post, updating this element with the response. If the form has the attribute
-		///     enctype="multipart/form-data", it assumes it's a file upload.
-		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.
+		///     <p>Performs an async form post, updating this element with the response. If the form has the attribute
+		///     enctype="<a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>", it assumes it's a file upload.
+		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.</p>
+		///     <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b>
+		///     performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the
+		///     DOM <tt>&lt;form></tt> element temporarily modified to have its
+		///     <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer
+		///     to a dynamically generated, hidden <tt>&lt;iframe></tt> which is inserted into the document
+		///     but removed after the return data has been gathered.</p>
+		///     <p>Be aware that file upload packets, sent with the content type <a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>
+		///     and some server technologies (notably JEE) may require some custom processing in order to
+		///     retrieve parameter names and parameter values from the packet content.</p>
 		///     parameters are passed:<ul>
 		///     <li><b>el</b> : Ext.Element<p class="sub-desc">The Element being updated.</p></li>
 		///     <li><b>success</b> : Boolean<p class="sub-desc">True for success, false for failure.</p></li>
@@ -297,9 +333,18 @@ namespace Ext {
 		public extern virtual void formUpdate(string form, string url, bool reset);
 
 		/// <summary>
-		///     Performs an async form post, updating this element with the response. If the form has the attribute
-		///     enctype="multipart/form-data", it assumes it's a file upload.
-		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.
+		///     <p>Performs an async form post, updating this element with the response. If the form has the attribute
+		///     enctype="<a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>", it assumes it's a file upload.
+		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.</p>
+		///     <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b>
+		///     performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the
+		///     DOM <tt>&lt;form></tt> element temporarily modified to have its
+		///     <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer
+		///     to a dynamically generated, hidden <tt>&lt;iframe></tt> which is inserted into the document
+		///     but removed after the return data has been gathered.</p>
+		///     <p>Be aware that file upload packets, sent with the content type <a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>
+		///     and some server technologies (notably JEE) may require some custom processing in order to
+		///     retrieve parameter names and parameter values from the packet content.</p>
 		///     parameters are passed:<ul>
 		///     <li><b>el</b> : Ext.Element<p class="sub-desc">The Element being updated.</p></li>
 		///     <li><b>success</b> : Boolean<p class="sub-desc">True for success, false for failure.</p></li>
@@ -313,9 +358,18 @@ namespace Ext {
 		public extern virtual void formUpdate(string form, string url, bool reset, Delegate callback);
 
 		/// <summary>
-		///     Performs an async form post, updating this element with the response. If the form has the attribute
-		///     enctype="multipart/form-data", it assumes it's a file upload.
-		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.
+		///     <p>Performs an async form post, updating this element with the response. If the form has the attribute
+		///     enctype="<a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>", it assumes it's a file upload.
+		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.</p>
+		///     <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b>
+		///     performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the
+		///     DOM <tt>&lt;form></tt> element temporarily modified to have its
+		///     <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer
+		///     to a dynamically generated, hidden <tt>&lt;iframe></tt> which is inserted into the document
+		///     but removed after the return data has been gathered.</p>
+		///     <p>Be aware that file upload packets, sent with the content type <a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>
+		///     and some server technologies (notably JEE) may require some custom processing in order to
+		///     retrieve parameter names and parameter values from the packet content.</p>
 		///     parameters are passed:<ul>
 		///     <li><b>el</b> : Ext.Element<p class="sub-desc">The Element being updated.</p></li>
 		///     <li><b>success</b> : Boolean<p class="sub-desc">True for success, false for failure.</p></li>
@@ -326,9 +380,18 @@ namespace Ext {
 		public extern virtual void formUpdate(DOMElement form);
 
 		/// <summary>
-		///     Performs an async form post, updating this element with the response. If the form has the attribute
-		///     enctype="multipart/form-data", it assumes it's a file upload.
-		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.
+		///     <p>Performs an async form post, updating this element with the response. If the form has the attribute
+		///     enctype="<a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>", it assumes it's a file upload.
+		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.</p>
+		///     <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b>
+		///     performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the
+		///     DOM <tt>&lt;form></tt> element temporarily modified to have its
+		///     <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer
+		///     to a dynamically generated, hidden <tt>&lt;iframe></tt> which is inserted into the document
+		///     but removed after the return data has been gathered.</p>
+		///     <p>Be aware that file upload packets, sent with the content type <a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>
+		///     and some server technologies (notably JEE) may require some custom processing in order to
+		///     retrieve parameter names and parameter values from the packet content.</p>
 		///     parameters are passed:<ul>
 		///     <li><b>el</b> : Ext.Element<p class="sub-desc">The Element being updated.</p></li>
 		///     <li><b>success</b> : Boolean<p class="sub-desc">True for success, false for failure.</p></li>
@@ -340,9 +403,18 @@ namespace Ext {
 		public extern virtual void formUpdate(DOMElement form, string url);
 
 		/// <summary>
-		///     Performs an async form post, updating this element with the response. If the form has the attribute
-		///     enctype="multipart/form-data", it assumes it's a file upload.
-		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.
+		///     <p>Performs an async form post, updating this element with the response. If the form has the attribute
+		///     enctype="<a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>", it assumes it's a file upload.
+		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.</p>
+		///     <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b>
+		///     performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the
+		///     DOM <tt>&lt;form></tt> element temporarily modified to have its
+		///     <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer
+		///     to a dynamically generated, hidden <tt>&lt;iframe></tt> which is inserted into the document
+		///     but removed after the return data has been gathered.</p>
+		///     <p>Be aware that file upload packets, sent with the content type <a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>
+		///     and some server technologies (notably JEE) may require some custom processing in order to
+		///     retrieve parameter names and parameter values from the packet content.</p>
 		///     parameters are passed:<ul>
 		///     <li><b>el</b> : Ext.Element<p class="sub-desc">The Element being updated.</p></li>
 		///     <li><b>success</b> : Boolean<p class="sub-desc">True for success, false for failure.</p></li>
@@ -355,9 +427,18 @@ namespace Ext {
 		public extern virtual void formUpdate(DOMElement form, string url, bool reset);
 
 		/// <summary>
-		///     Performs an async form post, updating this element with the response. If the form has the attribute
-		///     enctype="multipart/form-data", it assumes it's a file upload.
-		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.
+		///     <p>Performs an async form post, updating this element with the response. If the form has the attribute
+		///     enctype="<a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>", it assumes it's a file upload.
+		///     Uses this.sslBlankUrl for SSL file uploads to prevent IE security warning.</p>
+		///     <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b>
+		///     performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the
+		///     DOM <tt>&lt;form></tt> element temporarily modified to have its
+		///     <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer
+		///     to a dynamically generated, hidden <tt>&lt;iframe></tt> which is inserted into the document
+		///     but removed after the return data has been gathered.</p>
+		///     <p>Be aware that file upload packets, sent with the content type <a href="http://www.faqs.org/rfcs/rfc2388.html">multipart/form-data</a>
+		///     and some server technologies (notably JEE) may require some custom processing in order to
+		///     retrieve parameter names and parameter values from the packet content.</p>
 		///     parameters are passed:<ul>
 		///     <li><b>el</b> : Ext.Element<p class="sub-desc">The Element being updated.</p></li>
 		///     <li><b>success</b> : Boolean<p class="sub-desc">True for success, false for failure.</p></li>
@@ -744,7 +825,7 @@ namespace Ext {
 
 	[JsAnonymous]
 	public class UpdaterConfig : System.DotWeb.JsDynamic {
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

@@ -19,7 +19,7 @@ namespace Ext.grid {
 	///     grid.store.addSorted(rec);
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\PropertyGrid.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\grid\PropertyGrid.js</jssource>
 	[JsObject]
 	public class PropertyRecord  {
 

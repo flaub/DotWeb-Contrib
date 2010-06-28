@@ -11,7 +11,7 @@ namespace Ext {
 	///     */
 	///     Ext.EventManager = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\EventManager.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\core\EventManager.js</jssource>
 	[JsObject]
 	public class EventManager  {
 

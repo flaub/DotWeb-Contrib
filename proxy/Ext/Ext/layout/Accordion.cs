@@ -41,7 +41,7 @@ namespace Ext.layout {
 	///     */
 	///     Ext.layout.Accordion = Ext.extend(Ext.layout.FitLayout, {
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\layout\AccordionLayout.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\layout\AccordionLayout.js</jssource>
 	public class Accordion : Ext.layout.FitLayout {
 
 		/// <summary>Auto-generated default constructor</summary>
@@ -64,7 +64,11 @@ namespace Ext.layout {
 		/// </summary>
 		public extern bool fill { get; set; }
 
-		/// <summary>True to set each contained item's width to 'auto', false to use the item's current width (defaults to true).</summary>
+		/// <summary>
+		///     True to set each contained item's width to 'auto', false to use the item's current width (defaults to true).
+		///     Note that some components, in particular the {@link Ext.grid.GridPanel grid}, will not function properly within
+		///     layouts if they have auto width, so in such cases this config should be set to false.
+		/// </summary>
 		public extern bool autoWidth { get; set; }
 
 		/// <summary>
@@ -103,6 +107,20 @@ namespace Ext.layout {
 		public extern bool activeOnTop { get; set; }
 
 
+		/// <summary>Sets the active (expanded) item in the layout.</summary>
+		/// <returns></returns>
+		public extern virtual void setActiveItem();
+
+		/// <summary>Sets the active (expanded) item in the layout.</summary>
+		/// <param name="item">The string component id or numeric index of the item to activate</param>
+		/// <returns></returns>
+		public extern virtual void setActiveItem(string item);
+
+		/// <summary>Sets the active (expanded) item in the layout.</summary>
+		/// <param name="item">The string component id or numeric index of the item to activate</param>
+		/// <returns></returns>
+		public extern virtual void setActiveItem(double item);
+
 
 
 	}
@@ -112,7 +130,7 @@ namespace Ext.layout {
 		/// <summary>  True to adjust the active item's height to fill the available space in the container, false to use the item's current height, or auto height if not explicitly set (defaults to true).</summary>
 		public extern bool fill { get; set; }
 
-		/// <summary>  True to set each contained item's width to 'auto', false to use the item's current width (defaults to true).</summary>
+		/// <summary>  True to set each contained item's width to 'auto', false to use the item's current width (defaults to true). Note that some components, in particular the {@link Ext.grid.GridPanel grid}, will not function properly within layouts if they have auto width, so in such cases this config should be set to false.</summary>
 		public extern bool autoWidth { get; set; }
 
 		/// <summary>  True to allow expand/collapse of each contained panel by clicking anywhere on the title bar, false to allow expand/collapse only when the toggle tool button is clicked (defaults to true).  When set to false, {@link #hideCollapseTool} should be false also.</summary>

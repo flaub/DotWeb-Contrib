@@ -45,7 +45,7 @@ namespace Ext {
 	///     action.setText('Something else');
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Action.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\Action.js</jssource>
 	[JsObject]
 	public class Action  {
 
@@ -138,10 +138,7 @@ namespace Ext {
 		/// <returns></returns>
 		public extern virtual void disable();
 
-		/// <summary>
-		///     Returns true if the components using this action are currently disabled, else returns false.  Read-only.
-		///     @property
-		/// </summary>
+		/// <summary>Returns true if the components using this action are currently disabled, else returns false.</summary>
 		/// <returns></returns>
 		public extern virtual void isDisabled();
 
@@ -168,10 +165,7 @@ namespace Ext {
 		/// <returns></returns>
 		public extern virtual void hide();
 
-		/// <summary>
-		///     Returns true if the components using this action are currently hidden, else returns false.  Read-only.
-		///     @property
-		/// </summary>
+		/// <summary>Returns true if the components using this action are currently hidden, else returns false.</summary>
 		/// <returns></returns>
 		public extern virtual void isHidden();
 

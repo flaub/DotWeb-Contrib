@@ -10,7 +10,7 @@ namespace Ext.util {
 	///     */
 	///     Ext.util.TextMetrics = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\TextMetrics.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\util\TextMetrics.js</jssource>
 	[JsObject]
 	public class TextMetrics  {
 

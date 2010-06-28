@@ -13,7 +13,8 @@ namespace Ext.layout {
 	///     for customizing the BorderLayout are at the {@link Ext.layout.BorderLayout.Region} and
 	///     {@link Ext.layout.BorderLayout.SplitRegion} levels.</p>
 	///     <p><b>The regions of a BorderLayout are fixed at render time and thereafter, no regions may be removed or
-	///     added.</b></p>
+	///     added. The BorderLayout must have a center region, which will always fill the remaining space not used by
+	///     the other regions in the layout.</b></p>
 	///     <p>Example usage:</p>
 	///     <pre><code>
 	///     var border = new Ext.Panel({
@@ -44,7 +45,7 @@ namespace Ext.layout {
 	///     */
 	///     Ext.layout.BorderLayout = Ext.extend(Ext.layout.ContainerLayout, {
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\layout\BorderLayout.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\layout\BorderLayout.js</jssource>
 	public class BorderLayoutClass : Ext.layout.ContainerLayout {
 
 		/// <summary>Auto-generated default constructor</summary>

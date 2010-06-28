@@ -16,6 +16,7 @@ namespace Ext.tree {
 	///     @cfg {String} iconCls A css class to be added to the nodes icon element for applying css background images
 	///     @cfg {String} href URL of the link used for the node (defaults to #)
 	///     @cfg {String} hrefTarget target frame for the link
+	///     @cfg {Boolean} hidden True to render hidden. (Defaults to false).
 	///     @cfg {String} qtip An Ext QuickTip for the node
 	///     @cfg {Boolean} expandable If set to true, the node will always show a plus/minus icon, even when empty
 	///     @cfg {String} qtipCfg An Ext QuickTip config for the node (used instead of qtip)
@@ -26,8 +27,9 @@ namespace Ext.tree {
 	///     @cfg {Boolean} draggable True to make this node draggable (defaults to false)
 	///     @cfg {Boolean} isTarget False to not allow this node to act as a drop target (defaults to true)
 	///     @cfg {Boolean} allowChildren False to not allow this node to have child nodes (defaults to true)
+	///     @cfg {Boolean} editable False to not allow this node to be edited by an (@link Ext.tree.TreeEditor} (defaults to true)
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tree\TreeNode.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\tree\TreeNode.js</jssource>
 	public class TreeNode : Ext.data.Node {
 
 		/// <summary></summary>
@@ -57,6 +59,9 @@ namespace Ext.tree {
 
 		/// <summary>True if this node is disabled.</summary>
 		public extern bool disabled { get; set; }
+
+		/// <summary>True if this node is hidden.</summary>
+		public extern bool hidden { get; set; }
 
 		/// <summary>Read-only. The UI for this node</summary>
 		public extern TreeNodeUI ui { get; set; }
@@ -159,6 +164,14 @@ namespace Ext.tree {
 		/// <returns></returns>
 		public extern virtual void ensureVisible();
 
+		/// <summary>
+		///     Ensures all parent nodes are expanded, and if necessary, scrolls
+		///     the node into view.
+		/// </summary>
+		/// <param name="callback">(optional) A function to call when the node has been made visible.</param>
+		/// <returns></returns>
+		public extern virtual void ensureVisible(Delegate callback);
+
 		/// <summary>Expand all child nodes</summary>
 		/// <returns></returns>
 		public extern virtual void expandChildNodes();
@@ -221,6 +234,9 @@ namespace Ext.tree {
 		/// <summary> target frame for the link</summary>
 		public extern string hrefTarget { get; set; }
 
+		/// <summary> True to render hidden. (Defaults to false).</summary>
+		public extern bool hidden { get; set; }
+
 		/// <summary> An Ext QuickTip for the node</summary>
 		public extern string qtip { get; set; }
 
@@ -248,13 +264,16 @@ namespace Ext.tree {
 		/// <summary> False to not allow this node to have child nodes (defaults to true)</summary>
 		public extern bool allowChildren { get; set; }
 
+		/// <summary> False to not allow this node to be edited by an (@link Ext.tree.TreeEditor} (defaults to true)</summary>
+		public extern bool editable { get; set; }
+
 		/// <summary> true if this node is a leaf and does not have children</summary>
 		public extern bool leaf { get; set; }
 
 		/// <summary> The id for this node. If one is not specified, one is generated.</summary>
 		public extern string id { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

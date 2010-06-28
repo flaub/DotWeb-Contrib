@@ -9,7 +9,7 @@ namespace Ext {
 	///     */
 	///     Ext.StoreMgr = Ext.apply(new Ext.util.MixedCollection(), {
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\StoreMgr.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\data\StoreMgr.js</jssource>
 	public class StoreMgr : Ext.util.MixedCollection {
 
 		/// <summary>Auto-generated default constructor</summary>
@@ -147,7 +147,7 @@ namespace Ext {
 
 	[JsAnonymous]
 	public class StoreMgrConfig : System.DotWeb.JsDynamic {
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

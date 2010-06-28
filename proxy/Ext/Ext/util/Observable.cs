@@ -21,7 +21,7 @@ namespace Ext.util {
 	///     */
 	///     Ext.util.Observable = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\Observable.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\util\Observable.js</jssource>
 	[JsObject]
 	public class Observable  {
 
@@ -37,7 +37,7 @@ namespace Ext.util {
 		public extern static Delegate constructor { get; set; }
 
 		/// <summary>
-		///     A config object containing one or more event handlers to be added to thisobject during initialization.  This should be a valid listeners config object as specified in the
+		///     (optional) A config object containing one or more event handlers to be added to thisobject during initialization.  This should be a valid listeners config object as specified in the
 		///     {@link #addListener} example for attaching multiple handlers at once.
 		/// </summary>
 		public extern object listeners { get; set; }
@@ -60,25 +60,27 @@ namespace Ext.util {
 
 		/// <summary>
 		///     Appends an event handler to this component
-		///     function. The handler function's "this" context.
+		///     <b>If omitted, defaults to the object which fired the event.</b>
 		///     properties. This may contain any of the following properties:<ul>
-		///     <li><b>scope</b> : Object<p class="sub-desc">The scope in which to execute the handler function. The handler function's "this" context.</p></li>
-		///     <li><b>delay</b> : Number<p class="sub-desc">The number of milliseconds to delay the invocation of the handler after the event fires.</p></li>
-		///     <li><b>single</b> : Boolean<p class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</p></li>
-		///     <li><b>buffer</b> : Number<p class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
+		///     <li><b>scope</b> : Object<div class="sub-desc">The scope (<code><b>this</b></code> reference) in which the handler function is executed.
+		///     <b>If omitted, defaults to the object which fired the event.</b></div></li>
+		///     <li><b>delay</b> : Number<div class="sub-desc">The number of milliseconds to delay the invocation of the handler after the event fires.</div></li>
+		///     <li><b>single</b> : Boolean<div class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</div></li>
+		///     <li><b>buffer</b> : Number<div class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
 		///     by the specified number of milliseconds. If the event fires again within that time, the original
-		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</p></li>
+		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</div></li>
+		///     <li><b>target</b> : Observable<div class="sub-desc">Only call the handler if the event was fired on the target Observable, <i>not</i>
+		///     if the event was bubbled up from a child Observable.</div></li>
 		///     </ul><br>
 		///     <p>
 		///     <b>Combining Options</b><br>
 		///     Using the options argument, it is possible to combine different types of listeners:<br>
 		///     <br>
-		///     A normalized, delayed, one-time listener that auto stops the event and passes a custom argument (forumId)
+		///     A delayed, one-time listener.
 		///     <pre><code>
-		///     el.on('click', this.onClick, this, {
+		///     myDataView.on('click', this.onClick, this, {
 		///     single: true,
-		///     delay: 100,
-		///     forumId: 4
+		///     delay: 100
 		///     });</code></pre>
 		///     <p>
 		///     <b>Attaching multiple handlers in 1 call</b><br>
@@ -86,7 +88,7 @@ namespace Ext.util {
 		///     which specify multiple handlers.
 		///     <p>
 		///     <pre><code>
-		///     foo.on({
+		///     myGridPanel.on({
 		///     'click' : {
 		///     fn: this.onClick,
 		///     scope: this,
@@ -104,7 +106,7 @@ namespace Ext.util {
 		///     <p>
 		///     Or a shorthand syntax:<br>
 		///     <pre><code>
-		///     foo.on({
+		///     myGridPanel.on({
 		///     'click' : this.onClick,
 		///     'mouseover' : this.onMouseOver,
 		///     'mouseout' : this.onMouseOut,
@@ -116,25 +118,27 @@ namespace Ext.util {
 
 		/// <summary>
 		///     Appends an event handler to this component
-		///     function. The handler function's "this" context.
+		///     <b>If omitted, defaults to the object which fired the event.</b>
 		///     properties. This may contain any of the following properties:<ul>
-		///     <li><b>scope</b> : Object<p class="sub-desc">The scope in which to execute the handler function. The handler function's "this" context.</p></li>
-		///     <li><b>delay</b> : Number<p class="sub-desc">The number of milliseconds to delay the invocation of the handler after the event fires.</p></li>
-		///     <li><b>single</b> : Boolean<p class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</p></li>
-		///     <li><b>buffer</b> : Number<p class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
+		///     <li><b>scope</b> : Object<div class="sub-desc">The scope (<code><b>this</b></code> reference) in which the handler function is executed.
+		///     <b>If omitted, defaults to the object which fired the event.</b></div></li>
+		///     <li><b>delay</b> : Number<div class="sub-desc">The number of milliseconds to delay the invocation of the handler after the event fires.</div></li>
+		///     <li><b>single</b> : Boolean<div class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</div></li>
+		///     <li><b>buffer</b> : Number<div class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
 		///     by the specified number of milliseconds. If the event fires again within that time, the original
-		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</p></li>
+		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</div></li>
+		///     <li><b>target</b> : Observable<div class="sub-desc">Only call the handler if the event was fired on the target Observable, <i>not</i>
+		///     if the event was bubbled up from a child Observable.</div></li>
 		///     </ul><br>
 		///     <p>
 		///     <b>Combining Options</b><br>
 		///     Using the options argument, it is possible to combine different types of listeners:<br>
 		///     <br>
-		///     A normalized, delayed, one-time listener that auto stops the event and passes a custom argument (forumId)
+		///     A delayed, one-time listener.
 		///     <pre><code>
-		///     el.on('click', this.onClick, this, {
+		///     myDataView.on('click', this.onClick, this, {
 		///     single: true,
-		///     delay: 100,
-		///     forumId: 4
+		///     delay: 100
 		///     });</code></pre>
 		///     <p>
 		///     <b>Attaching multiple handlers in 1 call</b><br>
@@ -142,7 +146,7 @@ namespace Ext.util {
 		///     which specify multiple handlers.
 		///     <p>
 		///     <pre><code>
-		///     foo.on({
+		///     myGridPanel.on({
 		///     'click' : {
 		///     fn: this.onClick,
 		///     scope: this,
@@ -160,7 +164,7 @@ namespace Ext.util {
 		///     <p>
 		///     Or a shorthand syntax:<br>
 		///     <pre><code>
-		///     foo.on({
+		///     myGridPanel.on({
 		///     'click' : this.onClick,
 		///     'mouseover' : this.onMouseOver,
 		///     'mouseout' : this.onMouseOut,
@@ -173,25 +177,27 @@ namespace Ext.util {
 
 		/// <summary>
 		///     Appends an event handler to this component
-		///     function. The handler function's "this" context.
+		///     <b>If omitted, defaults to the object which fired the event.</b>
 		///     properties. This may contain any of the following properties:<ul>
-		///     <li><b>scope</b> : Object<p class="sub-desc">The scope in which to execute the handler function. The handler function's "this" context.</p></li>
-		///     <li><b>delay</b> : Number<p class="sub-desc">The number of milliseconds to delay the invocation of the handler after the event fires.</p></li>
-		///     <li><b>single</b> : Boolean<p class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</p></li>
-		///     <li><b>buffer</b> : Number<p class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
+		///     <li><b>scope</b> : Object<div class="sub-desc">The scope (<code><b>this</b></code> reference) in which the handler function is executed.
+		///     <b>If omitted, defaults to the object which fired the event.</b></div></li>
+		///     <li><b>delay</b> : Number<div class="sub-desc">The number of milliseconds to delay the invocation of the handler after the event fires.</div></li>
+		///     <li><b>single</b> : Boolean<div class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</div></li>
+		///     <li><b>buffer</b> : Number<div class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
 		///     by the specified number of milliseconds. If the event fires again within that time, the original
-		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</p></li>
+		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</div></li>
+		///     <li><b>target</b> : Observable<div class="sub-desc">Only call the handler if the event was fired on the target Observable, <i>not</i>
+		///     if the event was bubbled up from a child Observable.</div></li>
 		///     </ul><br>
 		///     <p>
 		///     <b>Combining Options</b><br>
 		///     Using the options argument, it is possible to combine different types of listeners:<br>
 		///     <br>
-		///     A normalized, delayed, one-time listener that auto stops the event and passes a custom argument (forumId)
+		///     A delayed, one-time listener.
 		///     <pre><code>
-		///     el.on('click', this.onClick, this, {
+		///     myDataView.on('click', this.onClick, this, {
 		///     single: true,
-		///     delay: 100,
-		///     forumId: 4
+		///     delay: 100
 		///     });</code></pre>
 		///     <p>
 		///     <b>Attaching multiple handlers in 1 call</b><br>
@@ -199,7 +205,7 @@ namespace Ext.util {
 		///     which specify multiple handlers.
 		///     <p>
 		///     <pre><code>
-		///     foo.on({
+		///     myGridPanel.on({
 		///     'click' : {
 		///     fn: this.onClick,
 		///     scope: this,
@@ -217,7 +223,7 @@ namespace Ext.util {
 		///     <p>
 		///     Or a shorthand syntax:<br>
 		///     <pre><code>
-		///     foo.on({
+		///     myGridPanel.on({
 		///     'click' : this.onClick,
 		///     'mouseover' : this.onMouseOver,
 		///     'mouseout' : this.onMouseOut,
@@ -231,25 +237,27 @@ namespace Ext.util {
 
 		/// <summary>
 		///     Appends an event handler to this component
-		///     function. The handler function's "this" context.
+		///     <b>If omitted, defaults to the object which fired the event.</b>
 		///     properties. This may contain any of the following properties:<ul>
-		///     <li><b>scope</b> : Object<p class="sub-desc">The scope in which to execute the handler function. The handler function's "this" context.</p></li>
-		///     <li><b>delay</b> : Number<p class="sub-desc">The number of milliseconds to delay the invocation of the handler after the event fires.</p></li>
-		///     <li><b>single</b> : Boolean<p class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</p></li>
-		///     <li><b>buffer</b> : Number<p class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
+		///     <li><b>scope</b> : Object<div class="sub-desc">The scope (<code><b>this</b></code> reference) in which the handler function is executed.
+		///     <b>If omitted, defaults to the object which fired the event.</b></div></li>
+		///     <li><b>delay</b> : Number<div class="sub-desc">The number of milliseconds to delay the invocation of the handler after the event fires.</div></li>
+		///     <li><b>single</b> : Boolean<div class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</div></li>
+		///     <li><b>buffer</b> : Number<div class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
 		///     by the specified number of milliseconds. If the event fires again within that time, the original
-		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</p></li>
+		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</div></li>
+		///     <li><b>target</b> : Observable<div class="sub-desc">Only call the handler if the event was fired on the target Observable, <i>not</i>
+		///     if the event was bubbled up from a child Observable.</div></li>
 		///     </ul><br>
 		///     <p>
 		///     <b>Combining Options</b><br>
 		///     Using the options argument, it is possible to combine different types of listeners:<br>
 		///     <br>
-		///     A normalized, delayed, one-time listener that auto stops the event and passes a custom argument (forumId)
+		///     A delayed, one-time listener.
 		///     <pre><code>
-		///     el.on('click', this.onClick, this, {
+		///     myDataView.on('click', this.onClick, this, {
 		///     single: true,
-		///     delay: 100,
-		///     forumId: 4
+		///     delay: 100
 		///     });</code></pre>
 		///     <p>
 		///     <b>Attaching multiple handlers in 1 call</b><br>
@@ -257,7 +265,7 @@ namespace Ext.util {
 		///     which specify multiple handlers.
 		///     <p>
 		///     <pre><code>
-		///     foo.on({
+		///     myGridPanel.on({
 		///     'click' : {
 		///     fn: this.onClick,
 		///     scope: this,
@@ -275,7 +283,7 @@ namespace Ext.util {
 		///     <p>
 		///     Or a shorthand syntax:<br>
 		///     <pre><code>
-		///     foo.on({
+		///     myGridPanel.on({
 		///     'click' : this.onClick,
 		///     'mouseover' : this.onMouseOver,
 		///     'mouseout' : this.onMouseOut,
@@ -284,31 +292,33 @@ namespace Ext.util {
 		/// </summary>
 		/// <param name="eventName">The type of event to listen for</param>
 		/// <param name="handler">The method the event invokes</param>
-		/// <param name="scope">(optional) The scope in which to execute the handler</param>
+		/// <param name="scope">(optional) The scope (<code><b>this</b></code> reference) in which the handler function is executed.</param>
 		/// <returns></returns>
 		public extern virtual void addListener(string eventName, Delegate handler, object scope);
 
 		/// <summary>
 		///     Appends an event handler to this component
-		///     function. The handler function's "this" context.
+		///     <b>If omitted, defaults to the object which fired the event.</b>
 		///     properties. This may contain any of the following properties:<ul>
-		///     <li><b>scope</b> : Object<p class="sub-desc">The scope in which to execute the handler function. The handler function's "this" context.</p></li>
-		///     <li><b>delay</b> : Number<p class="sub-desc">The number of milliseconds to delay the invocation of the handler after the event fires.</p></li>
-		///     <li><b>single</b> : Boolean<p class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</p></li>
-		///     <li><b>buffer</b> : Number<p class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
+		///     <li><b>scope</b> : Object<div class="sub-desc">The scope (<code><b>this</b></code> reference) in which the handler function is executed.
+		///     <b>If omitted, defaults to the object which fired the event.</b></div></li>
+		///     <li><b>delay</b> : Number<div class="sub-desc">The number of milliseconds to delay the invocation of the handler after the event fires.</div></li>
+		///     <li><b>single</b> : Boolean<div class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</div></li>
+		///     <li><b>buffer</b> : Number<div class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
 		///     by the specified number of milliseconds. If the event fires again within that time, the original
-		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</p></li>
+		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</div></li>
+		///     <li><b>target</b> : Observable<div class="sub-desc">Only call the handler if the event was fired on the target Observable, <i>not</i>
+		///     if the event was bubbled up from a child Observable.</div></li>
 		///     </ul><br>
 		///     <p>
 		///     <b>Combining Options</b><br>
 		///     Using the options argument, it is possible to combine different types of listeners:<br>
 		///     <br>
-		///     A normalized, delayed, one-time listener that auto stops the event and passes a custom argument (forumId)
+		///     A delayed, one-time listener.
 		///     <pre><code>
-		///     el.on('click', this.onClick, this, {
+		///     myDataView.on('click', this.onClick, this, {
 		///     single: true,
-		///     delay: 100,
-		///     forumId: 4
+		///     delay: 100
 		///     });</code></pre>
 		///     <p>
 		///     <b>Attaching multiple handlers in 1 call</b><br>
@@ -316,7 +326,7 @@ namespace Ext.util {
 		///     which specify multiple handlers.
 		///     <p>
 		///     <pre><code>
-		///     foo.on({
+		///     myGridPanel.on({
 		///     'click' : {
 		///     fn: this.onClick,
 		///     scope: this,
@@ -334,7 +344,7 @@ namespace Ext.util {
 		///     <p>
 		///     Or a shorthand syntax:<br>
 		///     <pre><code>
-		///     foo.on({
+		///     myGridPanel.on({
 		///     'click' : this.onClick,
 		///     'mouseover' : this.onMouseOver,
 		///     'mouseout' : this.onMouseOut,
@@ -343,7 +353,7 @@ namespace Ext.util {
 		/// </summary>
 		/// <param name="eventName">The type of event to listen for</param>
 		/// <param name="handler">The method the event invokes</param>
-		/// <param name="scope">(optional) The scope in which to execute the handler</param>
+		/// <param name="scope">(optional) The scope (<code><b>this</b></code> reference) in which the handler function is executed.</param>
 		/// <param name="options">(optional) An object containing handler configuration</param>
 		/// <returns></returns>
 		public extern virtual void addListener(string eventName, Delegate handler, object scope, object options);
@@ -539,7 +549,7 @@ namespace Ext.util {
 
 	[JsAnonymous]
 	public class ObservableConfig : System.DotWeb.JsDynamic {
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

@@ -7,7 +7,7 @@ namespace Ext.util {
 	///     /**
 	///     A Collection class that maintains both numeric indexes and keys and exposes events.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\MixedCollection.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\util\MixedCollection.js</jssource>
 	public class MixedCollection : Ext.util.Observable {
 
 		/// <summary>
@@ -720,7 +720,7 @@ namespace Ext.util {
 		/// <returns>Number</returns>
 		public extern virtual void findIndexBy(Delegate fn, object scope, double start);
 
-		/// <summary>Creates a duplicate of this collection</summary>
+		/// <summary>Creates a shallow copy of this collection</summary>
 		/// <returns>MixedCollection</returns>
 		public extern virtual void clone();
 
@@ -744,7 +744,7 @@ namespace Ext.util {
 
 	[JsAnonymous]
 	public class MixedCollectionConfig : System.DotWeb.JsDynamic {
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

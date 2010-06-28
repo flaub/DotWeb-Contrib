@@ -32,7 +32,7 @@ namespace Ext {
 	///     */
 	///     Ext.Ajax = new Ext.data.Connection({
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\Connection.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\data\Connection.js</jssource>
 	public class Ajax : Ext.data.Connection {
 
 		/// <summary>Auto-generated default constructor</summary>
@@ -101,7 +101,7 @@ namespace Ext {
 
 	[JsAnonymous]
 	public class AjaxConfig : System.DotWeb.JsDynamic {
-		/// <summary> (Optional) The default URL to be used for requests to the server. (defaults to undefined)</summary>
+		/// <summary> (Optional) <p>The default URL to be used for requests to the server. Defaults to undefined.</p> <p>The <code>url</code> config may be a function which <i>returns</i> the URL to use for the Ajax request. The scope (<code><b>this</b></code> reference) of the function is the <code>scope</code> option passed to the {@link #request} method.</p></summary>
 		public extern string url { get; set; }
 
 		/// <summary> (Optional) An object containing properties which are used as extra parameters to each request made by this object. (defaults to undefined)</summary>
@@ -125,7 +125,7 @@ namespace Ext {
 		/// <summary> (Optional) Change the parameter which is sent went disabling caching through a cache buster. Defaults to '_dc' @type String</summary>
 		public extern string disableCachingParam { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

@@ -11,7 +11,7 @@ namespace Ext.grid {
 	///     <p>This class does not provide ways to manipulate the underlying data. The data
 	///     model of a Grid is held in an {@link Ext.data.Store}.</p>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\GridView.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\grid\GridView.js</jssource>
 	public class GridView : Ext.util.Observable {
 
 		/// <summary></summary>
@@ -39,7 +39,7 @@ namespace Ext.grid {
 		public extern string emptyText { get; set; }
 
 		/// <summary>
-		///     <p><b>This will only be present if the owning GridPanel was configured with {@link Ext.grid.GridPanel#enableDragDrop enableDragDrop}<b> <tt>true</tt></b>.</p>
+		///     <p><b>This will only be present if the owning GridPanel was configured with {@link Ext.grid.GridPanel#enableDragDrop enableDragDrop} <tt>true</tt>.</b></p>
 		///     <p><b>This will only be present after the owning GridPanel has been rendered</b>.</p>
 		///     <p>A customized implementation of a {@link Ext.dd.DragZone DragZone} which provides default implementations of the
 		///     template methods of DragZone to enable dragging of the selected rows of a GridPanel. See {@link Ext.grid.GridDragZone} for details.</p>
@@ -55,7 +55,7 @@ namespace Ext.grid {
 		/// <summary>True to auto expand the columns to fit the grid <b>when the grid is created</b>.</summary>
 		public extern bool autoFill { get; set; }
 
-		/// <summary>True to auto expand/contract the size of the columns to fit the grid width and prevent horizontal scrolling.</summary>
+		/// <summary>True to auto expand/contract the size of the columns to fit the grid width and prevent horizontal scrolling.This option overrides any (@link Ext.grid.ColumnModel#width width} settings in the ColumnModel.</summary>
 		public extern bool forceFit { get; set; }
 
 		/// <summary>The CSS classes applied to a header when it is sorted. (defaults to ["sort-asc", "sort-desc"])</summary>
@@ -81,6 +81,12 @@ namespace Ext.grid {
 
 		/// <summary>The selector used to find rows internally</summary>
 		public extern string rowSelector { get; set; }
+
+		/// <summary>
+		///     The GridView's body Element which encapsulates all rows in the Grid. {@link Ext.Element Element}. Read-only.
+		///     <p>This Element is only available after the GridPanel has been rendered.</p>
+		/// </summary>
+		public extern Ext.Element mainBody { get; set; }
 
 
 		/// <summary>
@@ -178,6 +184,24 @@ namespace Ext.grid {
 		/// <returns>String</returns>
 		public extern virtual void getRowClass(Ext.data.Record record, double index, object rowParams, Ext.data.Store store);
 
+		/// <summary>Return the HtmlElement representing the grid row which contains the passed element.</summary>
+		/// <returns>The</returns>
+		public extern virtual void findRow();
+
+		/// <summary>Return the HtmlElement representing the grid row which contains the passed element.</summary>
+		/// <param name="el">The target element</param>
+		/// <returns>The</returns>
+		public extern virtual void findRow(Element el);
+
+		/// <summary>Return the index of the grid row which contains the passed element.</summary>
+		/// <returns>The</returns>
+		public extern virtual void findRowIndex();
+
+		/// <summary>Return the index of the grid row which contains the passed element.</summary>
+		/// <param name="el">The target element</param>
+		/// <returns>The</returns>
+		public extern virtual void findRowIndex(Element el);
+
 		/// <summary>Return the &lt;TR> HtmlElement which represents a Grid row for the specified index.</summary>
 		/// <returns>HtmlElement</returns>
 		public extern virtual void getRow();
@@ -266,7 +290,7 @@ namespace Ext.grid {
 		/// <summary> True to auto expand the columns to fit the grid <b>when the grid is created</b>.</summary>
 		public extern bool autoFill { get; set; }
 
-		/// <summary> True to auto expand/contract the size of the columns to fit the grid width and prevent horizontal scrolling.</summary>
+		/// <summary> True to auto expand/contract the size of the columns to fit the grid width and prevent horizontal scrolling. This option overrides any (@link Ext.grid.ColumnModel#width width} settings in the ColumnModel.</summary>
 		public extern bool forceFit { get; set; }
 
 		/// <summary> The number of levels to search for cells in event delegation (defaults to 4)</summary>
@@ -281,7 +305,7 @@ namespace Ext.grid {
 		/// <summary> The selector used to find rows internally</summary>
 		public extern string rowSelector { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

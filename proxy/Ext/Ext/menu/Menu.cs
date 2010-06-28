@@ -8,7 +8,7 @@ namespace Ext.menu {
 	///     A menu object.  This is the container to which you add all other menu items.  Menu can also serve as a base class
 	///     when you want a specialized menu based off of another component (like {@link Ext.menu.DateMenu} for example).
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\Menu.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\menu\Menu.js</jssource>
 	public class Menu : Ext.util.Observable {
 
 		/// <summary>Creates a new Menu</summary>
@@ -125,7 +125,7 @@ namespace Ext.menu {
 		public extern virtual void hide(bool deep);
 
 		/// <summary>
-		///     Addds one or more items of any type supported by the Menu class, or that can be converted into menu items.
+		///     Adds one or more items of any type supported by the Menu class, or that can be converted into menu items.
 		///     Any of the following are valid:
 		///     <ul>
 		///     <li>Any menu item object based on {@link Ext.menu.BaseItem}</li>
@@ -154,7 +154,7 @@ namespace Ext.menu {
 		public extern virtual void add();
 
 		/// <summary>
-		///     Addds one or more items of any type supported by the Menu class, or that can be converted into menu items.
+		///     Adds one or more items of any type supported by the Menu class, or that can be converted into menu items.
 		///     Any of the following are valid:
 		///     <ul>
 		///     <li>Any menu item object based on {@link Ext.menu.BaseItem}</li>
@@ -292,7 +292,7 @@ namespace Ext.menu {
 		/// <summary> True to ignore clicks on any item in this menu that is a parent item (displays a submenu) so that the submenu is not dismissed when clicking the parent item (defaults to false).</summary>
 		public extern bool ignoreParentClicks { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

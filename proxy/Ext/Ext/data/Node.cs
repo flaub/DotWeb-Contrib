@@ -8,7 +8,7 @@ namespace Ext.data {
 	///     @cfg {Boolean} leaf true if this node is a leaf and does not have children
 	///     @cfg {String} id The id for this node. If one is not specified, one is generated.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\Tree.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\data\Tree.js</jssource>
 	public class Node : Ext.util.Observable {
 
 		/// <summary></summary>
@@ -379,7 +379,7 @@ namespace Ext.data {
 		/// <summary> The id for this node. If one is not specified, one is generated.</summary>
 		public extern string id { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

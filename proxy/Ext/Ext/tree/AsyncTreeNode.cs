@@ -7,7 +7,7 @@ namespace Ext.tree {
 	///     /**
 	///     @cfg {TreeLoader} loader A TreeLoader to be used by this node (defaults to the loader defined on the tree)
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tree\AsyncTreeNode.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\tree\AsyncTreeNode.js</jssource>
 	public class AsyncTreeNode : Ext.tree.TreeNode {
 
 		/// <summary></summary>
@@ -92,6 +92,9 @@ namespace Ext.tree {
 		/// <summary> target frame for the link</summary>
 		public extern string hrefTarget { get; set; }
 
+		/// <summary> True to render hidden. (Defaults to false).</summary>
+		public extern bool hidden { get; set; }
+
 		/// <summary> An Ext QuickTip for the node</summary>
 		public extern string qtip { get; set; }
 
@@ -119,13 +122,16 @@ namespace Ext.tree {
 		/// <summary> False to not allow this node to have child nodes (defaults to true)</summary>
 		public extern bool allowChildren { get; set; }
 
+		/// <summary> False to not allow this node to be edited by an (@link Ext.tree.TreeEditor} (defaults to true)</summary>
+		public extern bool editable { get; set; }
+
 		/// <summary> true if this node is a leaf and does not have children</summary>
 		public extern bool leaf { get; set; }
 
 		/// <summary> The id for this node. If one is not specified, one is generated.</summary>
 		public extern string id { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

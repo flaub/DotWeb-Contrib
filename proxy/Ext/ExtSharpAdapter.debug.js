@@ -22,7 +22,6 @@ Ext.dd.DragDropMgr.lock_ = Ext.dd.DragDropMgr.lock;
 Ext.grid.AbstractSelectionModel.lock_ = Ext.grid.AbstractSelectionModel.lock;
 
 // **** renamed properties ****
-Ext.form.Action.params_ = Ext.form.Action.params;
 Ext.form.Checkbox.checked_ = Ext.form.Checkbox.checked;
 Ext.grid.ColumnModel.fixed_ = Ext.grid.ColumnModel.fixed;
 Ext.menu.CheckItem.checked_ = Ext.menu.CheckItem.checked;

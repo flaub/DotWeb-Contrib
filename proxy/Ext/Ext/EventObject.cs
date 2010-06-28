@@ -5,8 +5,7 @@ using DotWeb.Client;
 namespace Ext {
 	/// <summary>
 	///     /**
-	///     EventObject exposes the Yahoo! UI Event functionality directly on the object
-	///     passed to your event handler. It exists mostly for convenience. It also fixes the annoying null checks automatically to cleanup your code
+	///     EventObject encapsulates a DOM event adjusting for browser differences.
 	///     Example:
 	///     <pre><code>
 	///     function handleClick(e){ // e is not a standard event object, it is a Ext.EventObject
@@ -23,7 +22,7 @@ namespace Ext {
 	///     */
 	///     Ext.EventObject = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\EventManager.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\core\EventManager.js</jssource>
 	[JsObject]
 	public class EventObject  {
 
@@ -38,7 +37,7 @@ namespace Ext {
 		/// <summary>The reference to the constructor function</summary>
 		public extern static Delegate constructor { get; set; }
 
-		/// <summary>The normal browser event</summary>
+		/// <summary>The encapsulated browser event</summary>
 		public extern object browserEvent { get; set; }
 
 		/// <summary>The button pressed in a mouse event</summary>
@@ -417,7 +416,7 @@ namespace Ext {
 		public extern virtual void hasModifier();
 
 		/// <summary>
-		///     Returns true if the target of this event is a child of el.  If the target is el, it returns false.
+		///     Returns true if the target of this event is a child of el.  Unless the allowEl parameter is set, it will return false if if the target is el.
 		///     Example usage:<pre><code>
 		///     // Handle click on any child of an element
 		///     Ext.getBody().on('click', function(e){
@@ -437,7 +436,7 @@ namespace Ext {
 		public extern virtual void within();
 
 		/// <summary>
-		///     Returns true if the target of this event is a child of el.  If the target is el, it returns false.
+		///     Returns true if the target of this event is a child of el.  Unless the allowEl parameter is set, it will return false if if the target is el.
 		///     Example usage:<pre><code>
 		///     // Handle click on any child of an element
 		///     Ext.getBody().on('click', function(e){
@@ -458,7 +457,7 @@ namespace Ext {
 		public extern virtual void within(object el);
 
 		/// <summary>
-		///     Returns true if the target of this event is a child of el.  If the target is el, it returns false.
+		///     Returns true if the target of this event is a child of el.  Unless the allowEl parameter is set, it will return false if if the target is el.
 		///     Example usage:<pre><code>
 		///     // Handle click on any child of an element
 		///     Ext.getBody().on('click', function(e){
@@ -478,6 +477,29 @@ namespace Ext {
 		/// <param name="related">(optional) true to test if the related target is within el instead of the target</param>
 		/// <returns>Boolean</returns>
 		public extern virtual void within(object el, bool related);
+
+		/// <summary>
+		///     Returns true if the target of this event is a child of el.  Unless the allowEl parameter is set, it will return false if if the target is el.
+		///     Example usage:<pre><code>
+		///     // Handle click on any child of an element
+		///     Ext.getBody().on('click', function(e){
+		///     if(e.within('some-el')){
+		///     alert('Clicked on a child of some-el!');
+		///     }
+		///     });
+		///     // Handle click directly on an element, ignoring clicks on child nodes
+		///     Ext.getBody().on('click', function(e,t){
+		///     if((t.id == 'some-el') && !e.within(t, true)){
+		///     alert('Clicked directly on some-el!');
+		///     }
+		///     });
+		///     </code></pre>
+		/// </summary>
+		/// <param name="el">The id, DOM element or Ext.Element to check</param>
+		/// <param name="related">(optional) true to test if the related target is within el instead of the target</param>
+		/// <param name="allowEl">{optional} true to also check if the passed element is the target or related target</param>
+		/// <returns>Boolean</returns>
+		public extern virtual void within(object el, bool related, bool allowEl);
 
 
 

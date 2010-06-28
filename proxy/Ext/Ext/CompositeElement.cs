@@ -24,7 +24,7 @@ namespace Ext {
 	///     */
 	///     Ext.CompositeElement = function(els){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\CompositeElement.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\core\CompositeElement.js</jssource>
 	[JsObject]
 	public class CompositeElement  {
 

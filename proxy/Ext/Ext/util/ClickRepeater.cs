@@ -23,7 +23,7 @@ namespace Ext.util {
 	///     2007-02-02 jvs Renamed to ClickRepeater
 	///     2007-02-03 jvs Modifications for FF Mac and Safari
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\ClickRepeater.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\util\ClickRepeater.js</jssource>
 	public class ClickRepeater : Ext.util.Observable {
 
 		/// <summary></summary>
@@ -49,6 +49,23 @@ namespace Ext.util {
 		/// <summary>The reference to the class that this class inherits from</summary>
 		public extern static Ext.util.Observable superclass { get; set; }
 
+
+		/// <summary>Enables the repeater and allows events to fire.</summary>
+		/// <returns></returns>
+		public extern virtual void enable();
+
+		/// <summary>Disables the repeater and stops events from firing.</summary>
+		/// <returns></returns>
+		public extern virtual void disable();
+
+		/// <summary>Convenience function for setting disabled/enabled by boolean.</summary>
+		/// <returns></returns>
+		public extern virtual void setDisabled();
+
+		/// <summary>Convenience function for setting disabled/enabled by boolean.</summary>
+		/// <param name="disabled"></param>
+		/// <returns></returns>
+		public extern virtual void setDisabled(bool disabled);
 
 
 
@@ -77,7 +94,7 @@ namespace Ext.util {
 		/// <summary> True to stop the default click event</summary>
 		public extern bool stopDefault { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

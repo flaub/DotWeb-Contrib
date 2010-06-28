@@ -38,7 +38,7 @@ namespace Ext.tree {
 	///     This would pass an HTTP parameter called "category" to the server containing
 	///     the value of the Node's "category" attribute.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tree\TreeLoader.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\tree\TreeLoader.js</jssource>
 	public class TreeLoader : Ext.util.Observable {
 
 		/// <summary>Creates a new Treeloader.</summary>
@@ -122,9 +122,56 @@ namespace Ext.tree {
 		/// <returns></returns>
 		public extern virtual void load(Ext.tree.TreeNode node, Delegate callback);
 
-		/// <summary>Override this function for custom TreeNode node implementation</summary>
+		/// <summary>
+		///     <p>Override this function for custom TreeNode node implementation, or to
+		///     modify the attributes at creation time.</p>
+		///     Example:<code><pre>
+		///     new Ext.tree.TreePanel({
+		///     ...
+		///     loader: new Ext.tree.TreeLoader({
+		///     url: 'dataUrl',
+		///     createNode: function(attr) {
+		///     //          Allow consolidation consignments to have
+		///     //          consignments dropped into them.
+		///     if (attr.isConsolidation) {
+		///     attr.iconCls = 'x-consol',
+		///     attr.allowDrop = true;
+		///     }
+		///     return Ext.tree.TreeLoader.prototype.createNode.call(this, attr);
+		///     }
+		///     }),
+		///     ...
+		///     });
+		///     </pre></code>
+		/// </summary>
 		/// <returns></returns>
 		public extern virtual void createNode();
+
+		/// <summary>
+		///     <p>Override this function for custom TreeNode node implementation, or to
+		///     modify the attributes at creation time.</p>
+		///     Example:<code><pre>
+		///     new Ext.tree.TreePanel({
+		///     ...
+		///     loader: new Ext.tree.TreeLoader({
+		///     url: 'dataUrl',
+		///     createNode: function(attr) {
+		///     //          Allow consolidation consignments to have
+		///     //          consignments dropped into them.
+		///     if (attr.isConsolidation) {
+		///     attr.iconCls = 'x-consol',
+		///     attr.allowDrop = true;
+		///     }
+		///     return Ext.tree.TreeLoader.prototype.createNode.call(this, attr);
+		///     }
+		///     }),
+		///     ...
+		///     });
+		///     </pre></code>
+		/// </summary>
+		/// <param name="attr">{Object} The attributes from which to create the new node.</param>
+		/// <returns></returns>
+		public extern virtual void createNode(object attr);
 
 
 
@@ -156,7 +203,7 @@ namespace Ext.tree {
 		/// <summary> (optional) Default to true. Remove previously existing child nodes before loading.</summary>
 		public extern bool clearOnLoad { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

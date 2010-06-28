@@ -24,17 +24,21 @@ namespace Ext.data {
 	///     This would consume a JSON object of the form:
 	///     <pre><code>
 	///     {
-	///     'results': 2,
-	///     'rows': [
-	///     { 'id': 1, 'firstname': 'Bill', occupation: 'Gardener' },         // a row object
-	///     { 'id': 2, 'firstname': 'Ben' , occupation: 'Horticulturalist' }  // another row object
+	///     results: 2,
+	///     rows: [
+	///     { id: 1, firstname: 'Bill', occupation: 'Gardener' },         // a row object
+	///     { id: 2, firstname: 'Ben' , occupation: 'Horticulturalist' }  // another row object
 	///     ]
 	///     }
 	///     </code></pre>
 	///     <p>It is possible to change a JsonReader's metadata at any time by including a
 	///     <b><tt>metaData</tt></b> property in the data object. If this is detected in the
-	///     object, a {@link Ext.data.Store Store} object using this Reader will fire its
-	///     {@link Ext.data.Store#metachange metachange} event.</p>
+	///     object, a {@link Ext.data.Store Store} object using this Reader will reconfigure
+	///     itself to use the newly provided field definition and fire its
+	///     {@link Ext.data.Store#metachange metachange} event. In
+	///     undergoing this change, the Store sets its {@link Ext.data.Store#sortInfo sortInfo} property
+	///     from the <tt>sortInfo</tt> property in the new metadata. Note that reconfiguring a Store
+	///     potentially invalidates objects which may refer to Fields or Records which no longer exist.</p>
 	///     <p>The <b><tt>metaData</tt></b> property may contain any of the configuration
 	///     options for this class. Additionally, it may contain a <b><tt>fields</tt></b>
 	///     property which the JsonReader will use as an argument to {@link Ext.data.Record#create}
@@ -52,17 +56,20 @@ namespace Ext.data {
 	///     <p>The first data packet from the server would configure the reader by
 	///     containing a metaData property as well as the data:</p><pre><code>
 	///     {
-	///     'metaData': {
+	///     metaData: {
 	///     totalProperty: 'results',
 	///     root: 'rows',
 	///     id: 'id',
 	///     fields: [
 	///     {name: 'name'},
-	///     {name: 'occupation'} ]
+	///     {name: 'occupation'}
+	///     ]
 	///     },
-	///     'results': 2, 'rows': [
+	///     results: 2,
+	///     rows: [
 	///     { 'id': 1, 'name': 'Bill', occupation: 'Gardener' },
-	///     { 'id': 2, 'name': 'Ben', occupation: 'Horticulturalist' } ]
+	///     { 'id': 2, 'name': 'Ben', occupation: 'Horticulturalist' }
+	///     ]
 	///     }
 	///     </code></pre>
 	///     @cfg {String} totalProperty Name of the property from which to retrieve the total number of records
@@ -72,7 +79,7 @@ namespace Ext.data {
 	///     @cfg {String} root name of the property which contains the Array of row objects.
 	///     @cfg {String} id Name of the property within a row object that contains a record identifier value.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\JsonReader.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\data\JsonReader.js</jssource>
 	public class JsonReader : Ext.data.DataReader {
 
 		/// <summary>

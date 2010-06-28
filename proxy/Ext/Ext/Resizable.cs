@@ -66,7 +66,7 @@ namespace Ext {
 	///     @cfg {Number} minY The minimum allowed page Y for the element (only used for north resizing, defaults to 0)
 	///     @cfg {Boolean} draggable Convenience to initialize drag drop (defaults to false)
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Resizable.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\Resizable.js</jssource>
 	public class Resizable : Ext.util.Observable {
 
 		/// <summary>Create a new resizable component</summary>
@@ -273,7 +273,7 @@ namespace Ext {
 		/// <summary> Constrain the resize to a particular region</summary>
 		public extern object resizeRegion { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

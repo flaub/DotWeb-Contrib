@@ -10,7 +10,7 @@ namespace Ext.layout {
 	///     */
 	///     Ext.layout.AbsoluteLayout = Ext.extend(Ext.layout.AnchorLayout, {
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\layout\AbsoluteLayout.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\layout\AbsoluteLayout.js</jssource>
 	public class AbsoluteLayout : Ext.layout.AnchorLayout {
 
 		/// <summary>Auto-generated default constructor</summary>
@@ -27,6 +27,12 @@ namespace Ext.layout {
 		/// <summary>The reference to the class that this class inherits from</summary>
 		public extern static Ext.layout.AnchorLayout superclass { get; set; }
 
+		/// <summary>
+		///     An optional extra CSS class that will be added to the container (defaults to 'x-abs-layout-item').  This can be useful for
+		///     adding customized styles to the container or any of its children using standard CSS rules.
+		/// </summary>
+		public extern string extraCls { get; set; }
+
 
 
 
@@ -34,7 +40,7 @@ namespace Ext.layout {
 
 	[JsAnonymous]
 	public class AbsoluteLayoutConfig : System.DotWeb.JsDynamic {
-		/// <summary>  An optional extra CSS class that will be added to the container (defaults to '').  This can be useful for adding customized styles to the container or any of its children using standard CSS rules.</summary>
+		/// <summary>  An optional extra CSS class that will be added to the container (defaults to 'x-abs-layout-item').  This can be useful for adding customized styles to the container or any of its children using standard CSS rules.</summary>
 		public extern string extraCls { get; set; }
 
 		/// <summary>  True to hide each contained item on render (defaults to false).</summary>

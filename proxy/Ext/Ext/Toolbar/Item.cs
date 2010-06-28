@@ -7,7 +7,7 @@ namespace Ext.Toolbar {
 	///     /**
 	///     The base class that other classes should extend in order to get some basic common toolbar item functionality.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Toolbar.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\Toolbar.js</jssource>
 	[JsObject]
 	public class Item  {
 

@@ -8,7 +8,7 @@ namespace Ext.data {
 	///     Represents a tree data structure and bubbles all the events for its nodes. The nodes
 	///     in the tree have most standard DOM functionality.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\Tree.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\data\Tree.js</jssource>
 	public class Tree : Ext.util.Observable {
 
 		/// <summary></summary>
@@ -67,7 +67,7 @@ namespace Ext.data {
 		/// <summary>  The token used to separate paths in node ids (defaults to '/').</summary>
 		public extern string pathSeparator { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

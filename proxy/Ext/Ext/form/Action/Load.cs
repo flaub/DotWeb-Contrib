@@ -27,7 +27,7 @@ namespace Ext.form.Action {
 	///     */
 	///     Ext.form.Action.Load = function(form, options){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\Action.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\form\Action.js</jssource>
 	public class Load : Ext.form.ActionClass {
 
 		/// <summary>Auto-generated default constructor</summary>
@@ -60,10 +60,10 @@ namespace Ext.form.Action {
 		/// <summary> The HTTP method to use to access the requested URL. Defaults to the {@link Ext.form.BasicForm}'s method, or if that is not specified, the underlying DOM form's method.</summary>
 		public extern string method { get; set; }
 
-		/// <summary> Extra parameter values to pass. These are added to the Form's {@link Ext.form.BasicForm#baseParams} and passed to the specified URL along with the Form's input fields.</summary>
-		public extern object params_ { get; set; }
+		/// <summary> parameter values to pass. These are added to the Form's {@link Ext.form.BasicForm#baseParams} and passed to the specified URL along with the Form's input fields.</p> <p>Parameters are encoded as standard HTTP parameters using {@link Ext#urlEncode}.</p></summary>
+		public extern object paramsExtra { get; set; }
 
-		/// <summary> The number of milliseconds to wait for a server response before failing with the {@link #failureType} as {@link #CONNECT_FAILURE}.</summary>
+		/// <summary> The number of milliseconds to wait for a server response before failing with the {@link #failureType} as {@link #Action.CONNECT_FAILURE}.</summary>
 		public extern double timeout { get; set; }
 
 		/// <summary> The function to call when a valid success return packet is recieved. The function is passed the following parameters:<ul class="mdetail-params"> <li><b>form</b> : Ext.form.BasicForm<div class="sub-desc">The form that requested the action</div></li> <li><b>action</b> : Ext.form.Action<div class="sub-desc">The Action class. The {@link #result} property of this object may be examined to perform custom postprocessing.</div></li> </ul></summary>

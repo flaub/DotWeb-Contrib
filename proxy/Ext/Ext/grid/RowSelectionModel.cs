@@ -10,7 +10,7 @@ namespace Ext.grid {
 	///     as selections and returned by {@link #getSelected}, and {@link #getSelections} are
 	///     the {@link Ext.data.Record Record}s which provide the data for the selected rows.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\RowSelectionModel.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\grid\RowSelectionModel.js</jssource>
 	public class RowSelectionModel : Ext.grid.AbstractSelectionModel {
 
 		/// <summary></summary>
@@ -251,7 +251,7 @@ namespace Ext.grid {
 		/// <summary>  False to turn off moving the editor to the next cell when the enter key is pressed</summary>
 		public extern bool moveEditorOnEnter { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

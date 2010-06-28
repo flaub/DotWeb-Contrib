@@ -64,7 +64,7 @@ namespace Ext {
 	///     */
 	///     Ext.DomQuery = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\DomQuery.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\core\DomQuery.js</jssource>
 	[JsObject]
 	public class DomQuery  {
 
@@ -119,16 +119,25 @@ namespace Ext {
 		/// <returns>Function</returns>
 		public extern static void compile(string selector, string type);
 
-		/// <summary>Selects a group of elements.</summary>
+		/// <summary>
+		///     Selects a group of elements.
+		///     no matches, and empty Array is returned.
+		/// </summary>
 		/// <returns>Array</returns>
 		public extern static void select();
 
-		/// <summary>Selects a group of elements.</summary>
+		/// <summary>
+		///     Selects a group of elements.
+		///     no matches, and empty Array is returned.
+		/// </summary>
 		/// <param name="selector">The selector/xpath query (can be a comma separated list of selectors)</param>
 		/// <returns>Array</returns>
 		public extern static void select(string selector);
 
-		/// <summary>Selects a group of elements.</summary>
+		/// <summary>
+		///     Selects a group of elements.
+		///     no matches, and empty Array is returned.
+		/// </summary>
 		/// <param name="selector">The selector/xpath query (can be a comma separated list of selectors)</param>
 		/// <param name="root">(optional) The start of the query (defaults to document).</param>
 		/// <returns>Array</returns>
@@ -233,6 +242,7 @@ namespace Ext {
 		/// <summary>
 		///     Filters an array of elements to only include matches of a simple selector (e.g. div.some-class or span:first-child)
 		///     the selector instead of the ones that match
+		///     no matches, and empty Array is returned.
 		/// </summary>
 		/// <returns>Array</returns>
 		public extern static void filter();
@@ -240,6 +250,7 @@ namespace Ext {
 		/// <summary>
 		///     Filters an array of elements to only include matches of a simple selector (e.g. div.some-class or span:first-child)
 		///     the selector instead of the ones that match
+		///     no matches, and empty Array is returned.
 		/// </summary>
 		/// <param name="el">An array of elements to filter</param>
 		/// <returns>Array</returns>
@@ -248,6 +259,7 @@ namespace Ext {
 		/// <summary>
 		///     Filters an array of elements to only include matches of a simple selector (e.g. div.some-class or span:first-child)
 		///     the selector instead of the ones that match
+		///     no matches, and empty Array is returned.
 		/// </summary>
 		/// <param name="el">An array of elements to filter</param>
 		/// <param name="selector">The simple selector to test</param>
@@ -257,6 +269,7 @@ namespace Ext {
 		/// <summary>
 		///     Filters an array of elements to only include matches of a simple selector (e.g. div.some-class or span:first-child)
 		///     the selector instead of the ones that match
+		///     no matches, and empty Array is returned.
 		/// </summary>
 		/// <param name="el">An array of elements to filter</param>
 		/// <param name="selector">The simple selector to test</param>

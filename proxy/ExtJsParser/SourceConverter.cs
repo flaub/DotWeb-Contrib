@@ -11,7 +11,7 @@ namespace SourceConverter
 		public static bool ShowDoc = true;
 
 		// these paths are relative to .\bin\Debug\
-		private readonly string SourcePath = @"..\..\ext-2.2\source";
+		private readonly string SourcePath = @"..\..\ext-2.3";
 		private readonly string OutputPath = @"..\..\..\Ext\";
 		public static string CRLF = Environment.NewLine;
 		public static char[] CRLFA = Environment.NewLine.ToCharArray();

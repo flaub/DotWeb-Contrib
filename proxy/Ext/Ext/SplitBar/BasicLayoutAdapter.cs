@@ -10,7 +10,7 @@ namespace Ext.SplitBar {
 	///     */
 	///     Ext.SplitBar.BasicLayoutAdapter = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\SplitBar.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\SplitBar.js</jssource>
 	[JsObject]
 	public class BasicLayoutAdapter  {
 

@@ -10,7 +10,7 @@ namespace Ext.dd {
 	///     */
 	///     Ext.dd.Registry = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\dd\Registry.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\dd\Registry.js</jssource>
 	[JsObject]
 	public class Registry  {
 

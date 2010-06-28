@@ -5,8 +5,12 @@ using DotWeb.Client;
 namespace Ext {
 	/// <summary>
 	///     /**
-	///     Represents an Element in the DOM.<br><br>
-	///     Usage:<br>
+	///     <p>Encapsulates a DOM element, adding simple DOM manipulation facilities, normalizing for browser differences.</p>
+	///     <p>All instances of this class inherit the methods of {@link Ext.Fx} making visual effects easily available to all DOM elements.</p>
+	///     <p>Note that the events documented in this class are not Ext events, they encapsulate browser events. To
+	///     access the underlying browser event, see {@link Ext.EventObject#browserEvent}. Some older
+	///     browsers may not support the full range of events. Which events are supported is beyond the control of ExtJs.</p>
+	///     <p>Usage:</p>
 	///     <pre><code>
 	///     // by id
 	///     var el = Ext.get("my-div");
@@ -54,7 +58,7 @@ namespace Ext {
 	///     <b> Composite (Collections of) Elements</b><br />
 	///     For working with collections of Elements, see {@link Ext.CompositeElement}
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\Element.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\core\Element.js</jssource>
 	[JsObject]
 	public class Element  {
 
@@ -102,10 +106,16 @@ namespace Ext {
 		/// <summary>true to automatically adjust width and height settings for box-model issues (default to true)</summary>
 		public extern object autoBoxAdjust { get; set; }
 
-		/// <summary>Visibility mode constant - Use visibility to hide element</summary>
+		/// <summary>
+		///     Visibility mode constant for use with {@link #setVisibilityMode}. Use visibility to hide element
+		///     @member Ext.Element
+		/// </summary>
 		public extern static double VISIBILITY { get; set; }
 
-		/// <summary>Visibility mode constant - Use display to hide element</summary>
+		/// <summary>
+		///     Visibility mode constant for use with {@link #setVisibilityMode}. Use display to hide element
+		///     @member Ext.Element
+		/// </summary>
 		public extern static double DISPLAY { get; set; }
 
 
@@ -120,7 +130,7 @@ namespace Ext {
 		///     Sets the element's visibility mode. When setVisible() is called it
 		///     will use this to determine whether to set the visibility or the display property.
 		/// </summary>
-		/// <param name="visMode">Element.VISIBILITY or Element.DISPLAY</param>
+		/// <param name="visMode">Ext.Element.VISIBILITY or Ext.Element.DISPLAY</param>
 		/// <returns>Ext.Element</returns>
 		public extern virtual void setVisibilityMode(object visMode);
 
@@ -133,55 +143,37 @@ namespace Ext {
 		/// <returns>Ext.Element</returns>
 		public extern virtual void enableDisplayMode(string display);
 
-		/// <summary>
-		///     Looks at this node and then at parent nodes for a match of the passed simple selector (e.g. div.some-class or span:first-child)
-		///     search as a number or element (defaults to 10 || document.body)
-		/// </summary>
+		/// <summary>Looks at this node and then at parent nodes for a match of the passed simple selector (e.g. div.some-class or span:first-child)</summary>
 		/// <returns>HTMLElement</returns>
 		public extern virtual void findParent();
 
-		/// <summary>
-		///     Looks at this node and then at parent nodes for a match of the passed simple selector (e.g. div.some-class or span:first-child)
-		///     search as a number or element (defaults to 10 || document.body)
-		/// </summary>
+		/// <summary>Looks at this node and then at parent nodes for a match of the passed simple selector (e.g. div.some-class or span:first-child)</summary>
 		/// <param name="selector">The simple selector to test</param>
 		/// <returns>HTMLElement</returns>
 		public extern virtual void findParent(string selector);
 
-		/// <summary>
-		///     Looks at this node and then at parent nodes for a match of the passed simple selector (e.g. div.some-class or span:first-child)
-		///     search as a number or element (defaults to 10 || document.body)
-		/// </summary>
+		/// <summary>Looks at this node and then at parent nodes for a match of the passed simple selector (e.g. div.some-class or span:first-child)</summary>
 		/// <param name="selector">The simple selector to test</param>
-		/// <param name="maxDepth">(optional) The max depth to</param>
+		/// <param name="maxDepth">(optional) The max depth to search as a number or element (defaults to 50 || document.body)</param>
 		/// <returns>HTMLElement</returns>
 		public extern virtual void findParent(string selector, double maxDepth);
 
-		/// <summary>
-		///     Looks at this node and then at parent nodes for a match of the passed simple selector (e.g. div.some-class or span:first-child)
-		///     search as a number or element (defaults to 10 || document.body)
-		/// </summary>
+		/// <summary>Looks at this node and then at parent nodes for a match of the passed simple selector (e.g. div.some-class or span:first-child)</summary>
 		/// <param name="selector">The simple selector to test</param>
-		/// <param name="maxDepth">(optional) The max depth to</param>
+		/// <param name="maxDepth">(optional) The max depth to search as a number or element (defaults to 50 || document.body)</param>
 		/// <param name="returnEl">(optional) True to return a Ext.Element object instead of DOM node</param>
 		/// <returns>HTMLElement</returns>
 		public extern virtual void findParent(string selector, double maxDepth, bool returnEl);
 
-		/// <summary>
-		///     Looks at this node and then at parent nodes for a match of the passed simple selector (e.g. div.some-class or span:first-child)
-		///     search as a number or element (defaults to 10 || document.body)
-		/// </summary>
+		/// <summary>Looks at this node and then at parent nodes for a match of the passed simple selector (e.g. div.some-class or span:first-child)</summary>
 		/// <param name="selector">The simple selector to test</param>
-		/// <param name="maxDepth">(optional) The max depth to</param>
+		/// <param name="maxDepth">(optional) The max depth to search as a number or element (defaults to 50 || document.body)</param>
 		/// <returns>HTMLElement</returns>
 		public extern virtual void findParent(string selector, object maxDepth);
 
-		/// <summary>
-		///     Looks at this node and then at parent nodes for a match of the passed simple selector (e.g. div.some-class or span:first-child)
-		///     search as a number or element (defaults to 10 || document.body)
-		/// </summary>
+		/// <summary>Looks at this node and then at parent nodes for a match of the passed simple selector (e.g. div.some-class or span:first-child)</summary>
 		/// <param name="selector">The simple selector to test</param>
-		/// <param name="maxDepth">(optional) The max depth to</param>
+		/// <param name="maxDepth">(optional) The max depth to search as a number or element (defaults to 50 || document.body)</param>
 		/// <param name="returnEl">(optional) True to return a Ext.Element object instead of DOM node</param>
 		/// <returns>HTMLElement</returns>
 		public extern virtual void findParent(string selector, object maxDepth, bool returnEl);
@@ -1064,124 +1056,265 @@ namespace Ext {
 		/// <returns>String/Number</returns>
 		public extern virtual void getValue(bool asNumber);
 
-		/// <summary>Set the width of the element</summary>
+		/// <summary>
+		///     Set the width of this Element.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     </ul></div>
+		/// </summary>
 		/// <returns>Ext.Element</returns>
 		public extern virtual void setWidth();
 
-		/// <summary>Set the width of the element</summary>
-		/// <param name="width">The new width</param>
+		/// <summary>
+		///     Set the width of this Element.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     </ul></div>
+		/// </summary>
+		/// <param name="width">The new width. This may be one of<div class="mdetail-params"><ul></param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setWidth(double width);
+		public extern virtual void setWidth(object width);
 
-		/// <summary>Set the width of the element</summary>
-		/// <param name="width">The new width</param>
+		/// <summary>
+		///     Set the width of this Element.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     </ul></div>
+		/// </summary>
+		/// <param name="width">The new width. This may be one of<div class="mdetail-params"><ul></param>
 		/// <param name="animate">(optional) true for the default animation or a standard Element animation config object</param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setWidth(double width, bool animate);
+		public extern virtual void setWidth(object width, bool animate);
 
-		/// <summary>Set the width of the element</summary>
-		/// <param name="width">The new width</param>
+		/// <summary>
+		///     Set the width of this Element.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     </ul></div>
+		/// </summary>
+		/// <param name="width">The new width. This may be one of<div class="mdetail-params"><ul></param>
 		/// <param name="animate">(optional) true for the default animation or a standard Element animation config object</param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setWidth(double width, object animate);
+		public extern virtual void setWidth(object width, object animate);
 
-		/// <summary>Set the height of the element</summary>
+		/// <summary>
+		///     Set the height of this Element.
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels.)</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
 		/// <returns>Ext.Element</returns>
 		public extern virtual void setHeight();
 
-		/// <summary>Set the height of the element</summary>
-		/// <param name="height">The new height</param>
+		/// <summary>
+		///     Set the height of this Element.
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels.)</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
+		/// <param name="height">The new height. This may be one of:<div class="mdetail-params"><ul></param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setHeight(double height);
+		public extern virtual void setHeight(object height);
 
-		/// <summary>Set the height of the element</summary>
-		/// <param name="height">The new height</param>
+		/// <summary>
+		///     Set the height of this Element.
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels.)</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
+		/// <param name="height">The new height. This may be one of:<div class="mdetail-params"><ul></param>
 		/// <param name="animate">(optional) true for the default animation or a standard Element animation config object</param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setHeight(double height, bool animate);
+		public extern virtual void setHeight(object height, bool animate);
 
-		/// <summary>Set the height of the element</summary>
-		/// <param name="height">The new height</param>
+		/// <summary>
+		///     Set the height of this Element.
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels.)</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
+		/// <param name="height">The new height. This may be one of:<div class="mdetail-params"><ul></param>
 		/// <param name="animate">(optional) true for the default animation or a standard Element animation config object</param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setHeight(double height, object animate);
+		public extern virtual void setHeight(object height, object animate);
 
-		/// <summary>Set the size of the element. If animation is true, both width an height will be animated concurrently.</summary>
+		/// <summary>
+		///     Set the size of this Element. If animation is true, both width an height will be animated concurrently.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     <li>A size object in the format <code>{width: widthValue, height: heightValue}</code>.</li>
+		///     </ul></div>
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
 		/// <returns>Ext.Element</returns>
 		public extern virtual void setSize();
 
-		/// <summary>Set the size of the element. If animation is true, both width an height will be animated concurrently.</summary>
-		/// <param name="width">The new width</param>
+		/// <summary>
+		///     Set the size of this Element. If animation is true, both width an height will be animated concurrently.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     <li>A size object in the format <code>{width: widthValue, height: heightValue}</code>.</li>
+		///     </ul></div>
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
+		/// <param name="width">The new width. This may be one of:<div class="mdetail-params"><ul></param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setSize(double width);
+		public extern virtual void setSize(object width);
 
-		/// <summary>Set the size of the element. If animation is true, both width an height will be animated concurrently.</summary>
-		/// <param name="width">The new width</param>
-		/// <param name="height">The new height</param>
+		/// <summary>
+		///     Set the size of this Element. If animation is true, both width an height will be animated concurrently.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     <li>A size object in the format <code>{width: widthValue, height: heightValue}</code>.</li>
+		///     </ul></div>
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
+		/// <param name="width">The new width. This may be one of:<div class="mdetail-params"><ul></param>
+		/// <param name="height">The new height. This may be one of:<div class="mdetail-params"><ul></param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setSize(double width, double height);
+		public extern virtual void setSize(object width, object height);
 
-		/// <summary>Set the size of the element. If animation is true, both width an height will be animated concurrently.</summary>
-		/// <param name="width">The new width</param>
-		/// <param name="height">The new height</param>
+		/// <summary>
+		///     Set the size of this Element. If animation is true, both width an height will be animated concurrently.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     <li>A size object in the format <code>{width: widthValue, height: heightValue}</code>.</li>
+		///     </ul></div>
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
+		/// <param name="width">The new width. This may be one of:<div class="mdetail-params"><ul></param>
+		/// <param name="height">The new height. This may be one of:<div class="mdetail-params"><ul></param>
 		/// <param name="animate">(optional) true for the default animation or a standard Element animation config object</param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setSize(double width, double height, bool animate);
+		public extern virtual void setSize(object width, object height, bool animate);
 
-		/// <summary>Set the size of the element. If animation is true, both width an height will be animated concurrently.</summary>
-		/// <param name="width">The new width</param>
-		/// <param name="height">The new height</param>
+		/// <summary>
+		///     Set the size of this Element. If animation is true, both width an height will be animated concurrently.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     <li>A size object in the format <code>{width: widthValue, height: heightValue}</code>.</li>
+		///     </ul></div>
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels).</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
+		/// <param name="width">The new width. This may be one of:<div class="mdetail-params"><ul></param>
+		/// <param name="height">The new height. This may be one of:<div class="mdetail-params"><ul></param>
 		/// <param name="animate">(optional) true for the default animation or a standard Element animation config object</param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setSize(double width, double height, object animate);
+		public extern virtual void setSize(object width, object height, object animate);
 
-		/// <summary>Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.</summary>
+		/// <summary>
+		///     Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     </ul></div>
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
 		/// <returns>Ext.Element</returns>
 		public extern virtual void setBounds();
 
-		/// <summary>Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.</summary>
+		/// <summary>
+		///     Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     </ul></div>
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
 		/// <param name="x">X value for new position (coordinates are page-based)</param>
 		/// <returns>Ext.Element</returns>
 		public extern virtual void setBounds(double x);
 
-		/// <summary>Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.</summary>
+		/// <summary>
+		///     Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     </ul></div>
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
 		/// <param name="x">X value for new position (coordinates are page-based)</param>
 		/// <param name="y">Y value for new position (coordinates are page-based)</param>
 		/// <returns>Ext.Element</returns>
 		public extern virtual void setBounds(double x, double y);
 
-		/// <summary>Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.</summary>
+		/// <summary>
+		///     Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     </ul></div>
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
 		/// <param name="x">X value for new position (coordinates are page-based)</param>
 		/// <param name="y">Y value for new position (coordinates are page-based)</param>
-		/// <param name="width">The new width</param>
+		/// <param name="width">The new width. This may be one of:<div class="mdetail-params"><ul></param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setBounds(double x, double y, double width);
+		public extern virtual void setBounds(double x, double y, object width);
 
-		/// <summary>Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.</summary>
+		/// <summary>
+		///     Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     </ul></div>
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
 		/// <param name="x">X value for new position (coordinates are page-based)</param>
 		/// <param name="y">Y value for new position (coordinates are page-based)</param>
-		/// <param name="width">The new width</param>
-		/// <param name="height">The new height</param>
+		/// <param name="width">The new width. This may be one of:<div class="mdetail-params"><ul></param>
+		/// <param name="height">The new height. This may be one of:<div class="mdetail-params"><ul></param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setBounds(double x, double y, double width, double height);
+		public extern virtual void setBounds(double x, double y, object width, object height);
 
-		/// <summary>Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.</summary>
+		/// <summary>
+		///     Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     </ul></div>
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
 		/// <param name="x">X value for new position (coordinates are page-based)</param>
 		/// <param name="y">Y value for new position (coordinates are page-based)</param>
-		/// <param name="width">The new width</param>
-		/// <param name="height">The new height</param>
+		/// <param name="width">The new width. This may be one of:<div class="mdetail-params"><ul></param>
+		/// <param name="height">The new height. This may be one of:<div class="mdetail-params"><ul></param>
 		/// <param name="animate">(optional) true for the default animation or a standard Element animation config object</param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setBounds(double x, double y, double width, double height, bool animate);
+		public extern virtual void setBounds(double x, double y, object width, object height, bool animate);
 
-		/// <summary>Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.</summary>
+		/// <summary>
+		///     Sets the element's position and size in one shot. If animation is true then width, height, x and y will be animated concurrently.
+		///     <li>A Number specifying the new width in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS width style. Animation may <b>not</b> be used.
+		///     </ul></div>
+		///     <li>A Number specifying the new height in this Element's {@link #defaultUnit}s (by default, pixels)</li>
+		///     <li>A String used to set the CSS height style. Animation may <b>not</b> be used.</li>
+		///     </ul></div>
+		/// </summary>
 		/// <param name="x">X value for new position (coordinates are page-based)</param>
 		/// <param name="y">Y value for new position (coordinates are page-based)</param>
-		/// <param name="width">The new width</param>
-		/// <param name="height">The new height</param>
+		/// <param name="width">The new width. This may be one of:<div class="mdetail-params"><ul></param>
+		/// <param name="height">The new height. This may be one of:<div class="mdetail-params"><ul></param>
 		/// <param name="animate">(optional) true for the default animation or a standard Element animation config object</param>
 		/// <returns>Ext.Element</returns>
-		public extern virtual void setBounds(double x, double y, double width, double height, object animate);
+		public extern virtual void setBounds(double x, double y, object width, object height, object animate);
 
 		/// <summary>Sets the element's position and size the specified region. If animation is true then width, height, x and y will be animated concurrently.</summary>
 		/// <returns>Ext.Element</returns>
@@ -1207,24 +1340,25 @@ namespace Ext {
 		/// <summary>
 		///     Appends an event handler to this element.  The shorthand version {@link #on} is equivalent.
 		///     the following parameters:<ul>
-		///     <li>evt : EventObject<div class="sub-desc">The {@link Ext.EventObject EventObject} describing the event.</div></li>
-		///     <li>t : Element<div class="sub-desc">The {@link Ext.Element Element} which was the target of the event.
+		///     <li><b>evt</b> : EventObject<div class="sub-desc">The {@link Ext.EventObject EventObject} describing the event.</div></li>
+		///     <li><b>el</b> : Element<div class="sub-desc">The {@link Ext.Element Element} which was the target of the event.
 		///     Note that this may be filtered by using the <tt>delegate</tt> option.</div></li>
-		///     <li>o : Object<div class="sub-desc">The options object from the addListener call.</div></li>
+		///     <li><b>o</b> : Object<div class="sub-desc">The options object from the addListener call.</div></li>
 		///     </ul>
-		///     to this Element.
+		///     <b>If omitted, defaults to this Element.</b>.
 		///     This may contain any of the following properties:<ul>
-		///     <li>scope {Object} : The scope in which to execute the handler function. The handler function's "this" context.</li>
-		///     <li>delegate {String} : A simple selector to filter the target or look for a descendant of the target</li>
-		///     <li>stopEvent {Boolean} : True to stop the event. That is stop propagation, and prevent the default action.</li>
-		///     <li>preventDefault {Boolean} : True to prevent the default action</li>
-		///     <li>stopPropagation {Boolean} : True to prevent event propagation</li>
-		///     <li>normalized {Boolean} : False to pass a browser event to the handler function instead of an Ext.EventObject</li>
-		///     <li>delay {Number} : The number of milliseconds to delay the invocation of the handler after te event fires.</li>
-		///     <li>single {Boolean} : True to add a handler to handle just the next firing of the event, and then remove itself.</li>
-		///     <li>buffer {Number} : Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
+		///     <li><b>scope</b> Object : <div class="sub-desc">The scope (<code><b>this</b></code> reference) in which the handler function is executed.
+		///     <b>If omitted, defaults to this Element.</b></div></li>
+		///     <li><b>delegate</b> String: <div class="sub-desc">A simple selector to filter the target or look for a descendant of the target</div></li>
+		///     <li><b>stopEvent</b> Boolean: <div class="sub-desc">True to stop the event. That is stop propagation, and prevent the default action.</div></li>
+		///     <li><b>preventDefault</b> Boolean: <div class="sub-desc">True to prevent the default action</div></li>
+		///     <li><b>stopPropagation</b> Boolean: <div class="sub-desc">True to prevent event propagation</div></li>
+		///     <li><b>normalized</b> Boolean: <div class="sub-desc">False to pass a browser event to the handler function instead of an Ext.EventObject</div></li>
+		///     <li><b>delay</b> Number: <div class="sub-desc">The number of milliseconds to delay the invocation of the handler after te event fires.</div></li>
+		///     <li><b>single</b> Boolean: <div class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</div></li>
+		///     <li><b>buffer</b> Number: <div class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
 		///     by the specified number of milliseconds. If the event fires again within that time, the original
-		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</li>
+		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</div></li>
 		///     </ul><br>
 		///     <p>
 		///     <b>Combining Options</b><br>
@@ -1232,7 +1366,7 @@ namespace Ext {
 		///     addListener.  The two are equivalent.  Using the options argument, it is possible to combine different
 		///     types of listeners:<br>
 		///     <br>
-		///     A normalized, delayed, one-time listener that auto stops the event and adds a custom argument (forumId) to the
+		///     A delayed, one-time listener that auto stops the event and adds a custom argument (forumId) to the
 		///     options object. The options object is available as the third parameter in the handler function.<div style="margin: 5px 20px 20px;">
 		///     Code:<pre><code>
 		///     el.on('click', this.onClick, this, {
@@ -1278,24 +1412,25 @@ namespace Ext {
 		/// <summary>
 		///     Appends an event handler to this element.  The shorthand version {@link #on} is equivalent.
 		///     the following parameters:<ul>
-		///     <li>evt : EventObject<div class="sub-desc">The {@link Ext.EventObject EventObject} describing the event.</div></li>
-		///     <li>t : Element<div class="sub-desc">The {@link Ext.Element Element} which was the target of the event.
+		///     <li><b>evt</b> : EventObject<div class="sub-desc">The {@link Ext.EventObject EventObject} describing the event.</div></li>
+		///     <li><b>el</b> : Element<div class="sub-desc">The {@link Ext.Element Element} which was the target of the event.
 		///     Note that this may be filtered by using the <tt>delegate</tt> option.</div></li>
-		///     <li>o : Object<div class="sub-desc">The options object from the addListener call.</div></li>
+		///     <li><b>o</b> : Object<div class="sub-desc">The options object from the addListener call.</div></li>
 		///     </ul>
-		///     to this Element.
+		///     <b>If omitted, defaults to this Element.</b>.
 		///     This may contain any of the following properties:<ul>
-		///     <li>scope {Object} : The scope in which to execute the handler function. The handler function's "this" context.</li>
-		///     <li>delegate {String} : A simple selector to filter the target or look for a descendant of the target</li>
-		///     <li>stopEvent {Boolean} : True to stop the event. That is stop propagation, and prevent the default action.</li>
-		///     <li>preventDefault {Boolean} : True to prevent the default action</li>
-		///     <li>stopPropagation {Boolean} : True to prevent event propagation</li>
-		///     <li>normalized {Boolean} : False to pass a browser event to the handler function instead of an Ext.EventObject</li>
-		///     <li>delay {Number} : The number of milliseconds to delay the invocation of the handler after te event fires.</li>
-		///     <li>single {Boolean} : True to add a handler to handle just the next firing of the event, and then remove itself.</li>
-		///     <li>buffer {Number} : Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
+		///     <li><b>scope</b> Object : <div class="sub-desc">The scope (<code><b>this</b></code> reference) in which the handler function is executed.
+		///     <b>If omitted, defaults to this Element.</b></div></li>
+		///     <li><b>delegate</b> String: <div class="sub-desc">A simple selector to filter the target or look for a descendant of the target</div></li>
+		///     <li><b>stopEvent</b> Boolean: <div class="sub-desc">True to stop the event. That is stop propagation, and prevent the default action.</div></li>
+		///     <li><b>preventDefault</b> Boolean: <div class="sub-desc">True to prevent the default action</div></li>
+		///     <li><b>stopPropagation</b> Boolean: <div class="sub-desc">True to prevent event propagation</div></li>
+		///     <li><b>normalized</b> Boolean: <div class="sub-desc">False to pass a browser event to the handler function instead of an Ext.EventObject</div></li>
+		///     <li><b>delay</b> Number: <div class="sub-desc">The number of milliseconds to delay the invocation of the handler after te event fires.</div></li>
+		///     <li><b>single</b> Boolean: <div class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</div></li>
+		///     <li><b>buffer</b> Number: <div class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
 		///     by the specified number of milliseconds. If the event fires again within that time, the original
-		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</li>
+		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</div></li>
 		///     </ul><br>
 		///     <p>
 		///     <b>Combining Options</b><br>
@@ -1303,7 +1438,7 @@ namespace Ext {
 		///     addListener.  The two are equivalent.  Using the options argument, it is possible to combine different
 		///     types of listeners:<br>
 		///     <br>
-		///     A normalized, delayed, one-time listener that auto stops the event and adds a custom argument (forumId) to the
+		///     A delayed, one-time listener that auto stops the event and adds a custom argument (forumId) to the
 		///     options object. The options object is available as the third parameter in the handler function.<div style="margin: 5px 20px 20px;">
 		///     Code:<pre><code>
 		///     el.on('click', this.onClick, this, {
@@ -1350,24 +1485,25 @@ namespace Ext {
 		/// <summary>
 		///     Appends an event handler to this element.  The shorthand version {@link #on} is equivalent.
 		///     the following parameters:<ul>
-		///     <li>evt : EventObject<div class="sub-desc">The {@link Ext.EventObject EventObject} describing the event.</div></li>
-		///     <li>t : Element<div class="sub-desc">The {@link Ext.Element Element} which was the target of the event.
+		///     <li><b>evt</b> : EventObject<div class="sub-desc">The {@link Ext.EventObject EventObject} describing the event.</div></li>
+		///     <li><b>el</b> : Element<div class="sub-desc">The {@link Ext.Element Element} which was the target of the event.
 		///     Note that this may be filtered by using the <tt>delegate</tt> option.</div></li>
-		///     <li>o : Object<div class="sub-desc">The options object from the addListener call.</div></li>
+		///     <li><b>o</b> : Object<div class="sub-desc">The options object from the addListener call.</div></li>
 		///     </ul>
-		///     to this Element.
+		///     <b>If omitted, defaults to this Element.</b>.
 		///     This may contain any of the following properties:<ul>
-		///     <li>scope {Object} : The scope in which to execute the handler function. The handler function's "this" context.</li>
-		///     <li>delegate {String} : A simple selector to filter the target or look for a descendant of the target</li>
-		///     <li>stopEvent {Boolean} : True to stop the event. That is stop propagation, and prevent the default action.</li>
-		///     <li>preventDefault {Boolean} : True to prevent the default action</li>
-		///     <li>stopPropagation {Boolean} : True to prevent event propagation</li>
-		///     <li>normalized {Boolean} : False to pass a browser event to the handler function instead of an Ext.EventObject</li>
-		///     <li>delay {Number} : The number of milliseconds to delay the invocation of the handler after te event fires.</li>
-		///     <li>single {Boolean} : True to add a handler to handle just the next firing of the event, and then remove itself.</li>
-		///     <li>buffer {Number} : Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
+		///     <li><b>scope</b> Object : <div class="sub-desc">The scope (<code><b>this</b></code> reference) in which the handler function is executed.
+		///     <b>If omitted, defaults to this Element.</b></div></li>
+		///     <li><b>delegate</b> String: <div class="sub-desc">A simple selector to filter the target or look for a descendant of the target</div></li>
+		///     <li><b>stopEvent</b> Boolean: <div class="sub-desc">True to stop the event. That is stop propagation, and prevent the default action.</div></li>
+		///     <li><b>preventDefault</b> Boolean: <div class="sub-desc">True to prevent the default action</div></li>
+		///     <li><b>stopPropagation</b> Boolean: <div class="sub-desc">True to prevent event propagation</div></li>
+		///     <li><b>normalized</b> Boolean: <div class="sub-desc">False to pass a browser event to the handler function instead of an Ext.EventObject</div></li>
+		///     <li><b>delay</b> Number: <div class="sub-desc">The number of milliseconds to delay the invocation of the handler after te event fires.</div></li>
+		///     <li><b>single</b> Boolean: <div class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</div></li>
+		///     <li><b>buffer</b> Number: <div class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
 		///     by the specified number of milliseconds. If the event fires again within that time, the original
-		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</li>
+		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</div></li>
 		///     </ul><br>
 		///     <p>
 		///     <b>Combining Options</b><br>
@@ -1375,7 +1511,7 @@ namespace Ext {
 		///     addListener.  The two are equivalent.  Using the options argument, it is possible to combine different
 		///     types of listeners:<br>
 		///     <br>
-		///     A normalized, delayed, one-time listener that auto stops the event and adds a custom argument (forumId) to the
+		///     A delayed, one-time listener that auto stops the event and adds a custom argument (forumId) to the
 		///     options object. The options object is available as the third parameter in the handler function.<div style="margin: 5px 20px 20px;">
 		///     Code:<pre><code>
 		///     el.on('click', this.onClick, this, {
@@ -1423,24 +1559,25 @@ namespace Ext {
 		/// <summary>
 		///     Appends an event handler to this element.  The shorthand version {@link #on} is equivalent.
 		///     the following parameters:<ul>
-		///     <li>evt : EventObject<div class="sub-desc">The {@link Ext.EventObject EventObject} describing the event.</div></li>
-		///     <li>t : Element<div class="sub-desc">The {@link Ext.Element Element} which was the target of the event.
+		///     <li><b>evt</b> : EventObject<div class="sub-desc">The {@link Ext.EventObject EventObject} describing the event.</div></li>
+		///     <li><b>el</b> : Element<div class="sub-desc">The {@link Ext.Element Element} which was the target of the event.
 		///     Note that this may be filtered by using the <tt>delegate</tt> option.</div></li>
-		///     <li>o : Object<div class="sub-desc">The options object from the addListener call.</div></li>
+		///     <li><b>o</b> : Object<div class="sub-desc">The options object from the addListener call.</div></li>
 		///     </ul>
-		///     to this Element.
+		///     <b>If omitted, defaults to this Element.</b>.
 		///     This may contain any of the following properties:<ul>
-		///     <li>scope {Object} : The scope in which to execute the handler function. The handler function's "this" context.</li>
-		///     <li>delegate {String} : A simple selector to filter the target or look for a descendant of the target</li>
-		///     <li>stopEvent {Boolean} : True to stop the event. That is stop propagation, and prevent the default action.</li>
-		///     <li>preventDefault {Boolean} : True to prevent the default action</li>
-		///     <li>stopPropagation {Boolean} : True to prevent event propagation</li>
-		///     <li>normalized {Boolean} : False to pass a browser event to the handler function instead of an Ext.EventObject</li>
-		///     <li>delay {Number} : The number of milliseconds to delay the invocation of the handler after te event fires.</li>
-		///     <li>single {Boolean} : True to add a handler to handle just the next firing of the event, and then remove itself.</li>
-		///     <li>buffer {Number} : Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
+		///     <li><b>scope</b> Object : <div class="sub-desc">The scope (<code><b>this</b></code> reference) in which the handler function is executed.
+		///     <b>If omitted, defaults to this Element.</b></div></li>
+		///     <li><b>delegate</b> String: <div class="sub-desc">A simple selector to filter the target or look for a descendant of the target</div></li>
+		///     <li><b>stopEvent</b> Boolean: <div class="sub-desc">True to stop the event. That is stop propagation, and prevent the default action.</div></li>
+		///     <li><b>preventDefault</b> Boolean: <div class="sub-desc">True to prevent the default action</div></li>
+		///     <li><b>stopPropagation</b> Boolean: <div class="sub-desc">True to prevent event propagation</div></li>
+		///     <li><b>normalized</b> Boolean: <div class="sub-desc">False to pass a browser event to the handler function instead of an Ext.EventObject</div></li>
+		///     <li><b>delay</b> Number: <div class="sub-desc">The number of milliseconds to delay the invocation of the handler after te event fires.</div></li>
+		///     <li><b>single</b> Boolean: <div class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</div></li>
+		///     <li><b>buffer</b> Number: <div class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
 		///     by the specified number of milliseconds. If the event fires again within that time, the original
-		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</li>
+		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</div></li>
 		///     </ul><br>
 		///     <p>
 		///     <b>Combining Options</b><br>
@@ -1448,7 +1585,7 @@ namespace Ext {
 		///     addListener.  The two are equivalent.  Using the options argument, it is possible to combine different
 		///     types of listeners:<br>
 		///     <br>
-		///     A normalized, delayed, one-time listener that auto stops the event and adds a custom argument (forumId) to the
+		///     A delayed, one-time listener that auto stops the event and adds a custom argument (forumId) to the
 		///     options object. The options object is available as the third parameter in the handler function.<div style="margin: 5px 20px 20px;">
 		///     Code:<pre><code>
 		///     el.on('click', this.onClick, this, {
@@ -1490,31 +1627,32 @@ namespace Ext {
 		/// </summary>
 		/// <param name="eventName">The type of event to handle</param>
 		/// <param name="fn">The handler function the event invokes. This function is passed</param>
-		/// <param name="scope">(optional) The scope (The <tt>this</tt> reference) of the handler function. Defaults</param>
+		/// <param name="scope">(optional) The scope (<code><b>this</b></code> reference) in which the handler function is executed.</param>
 		/// <returns></returns>
 		public extern virtual void addListener(string eventName, Delegate fn, object scope);
 
 		/// <summary>
 		///     Appends an event handler to this element.  The shorthand version {@link #on} is equivalent.
 		///     the following parameters:<ul>
-		///     <li>evt : EventObject<div class="sub-desc">The {@link Ext.EventObject EventObject} describing the event.</div></li>
-		///     <li>t : Element<div class="sub-desc">The {@link Ext.Element Element} which was the target of the event.
+		///     <li><b>evt</b> : EventObject<div class="sub-desc">The {@link Ext.EventObject EventObject} describing the event.</div></li>
+		///     <li><b>el</b> : Element<div class="sub-desc">The {@link Ext.Element Element} which was the target of the event.
 		///     Note that this may be filtered by using the <tt>delegate</tt> option.</div></li>
-		///     <li>o : Object<div class="sub-desc">The options object from the addListener call.</div></li>
+		///     <li><b>o</b> : Object<div class="sub-desc">The options object from the addListener call.</div></li>
 		///     </ul>
-		///     to this Element.
+		///     <b>If omitted, defaults to this Element.</b>.
 		///     This may contain any of the following properties:<ul>
-		///     <li>scope {Object} : The scope in which to execute the handler function. The handler function's "this" context.</li>
-		///     <li>delegate {String} : A simple selector to filter the target or look for a descendant of the target</li>
-		///     <li>stopEvent {Boolean} : True to stop the event. That is stop propagation, and prevent the default action.</li>
-		///     <li>preventDefault {Boolean} : True to prevent the default action</li>
-		///     <li>stopPropagation {Boolean} : True to prevent event propagation</li>
-		///     <li>normalized {Boolean} : False to pass a browser event to the handler function instead of an Ext.EventObject</li>
-		///     <li>delay {Number} : The number of milliseconds to delay the invocation of the handler after te event fires.</li>
-		///     <li>single {Boolean} : True to add a handler to handle just the next firing of the event, and then remove itself.</li>
-		///     <li>buffer {Number} : Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
+		///     <li><b>scope</b> Object : <div class="sub-desc">The scope (<code><b>this</b></code> reference) in which the handler function is executed.
+		///     <b>If omitted, defaults to this Element.</b></div></li>
+		///     <li><b>delegate</b> String: <div class="sub-desc">A simple selector to filter the target or look for a descendant of the target</div></li>
+		///     <li><b>stopEvent</b> Boolean: <div class="sub-desc">True to stop the event. That is stop propagation, and prevent the default action.</div></li>
+		///     <li><b>preventDefault</b> Boolean: <div class="sub-desc">True to prevent the default action</div></li>
+		///     <li><b>stopPropagation</b> Boolean: <div class="sub-desc">True to prevent event propagation</div></li>
+		///     <li><b>normalized</b> Boolean: <div class="sub-desc">False to pass a browser event to the handler function instead of an Ext.EventObject</div></li>
+		///     <li><b>delay</b> Number: <div class="sub-desc">The number of milliseconds to delay the invocation of the handler after te event fires.</div></li>
+		///     <li><b>single</b> Boolean: <div class="sub-desc">True to add a handler to handle just the next firing of the event, and then remove itself.</div></li>
+		///     <li><b>buffer</b> Number: <div class="sub-desc">Causes the handler to be scheduled to run in an {@link Ext.util.DelayedTask} delayed
 		///     by the specified number of milliseconds. If the event fires again within that time, the original
-		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</li>
+		///     handler is <em>not</em> invoked, but the new handler is scheduled in its place.</div></li>
 		///     </ul><br>
 		///     <p>
 		///     <b>Combining Options</b><br>
@@ -1522,7 +1660,7 @@ namespace Ext {
 		///     addListener.  The two are equivalent.  Using the options argument, it is possible to combine different
 		///     types of listeners:<br>
 		///     <br>
-		///     A normalized, delayed, one-time listener that auto stops the event and adds a custom argument (forumId) to the
+		///     A delayed, one-time listener that auto stops the event and adds a custom argument (forumId) to the
 		///     options object. The options object is available as the third parameter in the handler function.<div style="margin: 5px 20px 20px;">
 		///     Code:<pre><code>
 		///     el.on('click', this.onClick, this, {
@@ -1564,7 +1702,7 @@ namespace Ext {
 		/// </summary>
 		/// <param name="eventName">The type of event to handle</param>
 		/// <param name="fn">The handler function the event invokes. This function is passed</param>
-		/// <param name="scope">(optional) The scope (The <tt>this</tt> reference) of the handler function. Defaults</param>
+		/// <param name="scope">(optional) The scope (<code><b>this</b></code> reference) in which the handler function is executed.</param>
 		/// <param name="options">(optional) An object containing handler configuration properties.</param>
 		/// <returns></returns>
 		public extern virtual void addListener(string eventName, Delegate fn, object scope, object options);
@@ -2667,38 +2805,26 @@ namespace Ext {
 		/// <returns></returns>
 		public extern virtual void remove();
 
-		/// <summary>
-		///     Sets up event handlers to call the passed functions when the mouse is over this element. Automatically
-		///     filters child element mouse events.
-		/// </summary>
-		/// <returns>Ext.Element</returns>
+		/// <summary>Sets up event handlers to call the passed functions when the mouse is moved into and out of the Element.</summary>
+		/// <returns></returns>
 		public extern virtual void hover();
 
-		/// <summary>
-		///     Sets up event handlers to call the passed functions when the mouse is over this element. Automatically
-		///     filters child element mouse events.
-		/// </summary>
-		/// <param name="overFn"></param>
-		/// <returns>Ext.Element</returns>
+		/// <summary>Sets up event handlers to call the passed functions when the mouse is moved into and out of the Element.</summary>
+		/// <param name="overFn">The function to call when the mouse enters the Element.</param>
+		/// <returns></returns>
 		public extern virtual void hover(Delegate overFn);
 
-		/// <summary>
-		///     Sets up event handlers to call the passed functions when the mouse is over this element. Automatically
-		///     filters child element mouse events.
-		/// </summary>
-		/// <param name="overFn"></param>
-		/// <param name="outFn"></param>
-		/// <returns>Ext.Element</returns>
+		/// <summary>Sets up event handlers to call the passed functions when the mouse is moved into and out of the Element.</summary>
+		/// <param name="overFn">The function to call when the mouse enters the Element.</param>
+		/// <param name="outFn">The function to call when the mouse leaves the Element.</param>
+		/// <returns></returns>
 		public extern virtual void hover(Delegate overFn, Delegate outFn);
 
-		/// <summary>
-		///     Sets up event handlers to call the passed functions when the mouse is over this element. Automatically
-		///     filters child element mouse events.
-		/// </summary>
-		/// <param name="overFn"></param>
-		/// <param name="outFn"></param>
-		/// <param name="scope">(optional)</param>
-		/// <returns>Ext.Element</returns>
+		/// <summary>Sets up event handlers to call the passed functions when the mouse is moved into and out of the Element.</summary>
+		/// <param name="overFn">The function to call when the mouse enters the Element.</param>
+		/// <param name="outFn">The function to call when the mouse leaves the Element.</param>
+		/// <param name="scope">(optional) The scope (<tt>this</tt> reference) in which the functions are executed. Defaults to this Element.</param>
+		/// <returns></returns>
 		public extern virtual void hover(Delegate overFn, Delegate outFn, object scope);
 
 		/// <summary>Sets up event handlers to add and remove a css class when the mouse is over this element</summary>
@@ -2728,20 +2854,31 @@ namespace Ext {
 		/// <returns>Ext.Element</returns>
 		public extern virtual void addClassOnClick(string className);
 
-		/// <summary>Stops the specified event from bubbling and optionally prevents the default action</summary>
+		/// <summary>Stops the specified event(s) from bubbling and optionally prevents the default action</summary>
 		/// <returns>Ext.Element</returns>
 		public extern virtual void swallowEvent();
 
-		/// <summary>Stops the specified event from bubbling and optionally prevents the default action</summary>
-		/// <param name="eventName"></param>
+		/// <summary>Stops the specified event(s) from bubbling and optionally prevents the default action</summary>
+		/// <param name="eventName">an event / array of events to stop from bubbling</param>
 		/// <returns>Ext.Element</returns>
 		public extern virtual void swallowEvent(string eventName);
 
-		/// <summary>Stops the specified event from bubbling and optionally prevents the default action</summary>
-		/// <param name="eventName"></param>
+		/// <summary>Stops the specified event(s) from bubbling and optionally prevents the default action</summary>
+		/// <param name="eventName">an event / array of events to stop from bubbling</param>
 		/// <param name="preventDefault">(optional) true to prevent the default action too</param>
 		/// <returns>Ext.Element</returns>
 		public extern virtual void swallowEvent(string eventName, bool preventDefault);
+
+		/// <summary>Stops the specified event(s) from bubbling and optionally prevents the default action</summary>
+		/// <param name="eventName">an event / array of events to stop from bubbling</param>
+		/// <returns>Ext.Element</returns>
+		public extern virtual void swallowEvent(System.Array eventName);
+
+		/// <summary>Stops the specified event(s) from bubbling and optionally prevents the default action</summary>
+		/// <param name="eventName">an event / array of events to stop from bubbling</param>
+		/// <param name="preventDefault">(optional) true to prevent the default action too</param>
+		/// <returns>Ext.Element</returns>
+		public extern virtual void swallowEvent(System.Array eventName, bool preventDefault);
 
 		/// <summary>Gets the parent node for this element, optionally chaining up trying to match a selector</summary>
 		/// <returns>Ext.Element/HTMLElement</returns>
@@ -3373,76 +3510,331 @@ namespace Ext {
 		/// <returns>Number</returns>
 		public extern virtual void getTextWidth(string text, double min, double max);
 
-		/// <summary>
-		///     Static method to retrieve Ext.Element objects.
-		///     <p><b>This method does not retrieve {@link Ext.Component Component}s.</b> This method
-		///     retrieves Ext.Element objects which encapsulate DOM elements. To retrieve a Component by
-		///     its ID, use {@link Ext.ComponentMgr#get}.</p>
-		///     <p>Uses simple caching to consistently return the same object.
-		///     Automatically fixes if an object was recreated with the same id via AJAX or DOM.</p>
-		/// </summary>
-		/// <returns>Element</returns>
-		public extern static void get();
-
-		/// <summary>
-		///     Static method to retrieve Ext.Element objects.
-		///     <p><b>This method does not retrieve {@link Ext.Component Component}s.</b> This method
-		///     retrieves Ext.Element objects which encapsulate DOM elements. To retrieve a Component by
-		///     its ID, use {@link Ext.ComponentMgr#get}.</p>
-		///     <p>Uses simple caching to consistently return the same object.
-		///     Automatically fixes if an object was recreated with the same id via AJAX or DOM.</p>
-		/// </summary>
-		/// <param name="el">The id of the node, a DOM Node or an existing Element.</param>
-		/// <returns>Element</returns>
-		public extern static void get(object el);
-
-		/// <summary>
-		///     Gets the globally shared flyweight Element, with the passed node as the active element. Do not store a reference to this element -
-		///     the dom node can be overwritten by other code.
-		///     prevent conflicts (e.g. internally Ext uses "_internal")
-		/// </summary>
-		/// <returns>Element</returns>
-		public extern static void fly();
-
-		/// <summary>
-		///     Gets the globally shared flyweight Element, with the passed node as the active element. Do not store a reference to this element -
-		///     the dom node can be overwritten by other code.
-		///     prevent conflicts (e.g. internally Ext uses "_internal")
-		/// </summary>
-		/// <param name="el">The dom node or id</param>
-		/// <returns>Element</returns>
-		public extern static void fly(string el);
-
-		/// <summary>
-		///     Gets the globally shared flyweight Element, with the passed node as the active element. Do not store a reference to this element -
-		///     the dom node can be overwritten by other code.
-		///     prevent conflicts (e.g. internally Ext uses "_internal")
-		/// </summary>
-		/// <param name="el">The dom node or id</param>
-		/// <param name="named">(optional) Allows for creation of named reusable flyweights to</param>
-		/// <returns>Element</returns>
-		public extern static void fly(string el, string named);
-
-		/// <summary>
-		///     Gets the globally shared flyweight Element, with the passed node as the active element. Do not store a reference to this element -
-		///     the dom node can be overwritten by other code.
-		///     prevent conflicts (e.g. internally Ext uses "_internal")
-		/// </summary>
-		/// <param name="el">The dom node or id</param>
-		/// <returns>Element</returns>
-		public extern static void fly(DOMElement el);
-
-		/// <summary>
-		///     Gets the globally shared flyweight Element, with the passed node as the active element. Do not store a reference to this element -
-		///     the dom node can be overwritten by other code.
-		///     prevent conflicts (e.g. internally Ext uses "_internal")
-		/// </summary>
-		/// <param name="el">The dom node or id</param>
-		/// <param name="named">(optional) Allows for creation of named reusable flyweights to</param>
-		/// <returns>Element</returns>
-		public extern static void fly(DOMElement el, string named);
-
 
 
 	}
+
+    public class ElementEvents {
+        /// <summary>Fires when a mouse click is detected with the element.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string click { get { return "click"; } }
+        /// <summary>Fires when a mouse double click is detected with the element.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string dblclick { get { return "dblclick"; } }
+        /// <summary>Fires when a mousedown is detected with the element.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string mousedown { get { return "mousedown"; } }
+        /// <summary>Fires when a mouseup is detected with the element.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string mouseup { get { return "mouseup"; } }
+        /// <summary>Fires when a mouseover is detected with the element.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string mouseover { get { return "mouseover"; } }
+        /// <summary>Fires when a mousemove is detected with the element.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string mousemove { get { return "mousemove"; } }
+        /// <summary>Fires when a mouseout is detected with the element.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string mouseout { get { return "mouseout"; } }
+        /// <summary>Fires when a keypress is detected with the element.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string keypress { get { return "keypress"; } }
+        /// <summary>Fires when a keydown is detected with the element.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string keydown { get { return "keydown"; } }
+        /// <summary>Fires when a keyup is detected with the element.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string keyup { get { return "keyup"; } }
+        /// <summary>Fires when the user agent finishes loading all content within the element. Only supported by window, frames, objects and images.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string load { get { return "load"; } }
+        /// <summary>Fires when the user agent removes all content from a window or frame. For elements, it fires when the target element or any of its content has been removed.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string unload { get { return "unload"; } }
+        /// <summary>Fires when an object/image is stopped from loading before completely loaded.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string abort { get { return "abort"; } }
+        /// <summary>Fires when an object/image/frame cannot be loaded properly.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string error { get { return "error"; } }
+        /// <summary>Fires when a document view is resized.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string resize { get { return "resize"; } }
+        /// <summary>Fires when a document view is scrolled.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string scroll { get { return "scroll"; } }
+        /// <summary>Fires when a user selects some text in a text field, including input and textarea.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string select { get { return "select"; } }
+        /// <summary>Fires when a control loses the input focus and its value has been modified since gaining focus.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string change { get { return "change"; } }
+        /// <summary>Fires when a form is submitted.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string submit { get { return "submit"; } }
+        /// <summary>Fires when a form is reset.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string reset { get { return "reset"; } }
+        /// <summary>Fires when an element receives focus either via the pointing device or by tab navigation.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string focus { get { return "focus"; } }
+        /// <summary>Fires when an element loses focus either via the pointing device or by tabbing navigation.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string blur { get { return "blur"; } }
+        /// <summary>Where supported. Similar to HTML focus event, but can be applied to any focusable element.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event.</description></item>
+        /// </list>
+        /// </summary>
+        public static string DOMFocusIn { get { return "DOMFocusIn"; } }
+        /// <summary>Where supported. Similar to HTML blur event, but can be applied to any focusable element.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string DOMFocusOut { get { return "DOMFocusOut"; } }
+        /// <summary>Where supported. Fires when an element is activated, for instance, through a mouse click or a keypress.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string DOMActivate { get { return "DOMActivate"; } }
+        /// <summary>Where supported. Fires when the subtree is modified.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string DOMSubtreeModified { get { return "DOMSubtreeModified"; } }
+        /// <summary>Where supported. Fires when a node has been added as a child of another node.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string DOMNodeInserted { get { return "DOMNodeInserted"; } }
+        /// <summary>Where supported. Fires when a descendant node of the element is removed.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string DOMNodeRemoved { get { return "DOMNodeRemoved"; } }
+        /// <summary>Where supported. Fires when a node is being removed from a document.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string DOMNodeRemovedFromDocument { get { return "DOMNodeRemovedFromDocument"; } }
+        /// <summary>Where supported. Fires when a node is being inserted into a document.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string DOMNodeInsertedIntoDocument { get { return "DOMNodeInsertedIntoDocument"; } }
+        /// <summary>Where supported. Fires when an attribute has been modified.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string DOMAttrModified { get { return "DOMAttrModified"; } }
+        /// <summary>Where supported. Fires when the character data has been modified.
+        /// <pre><code>
+        /// USAGE: ({Ext.EventObject} e)
+        /// </code></pre>
+        /// <list type="bullet">
+        /// <item><term><b>e</b></term><description>The {@link Ext.EventObject} encapsulating the DOM event</description></item>
+        /// </list>
+        /// </summary>
+        public static string DOMCharacterDataModified { get { return "DOMCharacterDataModified"; } }
+    }
+
+    public delegate void ElementClickDelegate(Ext.EventObject e);
+    public delegate void ElementDblclickDelegate(Ext.EventObject e);
+    public delegate void ElementMousedownDelegate(Ext.EventObject e);
+    public delegate void ElementMouseupDelegate(Ext.EventObject e);
+    public delegate void ElementMouseoverDelegate(Ext.EventObject e);
+    public delegate void ElementMousemoveDelegate(Ext.EventObject e);
+    public delegate void ElementMouseoutDelegate(Ext.EventObject e);
+    public delegate void ElementKeypressDelegate(Ext.EventObject e);
+    public delegate void ElementKeydownDelegate(Ext.EventObject e);
+    public delegate void ElementKeyupDelegate(Ext.EventObject e);
+    public delegate void ElementLoadDelegate(Ext.EventObject e);
+    public delegate void ElementUnloadDelegate(Ext.EventObject e);
+    public delegate void ElementAbortDelegate(Ext.EventObject e);
+    public delegate void ElementErrorDelegate(Ext.EventObject e);
+    public delegate void ElementResizeDelegate(Ext.EventObject e);
+    public delegate void ElementScrollDelegate(Ext.EventObject e);
+    public delegate void ElementSelectDelegate(Ext.EventObject e);
+    public delegate void ElementChangeDelegate(Ext.EventObject e);
+    public delegate void ElementSubmitDelegate(Ext.EventObject e);
+    public delegate void ElementResetDelegate(Ext.EventObject e);
+    public delegate void ElementFocusDelegate(Ext.EventObject e);
+    public delegate void ElementBlurDelegate(Ext.EventObject e);
+    public delegate void ElementDOMFocusInDelegate(Ext.EventObject e);
+    public delegate void ElementDOMFocusOutDelegate(Ext.EventObject e);
+    public delegate void ElementDOMActivateDelegate(Ext.EventObject e);
+    public delegate void ElementDOMSubtreeModifiedDelegate(Ext.EventObject e);
+    public delegate void ElementDOMNodeInsertedDelegate(Ext.EventObject e);
+    public delegate void ElementDOMNodeRemovedDelegate(Ext.EventObject e);
+    public delegate void ElementDOMNodeRemovedFromDocumentDelegate(Ext.EventObject e);
+    public delegate void ElementDOMNodeInsertedIntoDocumentDelegate(Ext.EventObject e);
+    public delegate void ElementDOMAttrModifiedDelegate(Ext.EventObject e);
+    public delegate void ElementDOMCharacterDataModifiedDelegate(Ext.EventObject e);
 }

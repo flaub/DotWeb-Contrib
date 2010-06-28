@@ -18,7 +18,7 @@ namespace Ext {
 	///     split.on('moved', splitterMoved);
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\SplitBar.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\SplitBar.js</jssource>
 	public class SplitBarClass : Ext.util.Observable {
 
 		/// <summary>
@@ -153,13 +153,13 @@ namespace Ext {
 
 	[JsAnonymous]
 	public class SplitBarConfig : System.DotWeb.JsDynamic {
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}
 
     public class SplitBarEvents {
-        /// <summary>Fires when the splitter is moved (alias for {@link #event-moved})
+        /// <summary>Fires when the splitter is moved (alias for {@link #moved})
         /// <pre><code>
         /// USAGE: ({Ext.SplitBar} objthis, {Number} newSize)
         /// </code></pre>

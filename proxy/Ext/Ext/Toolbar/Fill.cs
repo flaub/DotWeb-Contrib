@@ -16,7 +16,7 @@ namespace Ext.Toolbar {
 	///     });
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Toolbar.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\Toolbar.js</jssource>
 	public class Fill : Ext.Toolbar.Spacer {
 
 		/// <summary>Creates a new Spacer</summary>

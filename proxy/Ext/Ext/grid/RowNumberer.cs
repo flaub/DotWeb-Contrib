@@ -18,7 +18,7 @@ namespace Ext.grid {
 	///     ]);
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\RowNumberer.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\grid\RowNumberer.js</jssource>
 	[JsObject]
 	public class RowNumberer  {
 
@@ -43,9 +43,6 @@ namespace Ext.grid {
 		/// <summary>The default width in pixels of the row number column (defaults to 23).</summary>
 		public extern double width { get; set; }
 
-		/// <summary>True if the row number column is sortable (defaults to false).</summary>
-		public extern bool sortable { get; set; }
-
 
 
 
@@ -58,9 +55,6 @@ namespace Ext.grid {
 
 		/// <summary> The default width in pixels of the row number column (defaults to 23).</summary>
 		public extern double width { get; set; }
-
-		/// <summary> True if the row number column is sortable (defaults to false).</summary>
-		public extern bool sortable { get; set; }
 
 	}
 }

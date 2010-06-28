@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Blue Tree Labs")]
 [assembly: AssemblyProduct("SourceConverter")]
-[assembly: AssemblyCopyright("Copyright © Teflon 2007")]
+[assembly: AssemblyCopyright("Copyright © Frank Laub 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

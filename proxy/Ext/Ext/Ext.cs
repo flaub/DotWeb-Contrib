@@ -8,7 +8,7 @@ namespace Ext {
 	///     Ext core utilities and functions.
 	///     */
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\Ext.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\core\Ext.js</jssource>
 	[JsNamespace()]
 	[JsObject]
 	public class ExtClass  {
@@ -57,8 +57,17 @@ namespace Ext {
 		/// <summary>True if the detected browser is Opera.</summary>
 		public extern static bool isOpera { get; set; }
 
+		/// <summary>True if the detected browser uses WebKit.</summary>
+		public extern static bool isWebKit { get; set; }
+
+		/// <summary>True if the detected browser is Chrome.</summary>
+		public extern static bool isChrome { get; set; }
+
 		/// <summary>True if the detected browser is Safari.</summary>
 		public extern static bool isSafari { get; set; }
+
+		/// <summary>True if the detected browser is Safari 4.x.</summary>
+		public extern static bool isSafari4 { get; set; }
 
 		/// <summary>True if the detected browser is Safari 3.x.</summary>
 		public extern static bool isSafari3 { get; set; }
@@ -74,6 +83,9 @@ namespace Ext {
 
 		/// <summary>True if the detected browser is Internet Explorer 7.x.</summary>
 		public extern static bool isIE7 { get; set; }
+
+		/// <summary>True if the detected browser is Internet Explorer 8.x.</summary>
+		public extern static bool isIE8 { get; set; }
 
 		/// <summary>True if the detected browser uses the Gecko layout engine (e.g. Mozilla, Firefox).</summary>
 		public extern static bool isGecko { get; set; }
@@ -423,16 +435,31 @@ namespace Ext {
 		/// <returns>String</returns>
 		public extern static void urlEncode(object o);
 
-		/// <summary>Takes an encoded URL and and converts it to an object. e.g. Ext.urlDecode("foo=1&bar=2"); would return {foo: 1, bar: 2} or Ext.urlDecode("foo=1&bar=2&bar=3&bar=4", true); would return {foo: 1, bar: [2, 3, 4]}.</summary>
+		/// <summary>
+		///     Takes an encoded URL and and converts it to an object. Example: <pre><code>
+		///     Ext.urlDecode("foo=1&bar=2"); // returns {foo: "1", bar: "2"}
+		///     Ext.urlDecode("foo=1&bar=2&bar=3&bar=4", false); // returns {foo: "1", bar: ["2", "3", "4"]}
+		///     </code></pre>
+		/// </summary>
 		/// <returns>Object</returns>
 		public extern static void urlDecode();
 
-		/// <summary>Takes an encoded URL and and converts it to an object. e.g. Ext.urlDecode("foo=1&bar=2"); would return {foo: 1, bar: 2} or Ext.urlDecode("foo=1&bar=2&bar=3&bar=4", true); would return {foo: 1, bar: [2, 3, 4]}.</summary>
+		/// <summary>
+		///     Takes an encoded URL and and converts it to an object. Example: <pre><code>
+		///     Ext.urlDecode("foo=1&bar=2"); // returns {foo: "1", bar: "2"}
+		///     Ext.urlDecode("foo=1&bar=2&bar=3&bar=4", false); // returns {foo: "1", bar: ["2", "3", "4"]}
+		///     </code></pre>
+		/// </summary>
 		/// <param name="str"></param>
 		/// <returns>Object</returns>
 		public extern static void urlDecode(string str);
 
-		/// <summary>Takes an encoded URL and and converts it to an object. e.g. Ext.urlDecode("foo=1&bar=2"); would return {foo: 1, bar: 2} or Ext.urlDecode("foo=1&bar=2&bar=3&bar=4", true); would return {foo: 1, bar: [2, 3, 4]}.</summary>
+		/// <summary>
+		///     Takes an encoded URL and and converts it to an object. Example: <pre><code>
+		///     Ext.urlDecode("foo=1&bar=2"); // returns {foo: "1", bar: "2"}
+		///     Ext.urlDecode("foo=1&bar=2&bar=3&bar=4", false); // returns {foo: "1", bar: ["2", "3", "4"]}
+		///     </code></pre>
+		/// </summary>
 		/// <param name="str"></param>
 		/// <param name="overwrite">(optional) Items of the same name will overwrite previous values instead of creating an an array (Defaults to false).</param>
 		/// <returns>Object</returns>
@@ -592,6 +619,7 @@ namespace Ext {
 		///     <li><b>string</b>: If the object passed is a string</li>
 		///     <li><b>number</b>: If the object passed is a number</li>
 		///     <li><b>boolean</b>: If the object passed is a boolean value</li>
+		///     <li><b>date</b>: If the object passed is a Date object</li>
 		///     <li><b>function</b>: If the object passed is a function reference</li>
 		///     <li><b>object</b>: If the object passed is an object</li>
 		///     <li><b>array</b>: If the object passed is an array</li>
@@ -610,6 +638,7 @@ namespace Ext {
 		///     <li><b>string</b>: If the object passed is a string</li>
 		///     <li><b>number</b>: If the object passed is a number</li>
 		///     <li><b>boolean</b>: If the object passed is a boolean value</li>
+		///     <li><b>date</b>: If the object passed is a Date object</li>
 		///     <li><b>function</b>: If the object passed is a function reference</li>
 		///     <li><b>object</b>: If the object passed is an object</li>
 		///     <li><b>array</b>: If the object passed is an array</li>
@@ -623,38 +652,72 @@ namespace Ext {
 		/// <returns>String</returns>
 		public extern static void type(object obj);
 
-		/// <summary>Returns true if the passed value is null, undefined or an empty string (optional).</summary>
+		/// <summary>Returns true if the passed value is null, undefined or an empty string.</summary>
 		/// <returns>Boolean</returns>
 		public extern static void isEmpty();
 
-		/// <summary>Returns true if the passed value is null, undefined or an empty string (optional).</summary>
+		/// <summary>Returns true if the passed value is null, undefined or an empty string.</summary>
 		/// <param name="value">The value to test</param>
 		/// <returns>Boolean</returns>
 		public extern static void isEmpty(object value);
 
-		/// <summary>Returns true if the passed value is null, undefined or an empty string (optional).</summary>
+		/// <summary>Returns true if the passed value is null, undefined or an empty string.</summary>
 		/// <param name="value">The value to test</param>
-		/// <param name="allowBlank">(optional) Pass true if an empty string is not considered empty</param>
+		/// <param name="allowBlank">(optional) true to allow empty strings (defaults to false)</param>
 		/// <returns>Boolean</returns>
 		public extern static void isEmpty(object value, bool allowBlank);
+
+		/// <summary>
+		///     Utility method for validating that a value is non-empty (i.e. i) not null, ii) not undefined, and iii) not an empty string),
+		///     returning the specified default value if it is.
+		/// </summary>
+		/// <returns>Mixed</returns>
+		public extern static void value();
+
+		/// <summary>
+		///     Utility method for validating that a value is non-empty (i.e. i) not null, ii) not undefined, and iii) not an empty string),
+		///     returning the specified default value if it is.
+		/// </summary>
+		/// <param name="value">The value to test</param>
+		/// <returns>Mixed</returns>
+		public extern static void value(object value);
+
+		/// <summary>
+		///     Utility method for validating that a value is non-empty (i.e. i) not null, ii) not undefined, and iii) not an empty string),
+		///     returning the specified default value if it is.
+		/// </summary>
+		/// <param name="value">The value to test</param>
+		/// <param name="defaultValue">The value to return if the original value is empty</param>
+		/// <returns>Mixed</returns>
+		public extern static void value(object value, object defaultValue);
+
+		/// <summary>
+		///     Utility method for validating that a value is non-empty (i.e. i) not null, ii) not undefined, and iii) not an empty string),
+		///     returning the specified default value if it is.
+		/// </summary>
+		/// <param name="value">The value to test</param>
+		/// <param name="defaultValue">The value to return if the original value is empty</param>
+		/// <param name="allowBlank">(optional) true to allow empty strings (defaults to false)</param>
+		/// <returns>Mixed</returns>
+		public extern static void value(object value, object defaultValue, bool allowBlank);
 
 		/// <summary>Returns true if the passed object is a JavaScript array, otherwise false.</summary>
 		/// <returns>Boolean</returns>
 		public extern static void isArray();
 
 		/// <summary>Returns true if the passed object is a JavaScript array, otherwise false.</summary>
-		/// <param name="The">object to test</param>
+		/// <param name="obj">The object to test</param>
 		/// <returns>Boolean</returns>
-		public extern static void isArray(object The);
+		public extern static void isArray(object obj);
 
 		/// <summary>Returns true if the passed object is a JavaScript date object, otherwise false.</summary>
 		/// <returns>Boolean</returns>
 		public extern static void isDate();
 
 		/// <summary>Returns true if the passed object is a JavaScript date object, otherwise false.</summary>
-		/// <param name="The">object to test</param>
+		/// <param name="obj">The object to test</param>
 		/// <returns>Boolean</returns>
-		public extern static void isDate(object The);
+		public extern static void isDate(object obj);
 
 
 

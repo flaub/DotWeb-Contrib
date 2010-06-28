@@ -15,7 +15,7 @@ namespace Ext.data {
 	///     to create {@link Ext.data.Record Record} instances from the data object. These Records
 	///     are cached and made available through accessor functions.</p>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\Store.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\data\Store.js</jssource>
 	public class Store : Ext.util.Observable {
 
 		/// <summary>
@@ -48,6 +48,36 @@ namespace Ext.data {
 		/// </summary>
 		public extern object baseParams { get; set; }
 
+		/// <summary>
+		///     <p>An object containing properties which specify the names of the paging and
+		///     sorting parameters passed to remote servers when loading blocks of data. By default, this
+		///     object takes the following form:</p><pre><code>
+		///     {
+		///     start : "start",    // The parameter name which specifies the start row
+		///     limit : "limit",    // The parameter name which specifies number of rows to return
+		///     sort : "sort",      // The parameter name which specifies the column to sort on
+		///     dir : "dir"         // The parameter name which specifies the sort direction
+		///     }
+		///     </code></pre>
+		///     <p>The server must produce the requested data block upon receipt of these parameter names.
+		///     If different parameter names are required, this property can be overriden using a configuration
+		///     property.</p>
+		///     <p>A {@link Ext.PagingToolbar PagingToolbar} bound to this grid uses this property to determine
+		///     the parameter names to use in its requests.
+		/// </summary>
+		public extern object paramNames { get; set; }
+
+		/// <summary>
+		///     The {@link Ext.data.Record Record} constructor as supplied to (or created by) the {@link Ext.data.Reader#Reader Reader}. Read-only.
+		///     <p>If the Reader was constructed by passing in an Array of field definition objects, instead of a created
+		///     Record constructor it will have {@link Ext.data.Record#create created a constructor} from that Array.</p>
+		///     <p>This property may be used to create new Records of the type held in this Store.</p>
+		/// </summary>
+		public extern Delegate recordType { get; set; }
+
+		/// <summary>A MixedCollection containing the defined {@link Ext.data.Field Field}s for the Records stored in this Store. Read-only.</summary>
+		public extern Ext.util.MixedCollection fields { get; set; }
+
 		/// <summary>If passed, the id to use to register with the StoreMgr</summary>
 		public extern string storeId { get; set; }
 
@@ -66,7 +96,16 @@ namespace Ext.data {
 		/// <summary>The DataReader object which processes the data object and returnsan Array of Ext.data.Record objects which are cached keyed by their <em>id</em> property.</summary>
 		public extern Ext.data.DataReader reader { get; set; }
 
-		/// <summary>A config object in the format: {field: "fieldName", direction: "ASC|DESC"}.  The directionproperty is case-sensitive.</summary>
+		/// <summary>
+		///     object containing properties which are to be sent as parameters.</p><p>Parameters are encoded as standard HTTP parameters using {@link Ext#urlEncode}.</p>
+		///     on any HTTP request
+		/// </summary>
+		public extern object baseParamsAn { get; set; }
+
+		/// <summary>
+		///     A config object in the format: {field: "fieldName", direction: "ASC|DESC"} tospecify the sort order in the request of a remote Store's {@link #load} operation.  Note that for
+		///     local sorting, the direction property is case-sensitive.
+		/// </summary>
 		public extern object sortInfo { get; set; }
 
 		/// <summary>
@@ -123,9 +162,18 @@ namespace Ext.data {
 		public extern virtual void remove();
 
 		/// <summary>Remove a Record from the Store and fires the {@link #remove} event.</summary>
-		/// <param name="record">Th Ext.data.Record object to remove from the cache.</param>
+		/// <param name="record">The Ext.data.Record object to remove from the cache.</param>
 		/// <returns></returns>
 		public extern virtual void remove(Ext.data.Record record);
+
+		/// <summary>Remove a Record from the Store at the specified index. Fires the {@link #remove} event.</summary>
+		/// <returns></returns>
+		public extern virtual void removeAt();
+
+		/// <summary>Remove a Record from the Store at the specified index. Fires the {@link #remove} event.</summary>
+		/// <param name="index">The index of the record to remove.</param>
+		/// <returns></returns>
+		public extern virtual void removeAt(double index);
 
 		/// <summary>Remove all Records from the Store and fires the {@link #clear} event.</summary>
 		/// <returns></returns>
@@ -205,7 +253,8 @@ namespace Ext.data {
 		///     <p><b>It is important to note that for remote data sources, loading is asynchronous,
 		///     and this call will return before the new data has been loaded. Perform any post-processing
 		///     in a callback function, or in a "load" event handler.</b></p>
-		///     <li><b>params</b> :Object<p class="sub-desc">An object containing properties to pass as HTTP parameters to a remote data source.</p></li>
+		///     <li><b>params</b> :Object<p class="sub-desc">An object containing properties to pass as HTTP parameters to a remote data source.</p>
+		///     <p>Parameters are encoded as standard HTTP parameters using {@link Ext#urlEncode}.</p></li>
 		///     <li><b>callback</b> : Function<p class="sub-desc">A function to be called after the Records have been loaded. The callback is
 		///     passed the following arguments:<ul>
 		///     <li>r : Ext.data.Record[]</li>
@@ -226,7 +275,8 @@ namespace Ext.data {
 		///     <p><b>It is important to note that for remote data sources, loading is asynchronous,
 		///     and this call will return before the new data has been loaded. Perform any post-processing
 		///     in a callback function, or in a "load" event handler.</b></p>
-		///     <li><b>params</b> :Object<p class="sub-desc">An object containing properties to pass as HTTP parameters to a remote data source.</p></li>
+		///     <li><b>params</b> :Object<p class="sub-desc">An object containing properties to pass as HTTP parameters to a remote data source.</p>
+		///     <p>Parameters are encoded as standard HTTP parameters using {@link Ext#urlEncode}.</p></li>
 		///     <li><b>callback</b> : Function<p class="sub-desc">A function to be called after the Records have been loaded. The callback is
 		///     passed the following arguments:<ul>
 		///     <li>r : Ext.data.Record[]</li>
@@ -241,8 +291,11 @@ namespace Ext.data {
 		public extern virtual void load(object options);
 
 		/// <summary>
-		///     Reloads the Record cache from the configured Proxy using the configured Reader and
-		///     the options from the last load operation performed.
+		///     <p>Reloads the Record cache from the configured Proxy using the configured Reader and
+		///     the options from the last load operation performed.</p>
+		///     <p><b>It is important to note that for remote data sources, loading is asynchronous,
+		///     and this call will return before the new data has been loaded. Perform any post-processing
+		///     in a callback function, or in a "load" event handler.</b></p>
 		///     used in the last load operation. See {@link #load} for details (defaults to null, in which case
 		///     the most recently used options are reused).
 		/// </summary>
@@ -250,12 +303,15 @@ namespace Ext.data {
 		public extern virtual void reload();
 
 		/// <summary>
-		///     Reloads the Record cache from the configured Proxy using the configured Reader and
-		///     the options from the last load operation performed.
+		///     <p>Reloads the Record cache from the configured Proxy using the configured Reader and
+		///     the options from the last load operation performed.</p>
+		///     <p><b>It is important to note that for remote data sources, loading is asynchronous,
+		///     and this call will return before the new data has been loaded. Perform any post-processing
+		///     in a callback function, or in a "load" event handler.</b></p>
 		///     used in the last load operation. See {@link #load} for details (defaults to null, in which case
 		///     the most recently used options are reused).
 		/// </summary>
-		/// <param name="options">(optional) An object containing properties which may override the options</param>
+		/// <param name="options">(optional) An object containing loading options which may override the options</param>
 		/// <returns></returns>
 		public extern virtual void reload(object options);
 
@@ -263,6 +319,8 @@ namespace Ext.data {
 		///     Loads data from a passed data block and fires the {@link #load} event. A Reader which understands the format of the data
 		///     must have been configured in the constructor.
 		///     is dependent on the type of Reader that is configured and should correspond to that Reader's readRecords parameter.
+		///     Records in a Store are keyed by their {@link Ext.data.Record#id id}, so added Records with ids which are already present in
+		///     the Store will <i>replace</i> existing Records. Records with new, unique ids will be added.</b>
 		/// </summary>
 		/// <returns></returns>
 		public extern virtual void loadData();
@@ -271,6 +329,8 @@ namespace Ext.data {
 		///     Loads data from a passed data block and fires the {@link #load} event. A Reader which understands the format of the data
 		///     must have been configured in the constructor.
 		///     is dependent on the type of Reader that is configured and should correspond to that Reader's readRecords parameter.
+		///     Records in a Store are keyed by their {@link Ext.data.Record#id id}, so added Records with ids which are already present in
+		///     the Store will <i>replace</i> existing Records. Records with new, unique ids will be added.</b>
 		/// </summary>
 		/// <param name="data">The data block from which to read the Records.  The format of the data expected</param>
 		/// <returns></returns>
@@ -280,9 +340,11 @@ namespace Ext.data {
 		///     Loads data from a passed data block and fires the {@link #load} event. A Reader which understands the format of the data
 		///     must have been configured in the constructor.
 		///     is dependent on the type of Reader that is configured and should correspond to that Reader's readRecords parameter.
+		///     Records in a Store are keyed by their {@link Ext.data.Record#id id}, so added Records with ids which are already present in
+		///     the Store will <i>replace</i> existing Records. Records with new, unique ids will be added.</b>
 		/// </summary>
 		/// <param name="data">The data block from which to read the Records.  The format of the data expected</param>
-		/// <param name="append">(Optional) True to append the new Records rather than replace the existing cache.</param>
+		/// <param name="append">(Optional) True to append the new Records rather than replace the existing cache. <b>Remember that</param>
 		/// <returns></returns>
 		public extern virtual void loadData(object data, bool append);
 
@@ -748,10 +810,10 @@ namespace Ext.data {
 		/// <summary> The DataReader object which processes the data object and returns an Array of Ext.data.Record objects which are cached keyed by their <em>id</em> property.</summary>
 		public extern Ext.data.DataReader reader { get; set; }
 
-		/// <summary> An object containing properties which are to be sent as parameters on any HTTP request</summary>
-		public extern object baseParams { get; set; }
+		/// <summary> object containing properties which are to be sent as parameters.</p> <p>Parameters are encoded as standard HTTP parameters using {@link Ext#urlEncode}.</p> on any HTTP request</summary>
+		public extern object baseParamsAn { get; set; }
 
-		/// <summary> A config object in the format: {field: "fieldName", direction: "ASC|DESC"}.  The direction property is case-sensitive.</summary>
+		/// <summary> A config object in the format: {field: "fieldName", direction: "ASC|DESC"} to specify the sort order in the request of a remote Store's {@link #load} operation.  Note that for local sorting, the direction property is case-sensitive.</summary>
 		public extern object sortInfo { get; set; }
 
 		/// <summary> True if sorting is to be handled by requesting the Proxy to provide a refreshed version of the data object in sorted order, as opposed to sorting the Record cache in place (defaults to false). <p>If remote sorting is specified, then clicking on a column header causes the current page to be requested from the server with the addition of the following two parameters: <div class="mdetail-params"><ul> <li><b>sort</b> : String<p class="sub-desc">The name (as specified in the Record's Field definition) of the field to sort on.</p></li> <li><b>dir</b> : String<p class="sub-desc">The direction of the sort, "ASC" or "DESC" (case-sensitive).</p></li> </ul></div></p></summary>
@@ -760,15 +822,15 @@ namespace Ext.data {
 		/// <summary> True to clear all modified record information each time the store is loaded or when a record is removed. (defaults to false).</summary>
 		public extern bool pruneModifiedRecords { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}
 
     public class StoreEvents {
         /// <summary>
-        ///     Fires when the data cache has changed, and a widget which is using this Store
-        ///     as a Record cache should refresh its view.
+        ///     Fires when the data cache has changed in a bulk manner (e.g., it has been sorted, filtered, etc.) and a
+        ///     widget that is using this Store as a Record cache should refresh its view.
         /// 
         /// <pre><code>
         /// USAGE: ({Store} objthis)

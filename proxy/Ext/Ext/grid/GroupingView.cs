@@ -36,7 +36,7 @@ namespace Ext.grid {
 	///     renderTo: document.body
 	///     });</code></pre>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\GroupingView.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\grid\GroupingView.js</jssource>
 	public class GroupingView : Ext.grid.GridView {
 
 		/// <summary></summary>
@@ -224,7 +224,7 @@ namespace Ext.grid {
 		/// <summary> True to auto expand the columns to fit the grid <b>when the grid is created</b>.</summary>
 		public extern bool autoFill { get; set; }
 
-		/// <summary> True to auto expand/contract the size of the columns to fit the grid width and prevent horizontal scrolling.</summary>
+		/// <summary> True to auto expand/contract the size of the columns to fit the grid width and prevent horizontal scrolling. This option overrides any (@link Ext.grid.ColumnModel#width width} settings in the ColumnModel.</summary>
 		public extern bool forceFit { get; set; }
 
 		/// <summary> The number of levels to search for cells in event delegation (defaults to 4)</summary>
@@ -239,7 +239,7 @@ namespace Ext.grid {
 		/// <summary> The selector used to find rows internally</summary>
 		public extern string rowSelector { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

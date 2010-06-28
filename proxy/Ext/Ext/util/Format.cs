@@ -9,7 +9,7 @@ namespace Ext.util {
 	///     */
 	///     Ext.util.Format = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\Format.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\util\Format.js</jssource>
 	[JsObject]
 	public class Format  {
 
@@ -220,6 +220,15 @@ namespace Ext.util {
 		/// <param name="size">The numeric value to format</param>
 		/// <returns>String</returns>
 		public extern static void fileSize(string size);
+
+		/// <summary>Converts newline characters to the HTML tag &lt;br/></summary>
+		/// <returns>String</returns>
+		public extern static void nl2br();
+
+		/// <summary>Converts newline characters to the HTML tag &lt;br/></summary>
+		/// <param name="The">string value to format.</param>
+		/// <returns>String</returns>
+		public extern static void nl2br(string The);
 
 
 

@@ -11,7 +11,7 @@ namespace Ext.state {
 	///     */
 	///     Ext.state.Provider = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\state\Provider.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\state\Provider.js</jssource>
 	[JsObject]
 	public class Provider  {
 

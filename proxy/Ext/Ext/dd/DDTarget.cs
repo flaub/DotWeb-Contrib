@@ -10,7 +10,7 @@ namespace Ext.dd {
 	///     for the event callbacks, but this way we reduce the processing cost of the
 	///     event listener and the callbacks.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\dd\DDCore.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\dd\DDCore.js</jssource>
 	public class DDTarget : Ext.dd.DragDrop {
 
 		/// <summary>

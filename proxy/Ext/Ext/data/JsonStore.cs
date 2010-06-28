@@ -32,9 +32,11 @@ namespace Ext.data {
 	///     @cfg {Object} data  A data object readable by this object's JsonReader. Either this
 	///     option, or the {@link #url} option must be specified.
 	///     @cfg {Array} fields  Either an Array of field definition objects as passed to
-	///     {@link Ext.data.Record#create}, or a {@link Ext.data.Record Record} constructor created using {@link Ext.data.Record#create}.
+	///     {@link Ext.data.Record#create}, or a {@link Ext.data.Record Record} constructor created using {@link Ext.data.Record#create}.<br>
+	///     <p>This config is used to create the <tt>recordType</tt> parameter to the {@link Ext.data.JsonReader#JsonReader JsonReader}
+	///     constructor that is implicitly called, and creates the {@link Ext.data.Record Record definition} used by the Store.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\JsonStore.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\data\JsonStore.js</jssource>
 	public class JsonStore : Ext.data.Store {
 
 		/// <summary></summary>
@@ -83,10 +85,10 @@ namespace Ext.data {
 		/// <summary> The DataReader object which processes the data object and returns an Array of Ext.data.Record objects which are cached keyed by their <em>id</em> property.</summary>
 		public extern Ext.data.DataReader reader { get; set; }
 
-		/// <summary> An object containing properties which are to be sent as parameters on any HTTP request</summary>
-		public extern object baseParams { get; set; }
+		/// <summary> object containing properties which are to be sent as parameters.</p> <p>Parameters are encoded as standard HTTP parameters using {@link Ext#urlEncode}.</p> on any HTTP request</summary>
+		public extern object baseParamsAn { get; set; }
 
-		/// <summary> A config object in the format: {field: "fieldName", direction: "ASC|DESC"}.  The direction property is case-sensitive.</summary>
+		/// <summary> A config object in the format: {field: "fieldName", direction: "ASC|DESC"} to specify the sort order in the request of a remote Store's {@link #load} operation.  Note that for local sorting, the direction property is case-sensitive.</summary>
 		public extern object sortInfo { get; set; }
 
 		/// <summary> True if sorting is to be handled by requesting the Proxy to provide a refreshed version of the data object in sorted order, as opposed to sorting the Record cache in place (defaults to false). <p>If remote sorting is specified, then clicking on a column header causes the current page to be requested from the server with the addition of the following two parameters: <div class="mdetail-params"><ul> <li><b>sort</b> : String<p class="sub-desc">The name (as specified in the Record's Field definition) of the field to sort on.</p></li> <li><b>dir</b> : String<p class="sub-desc">The direction of the sort, "ASC" or "DESC" (case-sensitive).</p></li> </ul></div></p></summary>
@@ -95,7 +97,7 @@ namespace Ext.data {
 		/// <summary> True to clear all modified record information each time the store is loaded or when a record is removed. (defaults to false).</summary>
 		public extern bool pruneModifiedRecords { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

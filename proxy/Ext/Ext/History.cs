@@ -12,7 +12,7 @@ namespace Ext {
 	///     */
 	///     Ext.History = (function () {
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\History.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\util\History.js</jssource>
 	public class History : Ext.util.Observable {
 
 		/// <summary>Auto-generated default constructor</summary>
@@ -129,7 +129,7 @@ namespace Ext {
 
 	[JsAnonymous]
 	public class HistoryConfig : System.DotWeb.JsDynamic {
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

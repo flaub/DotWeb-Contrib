@@ -28,11 +28,11 @@ namespace Ext {
 	///     </code></pre></p>
 	///     <p>Element creation specification parameters may also be strings. If {@link useDom} is false, then the string is used
 	///     as innerHTML. If {@link useDom} is true, a string specification results in the creation of a text node.</p>
-	///     For more information and examples, see <a href="http://www.jackslocum.com/blog/2006/10/06/domhelper-create-elements-using-dom-html-fragments-or-templates/">the original blog post</a>.
+	///     For more information and examples, see <a href="http://extjs.com/learn/Tutorial:DomHelper_Blog/">the ExtJs tutorial page</a>.
 	///     */
 	///     Ext.DomHelper = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\DomHelper.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\core\DomHelper.js</jssource>
 	[JsObject]
 	public class DomHelper  {
 

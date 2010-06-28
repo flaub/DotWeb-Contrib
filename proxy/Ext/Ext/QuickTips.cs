@@ -44,7 +44,7 @@ namespace Ext {
 	///     trackMouse: true
 	///     });
 	///     // Manually register a quick tip for a specific element
-	///     q.register({
+	///     Ext.QuickTips.register({
 	///     target: 'my-div',
 	///     title: 'My Tooltip',
 	///     text: 'This tooltip was added in code',
@@ -70,7 +70,7 @@ namespace Ext {
 	///     */
 	///     Ext.QuickTips = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tips\QuickTips.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\tips\QuickTips.js</jssource>
 	[JsObject]
 	public class QuickTips  {
 

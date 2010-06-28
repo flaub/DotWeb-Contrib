@@ -38,7 +38,7 @@ namespace Ext.data {
 	///     }
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\ScriptTagProxy.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\data\ScriptTagProxy.js</jssource>
 	public class ScriptTagProxy : Ext.data.DataProxy {
 
 		/// <summary></summary>
@@ -203,7 +203,7 @@ namespace Ext.data {
 		/// <summary> (optional) Defaults to true. Disable caching by adding a unique parameter name to the request.</summary>
 		public extern bool nocache { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

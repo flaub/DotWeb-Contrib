@@ -9,7 +9,7 @@ namespace Ext.Updater {
 	///     */
 	///     Ext.Updater.defaults = {
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\UpdateManager.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\core\UpdateManager.js</jssource>
 	[JsObject]
 	public class defaults  {
 

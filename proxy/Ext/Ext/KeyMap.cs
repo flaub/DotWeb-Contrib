@@ -43,7 +43,7 @@ namespace Ext {
 	///     </code></pre>
 	///     <b>Note: A KeyMap starts enabled</b>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\KeyMap.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\util\KeyMap.js</jssource>
 	[JsObject]
 	public class KeyMap  {
 

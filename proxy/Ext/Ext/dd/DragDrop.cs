@@ -41,7 +41,7 @@ namespace Ext.dd {
 	///     }
 	///     </pre>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\dd\DDCore.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\dd\DDCore.js</jssource>
 	[JsObject]
 	public class DragDrop  {
 
@@ -126,7 +126,13 @@ namespace Ext.dd {
 		public extern object groups { get; set; }
 
 		/// <summary>
-		///     By default, all insances can be a drop target.  This can be disabled by
+		///     When set to true, other DD objects in cooperating DDGroups do not receive
+		///     notification events when this DD object is dragged over them. Defaults to false.
+		/// </summary>
+		public extern bool moveOnly { get; set; }
+
+		/// <summary>
+		///     By default, all instances can be a drop target.  This can be disabled by
 		///     setting isTarget to false.
 		/// </summary>
 		public extern bool isTarget { get; set; }
@@ -703,18 +709,18 @@ namespace Ext.dd {
 
 		/// <summary>Stores the initial placement of the linked element.</summary>
 		/// <returns></returns>
-		public extern virtual void setInitialPosition();
+		public extern virtual void setInitPosition();
 
 		/// <summary>Stores the initial placement of the linked element.</summary>
 		/// <param name="diffX">the X offset, default 0</param>
 		/// <returns></returns>
-		public extern virtual void setInitialPosition(int diffX);
+		public extern virtual void setInitPosition(int diffX);
 
 		/// <summary>Stores the initial placement of the linked element.</summary>
 		/// <param name="diffX">the X offset, default 0</param>
 		/// <param name="diffY">the Y offset, default 0</param>
 		/// <returns></returns>
-		public extern virtual void setInitialPosition(int diffX, int diffY);
+		public extern virtual void setInitPosition(int diffX, int diffY);
 
 		/// <summary>
 		///     Add this instance to a group of related drag/drop objects.  All

@@ -9,9 +9,11 @@ namespace Ext.data {
 	///     either to a configured URL, or to a URL specified at request time.</p>
 	///     <p>Requests made by this class are asynchronous, and will return immediately. No data from
 	///     the server will be available to the statement immediately following the {@link #request} call.
-	///     To process returned data, use a {@link #request-option-success callback} in the request options object,
+	///     To process returned data, use a
+	///     <a href="#request-option-success" ext:member="request-option-success" ext:cls="Ext.data.Connection">success callback</a>
+	///     in the request options object,
 	///     or an {@link #requestcomplete event listener}.</p>
-	///     <p>{@link #request-option-isUpload File uploads} are not performed using normal "Ajax" techniques, that
+	///     <p><h3>File Uploads</h3><a href="#request-option-isUpload" ext:member="request-option-isUpload" ext:cls="Ext.data.Connection">File uploads</a> are not performed using normal "Ajax" techniques, that
 	///     is they are <b>not</b> performed using XMLHttpRequests. Instead the form is submitted in the standard
 	///     manner with the DOM <tt>&lt;form></tt> element temporarily modified to have its
 	///     <a href="http://www.w3.org/TR/REC-html40/present/frames.html#adef-target">target</a> set to refer
@@ -21,6 +23,8 @@ namespace Ext.data {
 	///     server is using JSON to send the return object, then the
 	///     <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a> header
 	///     must be set to "text/html" in order to tell the browser to insert the text unchanged into the document body.</p>
+	///     <p>Characters which are significant to an HTML parser must be sent as HTML entities, so encode
+	///     "&lt;" as "&amp;lt;", "&amp;" as "&amp;amp;" etc.</p>
 	///     <p>The response text is retrieved from the document, and a fake XMLHttpRequest object
 	///     is created containing a <tt>responseText</tt> property in order to conform to the
 	///     requirements of event handlers and callbacks.</p>
@@ -28,7 +32,7 @@ namespace Ext.data {
 	///     and some server technologies (notably JEE) may require some custom processing in order to
 	///     retrieve parameter names and parameter values from the packet content.</p>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\Connection.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\data\Connection.js</jssource>
 	public class Connection : Ext.util.Observable {
 
 		/// <summary></summary>
@@ -49,7 +53,10 @@ namespace Ext.data {
 		/// <summary>The reference to the class that this class inherits from</summary>
 		public extern static Ext.util.Observable superclass { get; set; }
 
-		/// <summary>(Optional) The default URL to be used for requests to the server. (defaults to undefined)</summary>
+		/// <summary>
+		///     (Optional) <p>The default URL to be used for requests to the server. Defaults to undefined.</p><p>The <code>url</code> config may be a function which <i>returns</i> the URL to use for the Ajax request. The scope
+		///     (<code><b>this</b></code> reference) of the function is the <code>scope</code> option passed to the {@link #request} method.</p>
+		/// </summary>
 		public extern string url { get; set; }
 
 		/// <summary>(Optional) An object containing properties which are used asextra parameters to each request made by this object. (defaults to undefined)</summary>
@@ -83,9 +90,11 @@ namespace Ext.data {
 		///     return before the response has been received. Process any returned data
 		///     in a callback function.</p>
 		///     <p>To execute a callback function in the correct scope, use the <tt>scope</tt> option.</p>
-		///     <li><b>url</b> : String/Function (Optional)<div class="sub-desc">The URL to
-		///     which to send the request, or a function to call which returns a URL string. The scope of the
-		///     function is specified by the <tt>scope</tt> option. Defaults to configured URL.</div></li>
+		///     <li><b>url</b> : String/Function (Optional)<div class="sub-desc"><p>The URL to
+		///     which to send the request, or a function to call which returns a URL string. The scope (<code><b>this</b></code> reference) of the
+		///     function is specified by the <tt>scope</tt> option. Defaults to configured URL.
+		///     <p>The <code>url</code> config may be a function which <i>returns</i> the URL to use for the Ajax request. The scope
+		///     (<code><b>this</b></code> reference) of the function is the <code>scope</code> option passed to the {@link #request} method.</p></div></li>
 		///     <li><b>params</b> : Object/String/Function (Optional)<div class="sub-desc">
 		///     An object containing properties which are used as parameters to the
 		///     request, a url encoded string or a function to call to get either. The scope of the function
@@ -104,7 +113,7 @@ namespace Ext.data {
 		///     See <a href="http://www.w3.org/TR/XMLHttpRequest/">http://www.w3.org/TR/XMLHttpRequest/</a> for details about
 		///     accessing elements of the response.</div></li>
 		///     </ul></div></li>
-		///     <a id="request-option-success"></a><li><b>success</b> : Function (Optional)<div class="sub-desc">The function
+		///     <li><a id="request-option-success"></a><b>success</b> : Function (Optional)<div class="sub-desc">The function
 		///     to be called upon success of the request. The callback is passed the following
 		///     parameters:<ul>
 		///     <li><b>response</b> : Object<div class="sub-desc">The XMLHttpRequest object containing the response data.</div></li>
@@ -120,10 +129,13 @@ namespace Ext.data {
 		///     which to execute the callbacks: The "this" object for the callback function. If the <tt>url</tt>, or <tt>params</tt> options were
 		///     specified as functions from which to draw values, then this also serves as the scope for those function calls.
 		///     Defaults to the browser window.</div></li>
+		///     <li><b>timeout</b> : Number (Optional)<div class="sub-desc">The timeout in milliseconds to be used for this request. Defaults to 30 seconds.</div></li>
 		///     <li><b>form</b> : Element/HTMLElement/String (Optional)<div class="sub-desc">The <tt>&lt;form&gt;</tt>
 		///     Element or the id of the <tt>&lt;form&gt;</tt> to pull parameters from.</div></li>
-		///     <a id="request-option-isUpload"></a><li><b>isUpload</b> : Boolean (Optional)<div class="sub-desc">True if the form object is a
-		///     file upload (will usually be automatically detected).
+		///     <li><a id="request-option-isUpload"></a><b>isUpload</b> : Boolean (Optional)<div class="sub-desc"><b>Only meaningful when used
+		///     with the <tt>form</tt> option.</b>
+		///     <p>True if the form object is a file upload (will be set automatically if the form was
+		///     configured with <b><tt>enctype</tt></b> "multipart/form-data").</p>
 		///     <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b>
 		///     performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the
 		///     DOM <tt>&lt;form></tt> element temporarily modified to have its
@@ -165,9 +177,11 @@ namespace Ext.data {
 		///     return before the response has been received. Process any returned data
 		///     in a callback function.</p>
 		///     <p>To execute a callback function in the correct scope, use the <tt>scope</tt> option.</p>
-		///     <li><b>url</b> : String/Function (Optional)<div class="sub-desc">The URL to
-		///     which to send the request, or a function to call which returns a URL string. The scope of the
-		///     function is specified by the <tt>scope</tt> option. Defaults to configured URL.</div></li>
+		///     <li><b>url</b> : String/Function (Optional)<div class="sub-desc"><p>The URL to
+		///     which to send the request, or a function to call which returns a URL string. The scope (<code><b>this</b></code> reference) of the
+		///     function is specified by the <tt>scope</tt> option. Defaults to configured URL.
+		///     <p>The <code>url</code> config may be a function which <i>returns</i> the URL to use for the Ajax request. The scope
+		///     (<code><b>this</b></code> reference) of the function is the <code>scope</code> option passed to the {@link #request} method.</p></div></li>
 		///     <li><b>params</b> : Object/String/Function (Optional)<div class="sub-desc">
 		///     An object containing properties which are used as parameters to the
 		///     request, a url encoded string or a function to call to get either. The scope of the function
@@ -186,7 +200,7 @@ namespace Ext.data {
 		///     See <a href="http://www.w3.org/TR/XMLHttpRequest/">http://www.w3.org/TR/XMLHttpRequest/</a> for details about
 		///     accessing elements of the response.</div></li>
 		///     </ul></div></li>
-		///     <a id="request-option-success"></a><li><b>success</b> : Function (Optional)<div class="sub-desc">The function
+		///     <li><a id="request-option-success"></a><b>success</b> : Function (Optional)<div class="sub-desc">The function
 		///     to be called upon success of the request. The callback is passed the following
 		///     parameters:<ul>
 		///     <li><b>response</b> : Object<div class="sub-desc">The XMLHttpRequest object containing the response data.</div></li>
@@ -202,10 +216,13 @@ namespace Ext.data {
 		///     which to execute the callbacks: The "this" object for the callback function. If the <tt>url</tt>, or <tt>params</tt> options were
 		///     specified as functions from which to draw values, then this also serves as the scope for those function calls.
 		///     Defaults to the browser window.</div></li>
+		///     <li><b>timeout</b> : Number (Optional)<div class="sub-desc">The timeout in milliseconds to be used for this request. Defaults to 30 seconds.</div></li>
 		///     <li><b>form</b> : Element/HTMLElement/String (Optional)<div class="sub-desc">The <tt>&lt;form&gt;</tt>
 		///     Element or the id of the <tt>&lt;form&gt;</tt> to pull parameters from.</div></li>
-		///     <a id="request-option-isUpload"></a><li><b>isUpload</b> : Boolean (Optional)<div class="sub-desc">True if the form object is a
-		///     file upload (will usually be automatically detected).
+		///     <li><a id="request-option-isUpload"></a><b>isUpload</b> : Boolean (Optional)<div class="sub-desc"><b>Only meaningful when used
+		///     with the <tt>form</tt> option.</b>
+		///     <p>True if the form object is a file upload (will be set automatically if the form was
+		///     configured with <b><tt>enctype</tt></b> "multipart/form-data").</p>
 		///     <p>File uploads are not performed using normal "Ajax" techniques, that is they are <b>not</b>
 		///     performed using XMLHttpRequests. Instead the form is submitted in the standard manner with the
 		///     DOM <tt>&lt;form></tt> element temporarily modified to have its
@@ -266,7 +283,7 @@ namespace Ext.data {
 
 	[JsAnonymous]
 	public class ConnectionConfig : System.DotWeb.JsDynamic {
-		/// <summary> (Optional) The default URL to be used for requests to the server. (defaults to undefined)</summary>
+		/// <summary> (Optional) <p>The default URL to be used for requests to the server. Defaults to undefined.</p> <p>The <code>url</code> config may be a function which <i>returns</i> the URL to use for the Ajax request. The scope (<code><b>this</b></code> reference) of the function is the <code>scope</code> option passed to the {@link #request} method.</p></summary>
 		public extern string url { get; set; }
 
 		/// <summary> (Optional) An object containing properties which are used as extra parameters to each request made by this object. (defaults to undefined)</summary>
@@ -290,7 +307,7 @@ namespace Ext.data {
 		/// <summary> (Optional) Change the parameter which is sent went disabling caching through a cache buster. Defaults to '_dc' @type String</summary>
 		public extern string disableCachingParam { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

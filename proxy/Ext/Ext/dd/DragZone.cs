@@ -8,7 +8,7 @@ namespace Ext.dd {
 	///     This class provides a container DD instance that proxies for multiple child node sources.<br />
 	///     By default, this class requires that draggable child nodes are registered with {@link Ext.dd.Registry}.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\dd\DragZone.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\dd\DragZone.js</jssource>
 	public class DragZone : Ext.dd.DragSource {
 
 		/// <summary></summary>

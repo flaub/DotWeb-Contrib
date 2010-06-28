@@ -7,7 +7,7 @@ namespace Ext.grid {
 	///     /**
 	///     A custom column model for the {@link Ext.grid.PropertyGrid}.  Generally it should not need to be used directly.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\PropertyGrid.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\grid\PropertyGrid.js</jssource>
 	public class PropertyColumnModel : Ext.grid.ColumnModel {
 
 		/// <summary></summary>
@@ -49,7 +49,7 @@ namespace Ext.grid {
 		/// <summary> (optional) The name of the field in the grid's {@link Ext.data.Store}'s {@link Ext.data.Record} definition from which to draw the column's value. If not specified, the column's index is used as an index into the Record's data Array.</summary>
 		public extern string dataIndex { get; set; }
 
-		/// <summary> (optional) The initial width in pixels of the column.</summary>
+		/// <summary> (optional) The initial width in pixels of the column. This is ignored if the Grid's {@link Ext.grid.GridView view} is configured with {@link Ext.grid.GridView#forceFit forceFit} true.</summary>
 		public extern double width { get; set; }
 
 		/// <summary> (optional) True if sorting is to be allowed on this column. Defaults to the value of the {@link #defaultSortable} property. Whether local/remote sorting is used is specified in {@link Ext.data.Store#remoteSort}.</summary>
@@ -85,7 +85,7 @@ namespace Ext.grid {
 		/// <summary> (optional) The {@link Ext.form.Field} to use when editing values in this column if editing is supported by the grid.</summary>
 		public extern Ext.form.Field editor { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

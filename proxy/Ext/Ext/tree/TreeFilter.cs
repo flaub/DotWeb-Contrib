@@ -11,7 +11,7 @@ namespace Ext.tree {
 	///     */
 	///     Ext.tree.TreeFilter = function(tree, config){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tree\TreeFilter.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\tree\TreeFilter.js</jssource>
 	[JsObject]
 	public class TreeFilter  {
 

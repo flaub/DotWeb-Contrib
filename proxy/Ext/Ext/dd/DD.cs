@@ -8,7 +8,7 @@ namespace Ext.dd {
 	///     A DragDrop implementation where the linked element follows the
 	///     mouse cursor during a drag.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\dd\DDCore.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\dd\DDCore.js</jssource>
 	public class DD : Ext.dd.DragDrop {
 
 		/// <summary>

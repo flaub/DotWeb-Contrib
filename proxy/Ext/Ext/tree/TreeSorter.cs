@@ -19,7 +19,7 @@ namespace Ext.tree {
 	///     });
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tree\TreeSorter.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\tree\TreeSorter.js</jssource>
 	[JsObject]
 	public class TreeSorter  {
 

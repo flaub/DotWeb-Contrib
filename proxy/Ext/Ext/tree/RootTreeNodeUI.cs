@@ -13,7 +13,7 @@ namespace Ext.tree {
 	///     */
 	///     Ext.tree.RootTreeNodeUI = Ext.extend(Ext.tree.TreeNodeUI, {
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tree\TreeNodeUI.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\tree\TreeNodeUI.js</jssource>
 	[JsObject]
 	public class RootTreeNodeUI  {
 

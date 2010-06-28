@@ -33,7 +33,7 @@ namespace Ext {
 	///     */
 	///     Ext.MessageBox = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\MessageBox.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\MessageBox.js</jssource>
 	[JsObject]
 	public class MessageBox  {
 
@@ -122,16 +122,18 @@ namespace Ext {
 		public extern static void updateText(string text);
 
 		/// <summary>
-		///     Updates a progress-style message box's text and progress bar.  Only relevant on message boxes
-		///     initiated via {@link Ext.MessageBox#progress} or by calling {@link Ext.MessageBox#show} with progress: true.
+		///     Updates a progress-style message box's text and progress bar. Only relevant on message boxes
+		///     initiated via {@link Ext.MessageBox#progress} or {@link Ext.MessageBox#wait},
+		///     or by calling {@link Ext.MessageBox#show} with progress: true.
 		///     so that any existing body text will not get overwritten by default unless a new value is passed in)
 		/// </summary>
 		/// <returns>Ext.MessageBox</returns>
 		public extern static void updateProgress();
 
 		/// <summary>
-		///     Updates a progress-style message box's text and progress bar.  Only relevant on message boxes
-		///     initiated via {@link Ext.MessageBox#progress} or by calling {@link Ext.MessageBox#show} with progress: true.
+		///     Updates a progress-style message box's text and progress bar. Only relevant on message boxes
+		///     initiated via {@link Ext.MessageBox#progress} or {@link Ext.MessageBox#wait},
+		///     or by calling {@link Ext.MessageBox#show} with progress: true.
 		///     so that any existing body text will not get overwritten by default unless a new value is passed in)
 		/// </summary>
 		/// <param name="value">Any number between 0 and 1 (e.g., .5, defaults to 0)</param>
@@ -139,8 +141,9 @@ namespace Ext {
 		public extern static void updateProgress(double value);
 
 		/// <summary>
-		///     Updates a progress-style message box's text and progress bar.  Only relevant on message boxes
-		///     initiated via {@link Ext.MessageBox#progress} or by calling {@link Ext.MessageBox#show} with progress: true.
+		///     Updates a progress-style message box's text and progress bar. Only relevant on message boxes
+		///     initiated via {@link Ext.MessageBox#progress} or {@link Ext.MessageBox#wait},
+		///     or by calling {@link Ext.MessageBox#show} with progress: true.
 		///     so that any existing body text will not get overwritten by default unless a new value is passed in)
 		/// </summary>
 		/// <param name="value">Any number between 0 and 1 (e.g., .5, defaults to 0)</param>
@@ -149,8 +152,9 @@ namespace Ext {
 		public extern static void updateProgress(double value, string progressText);
 
 		/// <summary>
-		///     Updates a progress-style message box's text and progress bar.  Only relevant on message boxes
-		///     initiated via {@link Ext.MessageBox#progress} or by calling {@link Ext.MessageBox#show} with progress: true.
+		///     Updates a progress-style message box's text and progress bar. Only relevant on message boxes
+		///     initiated via {@link Ext.MessageBox#progress} or {@link Ext.MessageBox#wait},
+		///     or by calling {@link Ext.MessageBox#show} with progress: true.
 		///     so that any existing body text will not get overwritten by default unless a new value is passed in)
 		/// </summary>
 		/// <param name="value">Any number between 0 and 1 (e.g., .5, defaults to 0)</param>
@@ -193,9 +197,10 @@ namespace Ext {
 		///     <li><tt>no</tt></li>
 		///     <li><tt>cancel</tt></li>
 		///     </ul></div></div></li>
-		///     <li><b>text</b> : String<div class="sub-desc">Value of the input field if either <tt>{@link #show-option-prompt prompt}</tt>
-		///     or <tt>{@link #show-option-multiline multiline}</tt> is true</div></li>
-		///     </p></div></li>
+		///     <li><b>text</b> : String<div class="sub-desc">Value of the input field if either <tt><a href="#show-option-prompt" ext:member="show-option-prompt" ext:cls="Ext.MessageBox">prompt</a></tt>
+		///     or <tt><a href="#show-option-multiline" ext:member="show-option-multiline" ext:cls="Ext.MessageBox">multiline</a></tt> is true</div></li>
+		///     <li><b>opt</b> : Object<div class="sub-desc">The config object passed to show.</div></li>
+		///     </ul></p></div></li>
 		///     <li><b>scope</b> : Object<div class="sub-desc">The scope of the callback function</div></li>
 		///     <li><b>icon</b> : String<div class="sub-desc">A CSS class that provides a background image to be used as the body icon for the
 		///     dialog (e.g. Ext.MessageBox.WARNING or 'custom-class') (defaults to '')</div></li>
@@ -207,11 +212,11 @@ namespace Ext {
 		///     displayed (defaults to true)</div></li>
 		///     <li><b>msg</b> : String<div class="sub-desc">A string that will replace the existing message box body text (defaults to the
 		///     XHTML-compliant non-breaking space character '&amp;#160;')</div></li>
-		///     <a id="show-option-multiline"></a><li><b>multiline</b> : Boolean<div class="sub-desc">
+		///     <li><a id="show-option-multiline"></a><b>multiline</b> : Boolean<div class="sub-desc">
 		///     True to prompt the user to enter multi-line text (defaults to false)</div></li>
 		///     <li><b>progress</b> : Boolean<div class="sub-desc">True to display a progress bar (defaults to false)</div></li>
 		///     <li><b>progressText</b> : String<div class="sub-desc">The text to display inside the progress bar if progress = true (defaults to '')</div></li>
-		///     <a id="show-option-prompt"></a><li><b>prompt</b> : Boolean<div class="sub-desc">True to prompt the user to enter single-line text (defaults to false)</div></li>
+		///     <li><a id="show-option-prompt"></a><b>prompt</b> : Boolean<div class="sub-desc">True to prompt the user to enter single-line text (defaults to false)</div></li>
 		///     <li><b>proxyDrag</b> : Boolean<div class="sub-desc">True to display a lightweight proxy while dragging (defaults to false)</div></li>
 		///     <li><b>title</b> : String<div class="sub-desc">The title text</div></li>
 		///     <li><b>value</b> : String<div class="sub-desc">The string value to set into the active textbox element if displayed</div></li>
@@ -262,9 +267,10 @@ namespace Ext {
 		///     <li><tt>no</tt></li>
 		///     <li><tt>cancel</tt></li>
 		///     </ul></div></div></li>
-		///     <li><b>text</b> : String<div class="sub-desc">Value of the input field if either <tt>{@link #show-option-prompt prompt}</tt>
-		///     or <tt>{@link #show-option-multiline multiline}</tt> is true</div></li>
-		///     </p></div></li>
+		///     <li><b>text</b> : String<div class="sub-desc">Value of the input field if either <tt><a href="#show-option-prompt" ext:member="show-option-prompt" ext:cls="Ext.MessageBox">prompt</a></tt>
+		///     or <tt><a href="#show-option-multiline" ext:member="show-option-multiline" ext:cls="Ext.MessageBox">multiline</a></tt> is true</div></li>
+		///     <li><b>opt</b> : Object<div class="sub-desc">The config object passed to show.</div></li>
+		///     </ul></p></div></li>
 		///     <li><b>scope</b> : Object<div class="sub-desc">The scope of the callback function</div></li>
 		///     <li><b>icon</b> : String<div class="sub-desc">A CSS class that provides a background image to be used as the body icon for the
 		///     dialog (e.g. Ext.MessageBox.WARNING or 'custom-class') (defaults to '')</div></li>
@@ -276,11 +282,11 @@ namespace Ext {
 		///     displayed (defaults to true)</div></li>
 		///     <li><b>msg</b> : String<div class="sub-desc">A string that will replace the existing message box body text (defaults to the
 		///     XHTML-compliant non-breaking space character '&amp;#160;')</div></li>
-		///     <a id="show-option-multiline"></a><li><b>multiline</b> : Boolean<div class="sub-desc">
+		///     <li><a id="show-option-multiline"></a><b>multiline</b> : Boolean<div class="sub-desc">
 		///     True to prompt the user to enter multi-line text (defaults to false)</div></li>
 		///     <li><b>progress</b> : Boolean<div class="sub-desc">True to display a progress bar (defaults to false)</div></li>
 		///     <li><b>progressText</b> : String<div class="sub-desc">The text to display inside the progress bar if progress = true (defaults to '')</div></li>
-		///     <a id="show-option-prompt"></a><li><b>prompt</b> : Boolean<div class="sub-desc">True to prompt the user to enter single-line text (defaults to false)</div></li>
+		///     <li><a id="show-option-prompt"></a><b>prompt</b> : Boolean<div class="sub-desc">True to prompt the user to enter single-line text (defaults to false)</div></li>
 		///     <li><b>proxyDrag</b> : Boolean<div class="sub-desc">True to display a lightweight proxy while dragging (defaults to false)</div></li>
 		///     <li><b>title</b> : String<div class="sub-desc">The title text</div></li>
 		///     <li><b>value</b> : String<div class="sub-desc">The string value to set into the active textbox element if displayed</div></li>

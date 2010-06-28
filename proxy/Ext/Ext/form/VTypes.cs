@@ -5,11 +5,20 @@ using DotWeb.Client;
 namespace Ext.form {
 	/// <summary>
 	///     /**
-	///     Overridable validation definitions. The validations provided are basic and intended to be easily customizable and extended.
+	///     This is a singleton object which contains a set of commonly used field validation functions.
+	///     The validations provided are basic and intended to be easily customizable and extended. To add
+	///     your own custom VType:<pre><code>
+	///     Ext.apply(Ext.form.VTypes, {
+	///     IPAddress:  function(v) {
+	///     return /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(v);
+	///     },
+	///     IPAddressText: 'Must be a numeric IP address'
+	///     });
+	///     </code></pre>
 	///     */
 	///     Ext.form.VTypes = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\VTypes.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\form\VTypes.js</jssource>
 	[JsObject]
 	public class VTypes  {
 

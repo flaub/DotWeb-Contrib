@@ -17,7 +17,7 @@ namespace Ext.data {
 	///     */
 	///     Ext.data.DataProxy = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\DataProxy.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\data\DataProxy.js</jssource>
 	public class DataProxy : Ext.util.Observable {
 
 		/// <summary>Auto-generated default constructor</summary>
@@ -35,13 +35,17 @@ namespace Ext.data {
 		public extern static Ext.util.Observable superclass { get; set; }
 
 
+		/// <summary>Destroys the proxy by purging any event listeners and cancelling any active requests.</summary>
+		/// <returns></returns>
+		public extern virtual void destroy();
+
 
 
 	}
 
 	[JsAnonymous]
 	public class DataProxyConfig : System.DotWeb.JsDynamic {
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

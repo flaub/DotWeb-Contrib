@@ -7,7 +7,7 @@ namespace Ext.layout.BorderLayout {
 	///     /**
 	///     This is a specialized type of BorderLayout region that has a built-in {@link Ext.SplitBar} for user resizing of regions.
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\layout\BorderLayout.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\layout\BorderLayout.js</jssource>
 	public class SplitRegion : Ext.layout.BorderLayout.Region {
 
 		/// <summary>
@@ -20,14 +20,14 @@ namespace Ext.layout.BorderLayout {
 		///     Create a new SplitRegion.
 		///     BorderLayout must have a center region for the primary content -- all other regions are optional.
 		/// </summary>
-		/// <param name="layout">Any valid Ext layout class</param>
+		/// <param name="layout">The {@link Ext.layout.BorderLayout BorderLayout} instance that is managing this Region.</param>
 		/// <returns></returns>
 		public extern SplitRegion(object layout);
 		/// <summary>
 		///     Create a new SplitRegion.
 		///     BorderLayout must have a center region for the primary content -- all other regions are optional.
 		/// </summary>
-		/// <param name="layout">Any valid Ext layout class</param>
+		/// <param name="layout">The {@link Ext.layout.BorderLayout BorderLayout} instance that is managing this Region.</param>
 		/// <param name="config">The configuration options</param>
 		/// <returns></returns>
 		public extern SplitRegion(object layout, object config);
@@ -35,7 +35,7 @@ namespace Ext.layout.BorderLayout {
 		///     Create a new SplitRegion.
 		///     BorderLayout must have a center region for the primary content -- all other regions are optional.
 		/// </summary>
-		/// <param name="layout">Any valid Ext layout class</param>
+		/// <param name="layout">The {@link Ext.layout.BorderLayout BorderLayout} instance that is managing this Region.</param>
 		/// <param name="config">The configuration options</param>
 		/// <param name="position">The region position.  Valid values are: north, south, east, west and center.  Every</param>
 		/// <returns></returns>
@@ -101,10 +101,10 @@ namespace Ext.layout.BorderLayout {
 		/// <summary>  By default, collapsible regions are collapsed by clicking the expand/collapse tool button that renders into the region's title bar.  Optionally, when collapseMode is set to 'mini' the region's split bar will also display a small collapse button in the center of the bar.  In 'mini' mode the region will collapse to a thinner bar than in normal mode.  By default collapseMode is undefined, and the only two supported values are undefined and 'mini'.  Note that if a collapsible region does not have a title bar, then collapseMode must be set to 'mini' in order for the region to be collapsible by the user as the tool button will not be rendered.</summary>
 		public extern string collapseMode { get; set; }
 
-		/// <summary>  An object containing margins to apply to the region in the format {left: (left margin), top: (top margin), right: (right margin), bottom: (bottom margin)}</summary>
+		/// <summary>  An object containing margins to apply to the region when in the expanded state in the format:<pre><code> { top: (top margin), right: (right margin), bottom: (bottom margin), left: (left margin) }</code></pre> <p>May also be a string containing space-separated, numeric margin values. The order of the sides associated with each value matches the way CSS processes margin values:</p> <p><ul> <li>If there is only one value, it applies to all sides.</li> <li>If there are two values, the top and bottom borders are set to the first value and the right and left are set to the second.</li> <li>If there are three values, the top is set to the first value, the left and right are set to the second, and the bottom is set to the third.</li> <li>If there are four values, they apply to the top, right, bottom, and left, respectively.</li> </ul></p></summary>
 		public extern object margins { get; set; }
 
-		/// <summary>  An object containing margins to apply to the region's collapsed element in the format {left: (left margin), top: (top margin), right: (right margin), bottom: (bottom margin)}</summary>
+		/// <summary>  An object containing margins to apply to the region when in the collapsed state in the format:<pre><code> { top: (top margin), right: (right margin), bottom: (bottom margin), left: (left margin) }</code></pre> <p>May also be a string containing space-separated, numeric margin values. The order of the sides associated with each value matches the way CSS processes margin values.</p> <p><ul> <li>If there is only one value, it applies to all sides.</li> <li>If there are two values, the top and bottom borders are set to the first value and the right and left are set to the second.</li> <li>If there are three values, the top is set to the first value, the left and right are set to the second, and the bottom is set to the third.</li> <li>If there are four values, they apply to the top, right, bottom, and left, respectively.</li> </ul></p></summary>
 		public extern object cmargins { get; set; }
 
 		/// <summary>  True to allow the user to collapse this region (defaults to false).  If true, an expand/collapse tool button will automatically be rendered into the title bar of the region, otherwise the button will not be shown. Note that a title bar is required to display the toggle button -- if no region title is specified, the region will only be collapsible if {@link #collapseMode} is set to 'mini'.</summary>

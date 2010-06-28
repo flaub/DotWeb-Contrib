@@ -15,18 +15,34 @@ namespace Ext.grid {
 	///     <br>Usage:<br>
 	///     <pre><code>
 	///     var colModel = new Ext.grid.ColumnModel([
-	///     {header: "Ticker", width: 60, sortable: true},
-	///     {header: "Company Name", width: 150, sortable: true},
-	///     {header: "Market Cap.", width: 100, sortable: true},
-	///     {header: "$ Sales", width: 100, sortable: true, renderer: money},
-	///     {header: "Employees", width: 100, sortable: true, resizable: false}
+	///     { header: "Ticker", width: 60, sortable: true},
+	///     { header: "Company Name", width: 150, sortable: true},
+	///     { header: "Market Cap.", width: 100, sortable: true},
+	///     { header: "$ Sales", width: 100, sortable: true, renderer: money},
+	///     { header: "Employees", width: 100, sortable: true, resizable: false}
 	///     ]);
 	///     </code></pre>
 	///     <p>
-	///     The config options <b>defined by</b< this class are options which may appear in each
-	///     individual column definition.
+	///     The config options <b>defined by</b> this class are options which may appear in each
+	///     individual column definition. In order to use configuration options from the superclass,
+	///     specify the column configuration Array in the <tt><b>columns</b></tt> config property. eg:<pre><code>
+	///     var colModel = new Ext.grid.ColumnModel({
+	///     listeners: {
+	///     widthchange: function(cm, colIndex, width) {
+	///     saveConfig(colIndex, width);
+	///     }
+	///     },
+	///     columns: [
+	///     { header: "Ticker", width: 60, sortable: true},
+	///     { header: "Company Name", width: 150, sortable: true},
+	///     { header: "Market Cap.", width: 100, sortable: true},
+	///     { header: "$ Sales", width: 100, sortable: true, renderer: money},
+	///     { header: "Employees", width: 100, sortable: true, resizable: false}
+	///     ]
+	///     });
+	///     </code></pre>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\ColumnModel.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\grid\ColumnModel.js</jssource>
 	public class ColumnModel : Ext.util.Observable {
 
 		/// <summary>config objects for details.</summary>
@@ -53,7 +69,7 @@ namespace Ext.grid {
 		/// <summary>Default sortable of columns which have no sortable specified (defaults to false)</summary>
 		public extern bool defaultSortable { get; set; }
 
-		/// <summary>The config passed into the constructor</summary>
+		/// <summary>The column configuration Array passed into the constructor.</summary>
 		public extern System.Array config { get; set; }
 
 		/// <summary>
@@ -77,7 +93,7 @@ namespace Ext.grid {
 		/// </summary>
 		public extern string dataIndex { get; set; }
 
-		/// <summary>(optional) The initial width in pixels of the column.</summary>
+		/// <summary>(optional) The initial width in pixels of the column. This is ignored if theGrid's {@link Ext.grid.GridView view} is configured with {@link Ext.grid.GridView#forceFit forceFit} true.</summary>
 		public extern double width { get; set; }
 
 		/// <summary>
@@ -135,12 +151,22 @@ namespace Ext.grid {
 		/// <returns>String</returns>
 		public extern virtual void getColumnId(double index);
 
-		/// <summary>Reconfigures this column model</summary>
+		/// <summary>
+		///     <p>Reconfigures this column model according to the passed Array of column definition objects. For a description of
+		///     the individual properties of a column definition object, see the <a href="#Ext.grid.ColumnModel-configs">Config Options</a>.</p>
+		///     <p>Causes the {@link #configchange} event to be fired. A {@link Ext.grid.GridPanel GridPanel} using
+		///     this ColumnModel will listen for this event and refresh its UI automatically.</p>
+		/// </summary>
 		/// <returns></returns>
 		public extern virtual void setConfig();
 
-		/// <summary>Reconfigures this column model</summary>
-		/// <param name="config">Array of Column configs</param>
+		/// <summary>
+		///     <p>Reconfigures this column model according to the passed Array of column definition objects. For a description of
+		///     the individual properties of a column definition object, see the <a href="#Ext.grid.ColumnModel-configs">Config Options</a>.</p>
+		///     <p>Causes the {@link #configchange} event to be fired. A {@link Ext.grid.GridPanel GridPanel} using
+		///     this ColumnModel will listen for this event and refresh its UI automatically.</p>
+		/// </summary>
+		/// <param name="config">Array of Column definition objects.</param>
 		/// <returns></returns>
 		public extern virtual void setConfig(System.Array config);
 
@@ -180,6 +206,11 @@ namespace Ext.grid {
 		/// <summary>Returns the number of columns.</summary>
 		/// <returns>Number</returns>
 		public extern virtual void getColumnCount();
+
+		/// <summary>Returns the number of columns.</summary>
+		/// <param name="visibleOnly">Optional. Pass as true to only include visible columns.</param>
+		/// <returns>Number</returns>
+		public extern virtual void getColumnCount(bool visibleOnly);
 
 		/// <summary>Returns the column configs that return true by the passed function that is called with (columnConfig, index)</summary>
 		/// <returns>Array</returns>
@@ -409,19 +440,28 @@ namespace Ext.grid {
 		/// <returns>Boolean</returns>
 		public extern virtual void isCellEditable(double colIndex, double rowIndex);
 
-		/// <summary>Returns the editor defined for the cell/column.</summary>
-		/// <returns>Object</returns>
+		/// <summary>
+		///     Returns the editor defined for the cell/column.
+		///     the {@link Ext.form.Field Field} used to edit the cell.
+		/// </summary>
+		/// <returns>Ext.Editor</returns>
 		public extern virtual void getCellEditor();
 
-		/// <summary>Returns the editor defined for the cell/column.</summary>
+		/// <summary>
+		///     Returns the editor defined for the cell/column.
+		///     the {@link Ext.form.Field Field} used to edit the cell.
+		/// </summary>
 		/// <param name="colIndex">The column index</param>
-		/// <returns>Object</returns>
+		/// <returns>Ext.Editor</returns>
 		public extern virtual void getCellEditor(double colIndex);
 
-		/// <summary>Returns the editor defined for the cell/column.</summary>
+		/// <summary>
+		///     Returns the editor defined for the cell/column.
+		///     the {@link Ext.form.Field Field} used to edit the cell.
+		/// </summary>
 		/// <param name="colIndex">The column index</param>
 		/// <param name="rowIndex">The row index</param>
-		/// <returns>Object</returns>
+		/// <returns>Ext.Editor</returns>
 		public extern virtual void getCellEditor(double colIndex, double rowIndex);
 
 		/// <summary>Sets if a column is editable.</summary>
@@ -486,6 +526,10 @@ namespace Ext.grid {
 		/// <returns></returns>
 		public extern virtual void setEditor(double col, object editor);
 
+		/// <summary>Destroys this the column model by purging any event listeners, and removing any editors.</summary>
+		/// <returns></returns>
+		public extern virtual void destroy();
+
 
 
 	}
@@ -501,7 +545,7 @@ namespace Ext.grid {
 		/// <summary> (optional) The name of the field in the grid's {@link Ext.data.Store}'s {@link Ext.data.Record} definition from which to draw the column's value. If not specified, the column's index is used as an index into the Record's data Array.</summary>
 		public extern string dataIndex { get; set; }
 
-		/// <summary> (optional) The initial width in pixels of the column.</summary>
+		/// <summary> (optional) The initial width in pixels of the column. This is ignored if the Grid's {@link Ext.grid.GridView view} is configured with {@link Ext.grid.GridView#forceFit forceFit} true.</summary>
 		public extern double width { get; set; }
 
 		/// <summary> (optional) True if sorting is to be allowed on this column. Defaults to the value of the {@link #defaultSortable} property. Whether local/remote sorting is used is specified in {@link Ext.data.Store#remoteSort}.</summary>
@@ -537,7 +581,7 @@ namespace Ext.grid {
 		/// <summary> (optional) The {@link Ext.form.Field} to use when editing values in this column if editing is supported by the grid.</summary>
 		public extern Ext.form.Field editor { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

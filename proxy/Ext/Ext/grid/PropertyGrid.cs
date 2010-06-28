@@ -24,7 +24,7 @@ namespace Ext.grid {
 	///     });
 	///     </pre></code>
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\PropertyGrid.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\widgets\grid\PropertyGrid.js</jssource>
 	public class PropertyGrid : Ext.grid.EditorGridPanel {
 
 		/// <summary></summary>
@@ -52,6 +52,9 @@ namespace Ext.grid {
 
 		/// <summary>The reference to the class that this class inherits from</summary>
 		public extern static Ext.grid.EditorGridPanel superclass { get; set; }
+
+		/// <summary>An object containing property name/display name pairs.If specified, the display name will be shown in the name column instead of the property name.</summary>
+		public extern object propertyNames { get; set; }
 
 		/// <summary>A data object to use as the data source of the grid (see {@link #setSource} for details).</summary>
 		public extern object source { get; set; }
@@ -128,19 +131,22 @@ namespace Ext.grid {
 
 	[JsAnonymous]
 	public class PropertyGridConfig : System.DotWeb.JsDynamic {
+		/// <summary> An object containing property name/display name pairs. If specified, the display name will be shown in the name column instead of the property name.</summary>
+		public extern object propertyNames { get; set; }
+
 		/// <summary> A data object to use as the data source of the grid (see {@link #setSource} for details).</summary>
 		public extern object source { get; set; }
 
 		/// <summary> An object containing name/value pairs of custom editor type definitions that allow the grid to support additional types of editable fields.  By default, the grid supports strongly-typed editing of strings, dates, numbers and booleans using built-in form editors, but any custom type can be supported and associated with a custom input control by specifying a custom editor.  The name of the editor type should correspond with the name of the property that will use the editor.  Example usage: <pre><code> var grid = new Ext.grid.PropertyGrid({ ... customEditors: { 'Start Time': new Ext.grid.GridEditor(new Ext.form.TimeField({selectOnFocus:true})) }, source: { 'Start Time': '10:00 AM' } }); </code></pre></summary>
 		public extern object customEditors { get; set; }
 
-		/// <summary>  The number of clicks on a cell required to display the cell's editor (defaults to 2)</summary>
+		/// <summary>  <p>The number of clicks on a cell required to display the cell's editor (defaults to 2).</p> <p>Setting this option to 'auto' means that mousedown <i>on the selected cell</i> starts editing that cell.</p></summary>
 		public extern double clicksToEdit { get; set; }
 
 		/// <summary>  True to automatically HTML encode and decode values pre and post edit (defaults to false)</summary>
 		public extern bool autoEncode { get; set; }
 
-		/// <summary> Any subclass of AbstractSelectionModel that will provide the selection model for the grid (defaults to {@link Ext.grid.CellSelectionModel} if not specified).</summary>
+		/// <summary> Any subclass of AbstractSelectionModel that will provide the selection model for the grid (defaults to {@link Ext.grid.CellSelectionModel} if not specified). Note that the SelectionModel must be compatible with the model of selecting cells individually, and should support a method named <tt>getSelectedCell</tt> (for these reasons, {@link Ext.grid.RowSelectionModel} is not compatible).</summary>
 		public extern object selModel { get; set; }
 
 		/// <summary> The {@link Ext.data.Store} the grid should use as its data source (required).</summary>
@@ -170,7 +176,7 @@ namespace Ext.grid {
 		/// <summary> False to turn off column resizing for the whole grid (defaults to true).</summary>
 		public extern bool enableColumnResize { get; set; }
 
-		/// <summary> A config object that will be applied to the grid's UI view.  Any of the config options available for {@link Ext.grid.GridView} can be specified here.</summary>
+		/// <summary> A config object that will be used to create the grid's UI view.  Any of the config options available for {@link Ext.grid.GridView} can be specified here. This option is ignored if {@link #view} is specified.</summary>
 		public extern object viewConfig { get; set; }
 
 		/// <summary> True to hide the grid's header (defaults to false).</summary>
@@ -182,7 +188,7 @@ namespace Ext.grid {
 		/// <summary> True to highlight rows when the mouse is over. Default is true.</summary>
 		public extern bool trackMouseOver { get; set; }
 
-		/// <summary> True to enable dragging of the selected rows of the GridPanel.</p> <p>Setting this to <b><tt>true</tt></b> causes this GridPanel's {@link #getView GridView} to create an instance of {@link Ext.grid.GridDragZone}. This is available <b>(only after the Grid has been rendered)</b> as the GridView's {@link Ext.grid.GridView#dragZone dragZone} property.</p> <p>A cooperating {@link Ext.dd.DropZone DropZone} must be created who's implementations of {@link Ext.dd.DropZone#onNodeEnter onNodeEnter}, {@link Ext.dd.DropZone#onNodeOver onNodeOver}, {@link Ext.dd.DropZone#onNodeOut onNodeOut} and {@link Ext.dd.DropZone#onNodeDrop onNodeDrop}</p> are able to process the {@link Ext.grid.GridDragZone#getDragData data} which is provided.</summary>
+		/// <summary> <p>True to enable dragging of the selected rows of the GridPanel.</p> <p>Setting this to <b><tt>true</tt></b> causes this GridPanel's {@link #getView GridView} to create an instance of {@link Ext.grid.GridDragZone}. This is available <b>(only after the Grid has been rendered)</b> as the GridView's {@link Ext.grid.GridView#dragZone dragZone} property.</p> <p>A cooperating {@link Ext.dd.DropZone DropZone} must be created who's implementations of {@link Ext.dd.DropZone#onNodeEnter onNodeEnter}, {@link Ext.dd.DropZone#onNodeOver onNodeOver}, {@link Ext.dd.DropZone#onNodeOut onNodeOut} and {@link Ext.dd.DropZone#onNodeDrop onNodeDrop} are able to process the {@link Ext.grid.GridDragZone#getDragData data} which is provided.</p></summary>
 		public extern bool enableDragDrop { get; set; }
 
 		/// <summary> True to enable hiding of columns with the header context menu.</summary>
@@ -191,7 +197,7 @@ namespace Ext.grid {
 		/// <summary> True to enable the drop down button for menu in the headers.</summary>
 		public extern bool enableHdMenu { get; set; }
 
-		/// <summary> True to stripe the rows. Default is false.</summary>
+		/// <summary> True to stripe the rows. Default is false. <p>This causes the CSS class <tt><b>x-grid3-row-alt</b></tt> to be added to alternate rows of the grid. A default CSS rule is provided which sets a background colour, but you can override this with a rule which either overrides the <b>background-color</b> style using the "!important" modifier, or which uses a CSS selector of higher specificity.</p></summary>
 		public extern bool stripeRows { get; set; }
 
 		/// <summary> The id of a column in this grid that should expand to fill unused space. This id can not be 0.</summary>
@@ -212,16 +218,28 @@ namespace Ext.grid {
 		/// <summary> True to enable deferred row rendering. Default is true.</summary>
 		public extern bool deferRowRender { get; set; }
 
+		/// <summary>  An array of events that, when fired, should trigger this component to save its state (defaults to ["columnmove", "columnresize", "sortchange"]). These can be any types of events supported by this component, including browser or custom events (e.g., ['click', 'customerchange']). <p>See {@link #stateful} for an explanation of saving and restoring Component state.</p></summary>
+		public extern System.Array stateEvents { get; set; }
+
+		/// <summary>  <p>A {@link Ext.DomHelper DomHelper} configuration object specifying the element structure of this Panel's {@link #body} Element.</p> <p>This may be used to force the body Element to use a different form of markup than is created automatically. An example of this might be to create a child Panel containing custom content, such as a header, or forcing centering of all Panel content by having the body be a &lt;center&gt; element:</p><code><pre> new Ext.Panel({ title: 'New Message', collapsible: true, renderTo: Ext.getBody(), width: 400, bodyCfg: { tag: 'center', cls: 'x-panel-body' }, items: [{ border: false, header: false, bodyCfg: {tag: 'h2', html: 'Message'} }, { xtype: 'textarea', style: { width: '95%', marginBottom: '10px' } }, new Ext.Button({ text: 'Send', minWidth: '100', style: { marginBottom: '10px' } }) ] });</pre></code></summary>
+		public extern object bodyCfg { get; set; }
+
+		/// <summary>  <p>A {@link Ext.DomHelper DomHelper} configuration object specifying the element structure of this Panel's {@link #header} Element.</p></summary>
+		public extern object headerCfg { get; set; }
+
+		/// <summary>  <p>A {@link Ext.DomHelper DomHelper} configuration object specifying the element structure of this Panel's {@link #footer} Element.</p></summary>
+		public extern object footerCfg { get; set; }
+
 		/// <summary>  The id of the node, a DOM node or an existing Element corresponding to a DIV that is already present in the document that specifies some panel-specific structural markup.  When applyTo is used, constituent parts of the panel can be specified by CSS class name within the main element, and the panel will automatically create those components from that markup. Any required components not specified in the markup will be autogenerated if necessary. The following class names are supported (baseCls will be replaced by {@link #baseCls}): <ul><li>baseCls + '-header'</li> <li>baseCls + '-header-text'</li> <li>baseCls + '-bwrap'</li> <li>baseCls + '-tbar'</li> <li>baseCls + '-body'</li> <li>baseCls + '-bbar'</li> <li>baseCls + '-footer'</li></ul> Using this config, a call to render() is not required.  If applyTo is specified, any value passed for {@link #renderTo} will be ignored and the target element's parent node will automatically be used as the panel's container.</summary>
 		public extern object applyTo { get; set; }
 
-		/// <summary>{Object/Array}  The top toolbar of the panel. This can be a {@link Ext.Toolbar} object, a toolbar config, or an array of buttons/button configs to be added to the toolbar.  Note that this is not available as a property after render. To access the top toolbar after render, use {@link #getTopToolbar}.</summary>
+		/// <summary>{Object/Array}  <p>The top toolbar of the panel. This can be either an {@link Ext.Toolbar} object or an array of buttons/button configs to be added to the toolbar.  Note that this is not available as a property after render. To access the top toolbar after render, use {@link #getTopToolbar}.</p> <p><b>Note:</b> Although a Toolbar may contain Field components, these will <b>not<b> be updated by a load of an ancestor FormPanel. A Panel's toolbars are not part of the standard Container->Component hierarchy, and so are not scanned to collect form items. Hoverver, the values <b>will</b> be submitted because form submission parameters are collected from the DOM tree.</p></summary>
 		public extern object tbar { get; set; }
 
-		/// <summary>{Object/Array}  The bottom toolbar of the panel. This can be a {@link Ext.Toolbar} object, a toolbar config, or an array of buttons/button configs to be added to the toolbar.  Note that this is not available as a property after render. To access the bottom toolbar after render, use {@link #getBottomToolbar}.</summary>
+		/// <summary>{Object/Array}  <p>The bottom toolbar of the panel. This can be either an {@link Ext.Toolbar} object or an array of buttons/button configs to be added to the toolbar.  Note that this is not available as a property after render. To access the bottom toolbar after render, use {@link #getBottomToolbar}.</p> <p><b>Note:</b> Although a Toolbar may contain Field components, these will <b>not<b> be updated by a load of an ancestor FormPanel. A Panel's toolbars are not part of the standard Container->Component hierarchy, and so are not scanned to collect form items. Hoverver, the values <b>will</b> be submitted because form submission parameters are collected from the DOM tree.</p></summary>
 		public extern object bbar { get; set; }
 
-		/// <summary>  True to create the header element explicitly, false to skip creating it.  By default, when header is not specified, if a {@link #title} is set the header will be created automatically, otherwise it will not.  If a title is set but header is explicitly set to false, the header will not be rendered.</summary>
+		/// <summary>  True to create the Panel's header element explicitly, false to skip creating it.  By default, when header is not specified, if a {@link #title} is set the header will be created automatically, otherwise it will not.  If a title is set but header is explicitly set to false, the header will not be rendered.</summary>
 		public extern bool header { get; set; }
 
 		/// <summary>  True to create the footer element explicitly, false to skip creating it.  By default, when footer is not specified, if one or more buttons have been added to the panel the footer will be created automatically, otherwise it will not.</summary>
@@ -254,8 +272,11 @@ namespace Ext.grid {
 		/// <summary>  True to make the panel collapsible and have the expand/collapse toggle button automatically rendered into the header tool button area, false to keep the panel statically sized with no button (defaults to false).</summary>
 		public extern bool collapsible { get; set; }
 
-		/// <summary>  An array of tool button configs to be added to the header tool area. When rendered, each tool is stored as an {@link Ext.Element Element} referenced by a public property called <tt><b></b>tools.<i>&lt;tool-type&gt;</i></tt> <p>Each tool config may contain the following properties: <div class="mdetail-params"><ul> <li><b>id</b> : String<div class="sub-desc"><b>Required.</b> The type of tool to create. Values may be<ul> <li><tt>toggle</tt> (Created by default when {@link #collapsible} is <tt>true</tt>)</li> <li><tt>close</tt></li> <li><tt>minimize</tt></li> <li><tt>maximize</tt></li> <li><tt>restore</tt></li> <li><tt>gear</tt></li> <li><tt>pin</tt></li> <li><tt>unpin</tt></li> <li><tt>right</tt></li> <li><tt>left</tt></li> <li><tt>up</tt></li> <li><tt>down</tt></li> <li><tt>refresh</tt></li> <li><tt>minus</tt></li> <li><tt>plus</tt></li> <li><tt>help</tt></li> <li><tt>search</tt></li> <li><tt>save</tt></li> <li><tt>print</tt></li> </ul></div></li> <li><b>handler</b> : Function<div class="sub-desc"><b>Required.</b> The function to call when clicked. Arguments passed are:<ul> <li><b>event</b> : Ext.EventObject<div class="sub-desc">The click event.</div></li> <li><b>toolEl</b> : Ext.Element<div class="sub-desc">The tool Element.</div></li> <li><b>Panel</b> : Ext.Panel<div class="sub-desc">The host Panel</div></li> </ul></div></li> <li><b>scope</b> : Object<div class="sub-desc">The scope in which to call the handler.</div></li> <li><b>qtip</b> : String/Object<div class="sub-desc">A tip string, or a config argument to {@link Ext.QuickTip#register}</div></li> <li><b>hidden</b> : Boolean<div class="sub-desc">True to initially render hidden.</div></li> <li><b>on</b> : Object<div class="sub-desc">A listener config object specifiying event listeners in the format of an argument to {@link #addListener}</div></li> </ul></div> Example usage: <pre><code> tools:[{ id:'refresh', qtip: 'Refresh form Data', // hidden:true, handler: function(event, toolEl, panel){ // refresh logic } }] </code></pre> Note that apart from the toggle tool which is provided when a panel is collapsible, these tools only provide the visual button. Any required functionality must be provided by adding handlers that implement the necessary behavior.</summary>
+		/// <summary>  An array of tool button configs to be added to the header tool area. When rendered, each tool is stored as an {@link Ext.Element Element} referenced by a public property called <tt><b></b>tools.<i>&lt;tool-type&gt;</i></tt> <p>Each tool config may contain the following properties: <div class="mdetail-params"><ul> <li><b>id</b> : String<div class="sub-desc"><b>Required.</b> The type of tool to create. By default, this assigns a CSS class of the form <tt>x-tool-<i>&lt;tool-type&gt;</i></tt> to the resulting tool Element. Ext provides CSS rules, and an icon sprite containing images for the tool types listed below. The developer may implement custom tools by supplying alternate CSS rules and background images:<ul> <li><tt>toggle</tt> (Created by default when {@link #collapsible} is <tt>true</tt>)</li> <li><tt>close</tt></li> <li><tt>minimize</tt></li> <li><tt>maximize</tt></li> <li><tt>restore</tt></li> <li><tt>gear</tt></li> <li><tt>pin</tt></li> <li><tt>unpin</tt></li> <li><tt>right</tt></li> <li><tt>left</tt></li> <li><tt>up</tt></li> <li><tt>down</tt></li> <li><tt>refresh</tt></li> <li><tt>minus</tt></li> <li><tt>plus</tt></li> <li><tt>help</tt></li> <li><tt>search</tt></li> <li><tt>save</tt></li> <li><tt>print</tt></li> </ul></div></li> <li><b>handler</b> : Function<div class="sub-desc"><b>Required.</b> The function to call when clicked. Arguments passed are:<ul> <li><b>event</b> : Ext.EventObject<div class="sub-desc">The click event.</div></li> <li><b>toolEl</b> : Ext.Element<div class="sub-desc">The tool Element.</div></li> <li><b>Panel</b> : Ext.Panel<div class="sub-desc">The host Panel</div></li> </ul></div></li> <li><b>scope</b> : Object<div class="sub-desc">The scope in which to call the handler.</div></li> <li><b>qtip</b> : String/Object<div class="sub-desc">A tip string, or a config argument to {@link Ext.QuickTip#register}</div></li> <li><b>hidden</b> : Boolean<div class="sub-desc">True to initially render hidden.</div></li> <li><b>on</b> : Object<div class="sub-desc">A listener config object specifiying event listeners in the format of an argument to {@link #addListener}</div></li> </ul></div> Example usage: <pre><code> tools:[{ id:'refresh', qtip: 'Refresh form Data', // hidden:true, handler: function(event, toolEl, panel){ // refresh logic } }] </code></pre> Note that apart from the toggle tool which is provided when a panel is collapsible, these tools only provide the visual button. Any required functionality must be provided by adding handlers that implement the necessary behavior.</summary>
 		public extern System.Array tools { get; set; }
+
+		/// <summary>{Ext.Template/Ext.XTemplate}  @type {Ext.Template/Ext.XTemplate} <p>A Template used to create tools in the {@link #header} Element. Defaults to:</p><pre><code> new Ext.Template('&lt;div class="x-tool x-tool-{id}">&amp;#160;&lt;/div>')</code></pre> <p>This may may be overridden to provide a custom DOM structure for tools based upon a more complex XTemplate. The template's data is a single tool configuration object (Not the entire Array) as specified in {@link #tools} Example:</p><pre><code> var win = new Ext.Window({ tools: [{ id: 'download', href: '/MyPdfDoc.pdf' }], toolTemplate: new Ext.XTemplate( '&lt;tpl if="id==\'download\'">', '&lt;a class="x-tool x-tool-pdf" href="{href}">&lt;/a>', '&lt;/tpl>', '&lt;tpl if="id!=\'download\'">', '&lt;div class="x-tool x-tool-{id}">&amp;#160;&lt;/div>', '&lt;/tpl>' ), width:500, height:300, closeAction:'hide' });</code></pre> <p>Note that the CSS class "x-tool-pdf" should have an associated style rule which provides an appropriate background image.</p></summary>
+		public extern object toolTemplate { get; set; }
 
 		/// <summary>  True to hide the expand/collapse toggle button when {@link #collapsible} = true, false to display it (defaults to false).</summary>
 		public extern bool hideCollapseTool { get; set; }
@@ -266,7 +287,7 @@ namespace Ext.grid {
 		/// <summary>  True to use overflow:'auto' on the panel's body element and show scroll bars automatically when necessary, false to clip any overflowing content (defaults to false).</summary>
 		public extern bool autoScroll { get; set; }
 
-		/// <summary>  True to float the panel (absolute position it with automatic shimming and shadow), false to display it inline where it is rendered (defaults to false).  Note that by default, setting floating to true will cause the panel to display at negative offsets so that it is hidden -- because the panel is absolute positioned, the position must be set explicitly after render (e.g., myPanel.setPosition(100,100);).  Also, when floating a panel you should always assign a fixed width, otherwise it will be auto width and will expand to fill to the right edge of the viewport.</summary>
+		/// <summary>  <p>True to float this Panel (absolute position it with automatic shimming and shadow), false to display it inline where it is rendered (defaults to false).</p> <p>Setting floating to true will create an {@link Ext.Layer} encapsulating this Panel's Element and display the Panel at negative offsets so that it is hidden. The position must be set explicitly after render (e.g., myPanel.setPosition(100,100);).</p> <p>When floating a panel you should always assign a fixed width, otherwise it will be auto width and will expand to fill to the right edge of the viewport.</p> <p>This property may also be specified as an object to be used as the configuration object for the {@link Ext.Layer} that will be created.</summary>
 		public extern bool floating { get; set; }
 
 		/// <summary>{Boolean/String}  True (or a valid Ext.Shadow {@link Ext.Shadow#mode} value) to display a shadow behind the panel, false to display no shadow (defaults to 'sides').  Note that this option only applies when floating = true.</summary>
@@ -278,10 +299,10 @@ namespace Ext.grid {
 		/// <summary>  False to disable the iframe shim in browsers which need one (defaults to true).  Note that this option only applies when floating = true.</summary>
 		public extern bool shim { get; set; }
 
-		/// <summary>{String/Object}  An HTML fragment, or a {@link Ext.DomHelper DomHelper} specification to use as the panel's body content (defaults to '').</summary>
+		/// <summary>{String/Object}  An HTML fragment, or a {@link Ext.DomHelper DomHelper} specification to use as the panel's body content (defaults to ''). The HTML content is added by the Panel's afterRender method, and so the document will not contain this HTML at the time the render event is fired. This content is inserted into the body <i>before</i> any configured {@link #contentEl} is appended.</summary>
 		public extern object html { get; set; }
 
-		/// <summary>  The id of an existing HTML node to use as the panel's body content (defaults to '').</summary>
+		/// <summary>  The id of an existing HTML node to use as the panel's body content (defaults to ''). The specified Element is appended to the Panel's body Element by the Panel's afterRender method <i>after any configured {@link #html HTML} has been inserted</i>, and so the document will not contain this HTML at the time the render event is fired.</summary>
 		public extern string contentEl { get; set; }
 
 		/// <summary>{Object/Array}  A KeyMap config object (in the format expected by {@link Ext.KeyMap#addBinding} used to assign custom key handling to this panel (defaults to null).</summary>
@@ -295,6 +316,9 @@ namespace Ext.grid {
 
 		/// <summary>  Render this panel disabled (default is false). An important note when using the disabled config on panels is that IE will often fail to initialize the disabled mask element correectly if the panel's layout has not yet completed by the time the Panel is disabled during the render process. If you experience this issue, you may need to instead use the {@link afterlayout} event to initialize the disabled state: <pre><code> new Ext.Panel({ ... listeners: { 'afterlayout': { fn: function(p){ p.disable(); }, single: true // important, as many layouts can occur } } }); </code></pre></summary>
 		public extern bool disabled { get; set; }
+
+		/// <summary>  True to use height:'auto', false to use fixed height (defaults to false). <b>Note</b>: Setting autoHeight:true means that the browser will manage the panel's height based on its contents, and that Ext will not manage it at all. If the panel is within a layout that manages dimensions (fit, border, etc.) then setting autoHeight:true can cause issues with scrolling and will not generally work as expected since the panel will take on the height of its contents rather than the height required by the Ext layout.</summary>
+		public extern bool autoHeight { get; set; }
 
 		/// <summary>  The base CSS class to apply to this panel's element (defaults to 'x-panel').</summary>
 		public extern string baseCls { get; set; }
@@ -329,7 +353,7 @@ namespace Ext.grid {
 		/// <summary> The default type of container represented by this object as registered in Ext.ComponentMgr (defaults to 'panel').</summary>
 		public extern string defaultType { get; set; }
 
-		/// <summary>  The layout type to be used in this container.  If not specified, a default {@link Ext.layout.ContainerLayout} will be created and used.  Valid values are: absolute, accordion, anchor, border, card, column, fit, form and table. Specific config values for the chosen layout type can be specified using {@link #layoutConfig}.</summary>
+		/// <summary>  The layout type to be used in this container.  If not specified, a default {@link Ext.layout.ContainerLayout} will be created and used. Specific config values for the chosen layout type can be specified using {@link #layoutConfig}. Valid values are:<ul class="mdetail-params"> <li>absolute</li> <li>accordion</li> <li>anchor</li> <li>border</li> <li>card</li> <li>column</li> <li>fit</li> <li>form</li> <li>table</li></ul></summary>
 		public extern string layout { get; set; }
 
 		/// <summary>  This is a config object containing properties specific to the chosen layout (to be used in conjunction with the {@link #layout} config value).  For complete details regarding the valid config options for each layout type, see the layout class corresponding to the type specified:<ul class="mdetail-params"> <li>{@link Ext.layout.Absolute}</li> <li>{@link Ext.layout.Accordion}</li> <li>{@link Ext.layout.AnchorLayout}</li> <li>{@link Ext.layout.BorderLayout}</li> <li>{@link Ext.layout.CardLayout}</li> <li>{@link Ext.layout.ColumnLayout}</li> <li>{@link Ext.layout.FitLayout}</li> <li>{@link Ext.layout.FormLayout}</li> <li>{@link Ext.layout.TableLayout}</li></ul></summary>
@@ -365,10 +389,7 @@ namespace Ext.grid {
 		/// <summary>  The width of this component in pixels (defaults to auto).</summary>
 		public extern double width { get; set; }
 
-		/// <summary>  True to use height:'auto', false to use fixed height. Note: although many components inherit this config option, not all will function as expected with a height of 'auto'. (defaults to false).</summary>
-		public extern bool autoHeight { get; set; }
-
-		/// <summary>  True to use width:'auto', false to use fixed width. Note: although many components inherit this config option, not all will function as expected with a width of 'auto'. (defaults to false).</summary>
+		/// <summary>  True to use width:'auto', false to use fixed width (defaults to false). <b>Note</b>: Although many components inherit this config option, not all will function as expected with a width of 'auto'. Setting autoWidth:true means that the browser will manage width based on the element's contents, and that Ext will not manage it at all.</summary>
 		public extern bool autoWidth { get; set; }
 
 		/// <summary> 
@@ -378,10 +399,28 @@ namespace Ext.grid {
 		/// </summary>
 		public extern string xtype { get; set; }
 
-		/// <summary>  The unique id of this component (defaults to an auto-assigned id).</summary>
+		/// <summary> The label text to display next to this Component (defaults to '') <p><b>This config is only used when this Component is rendered by a Container which has been configured to use the {@link Ext.form.FormLayout FormLayout} layout manager.</b></p> Example use:<pre><code> new Ext.FormPanel({ height: 100, renderTo: Ext.getBody(), items: [{ xtype: 'textfield', fieldLabel: 'Name' }] }); </code></pre></summary>
+		public extern string fieldLabel { get; set; }
+
+		/// <summary> A CSS style specification to apply directly to this field's label (defaults to the container's labelStyle value if set, or '').<code></code>. <p><b>This config is only used when this Component is rendered by a Container which has been configured to use the {@link Ext.form.FormLayout FormLayout} layout manager.</b></p> Example use:<pre><code> new Ext.FormPanel({ height: 100, renderTo: Ext.getBody(), items: [{ xtype: 'textfield', fieldLabel: 'Name', labelStyle: 'font-weight:bold;' }] }); </code></pre></summary>
+		public extern string labelStyle { get; set; }
+
+		/// <summary> The standard separator to display after the text of each form label (defaults to the value of {@link Ext.layout.FormLayout#labelSeparator}, which is a colon ':' by default).  To display no separator for this field's label specify empty string ''. <p><b>This config is only used when this Component is rendered by a Container which has been configured to use the {@link Ext.form.FormLayout FormLayout} layout manager.</b></p> Example use:<pre><code> new Ext.FormPanel({ height: 100, renderTo: Ext.getBody(), items: [{ xtype: 'textfield', fieldLabel: 'Name', labelSeparator: '...' }] }); </code></pre></summary>
+		public extern string labelSeparator { get; set; }
+
+		/// <summary> True to completely hide the label element (defaults to false).  By default, even if you do not specify a {@link fieldLabel} the space will still be reserved so that the field will line up with other fields that do have labels. Setting this to true will cause the field to not reserve that space. <p><b>This config is only used when this Component is rendered by a Container which has been configured to use the {@link Ext.form.FormLayout FormLayout} layout manager.</b></p> Example use:<pre><code> new Ext.FormPanel({ height: 100, renderTo: Ext.getBody(), items: [{ xtype: 'textfield' hideLabel: true }] }); </code></pre></summary>
+		public extern bool hideLabel { get; set; }
+
+		/// <summary> The CSS class used to provide field clearing (defaults to 'x-form-clear-left'). <p><b>This config is only used when this Component is rendered by a Container which has been configured to use the {@link Ext.form.FormLayout FormLayout} layout manager.</b></p></summary>
+		public extern string clearCls { get; set; }
+
+		/// <summary> An additional CSS class to apply to the wrapper's form item element of this field (defaults to the container's itemCls value if set, or '').  Since it is applied to the item wrapper, it allows you to write standard CSS rules that can apply to the field, the label (if specified) or any other element within the markup for the field. <p><b>This config is only used when this Component is rendered by a Container which has been configured to use the {@link Ext.form.FormLayout FormLayout} layout manager.</b></p> Example use:<pre><code> // Apply a style to the field's label: &lt;style> .required .x-form-item-label {font-weight:bold;color:red;} &lt;/style> new Ext.FormPanel({ height: 100, renderTo: Ext.getBody(), items: [{ xtype: 'textfield', fieldLabel: 'Name', itemCls: 'required' //this label will be styled },{ xtype: 'textfield', fieldLabel: 'Favorite Color' }] }); </code></pre></summary>
+		public extern string itemCls { get; set; }
+
+		/// <summary>  The unique id of this component (defaults to an auto-assigned id). You should assign an id if you need to be able to access the component later and you do not have an object reference available (e.g., using {@link Ext.ComponentMgr#getCmp}). Note that this id will also be used as the element id for the containing HTML element that is rendered to the page for this component. This allows you to write id-based CSS rules to style the specific instance of this component uniquely, and also to select sub-elements using this component's id as the parent.</summary>
 		public extern string id { get; set; }
 
-		/// <summary>{String/Object}  A tag name or DomHelper spec to create an element with. This is intended to create shorthand utility components inline via JSON. It should not be used for higher level components which already create their own elements. Example usage: <pre><code> {xtype:'box', autoEl: 'div', cls:'my-class'} {xtype:'box', autoEl: {tag:'blockquote', html:'autoEl is cool!'}} // with DomHelper </code></pre></summary>
+		/// <summary>  <p>A tag name or {@link Ext.DomHelper DomHelper} spec used to create the {@link #getEl Element} which will encapsulate this Component.</p> <p>You only need to specify this when creating or subclassing the base classes {@link Ext.Component}, {@link Ext.BoxComponent}, and {@link Ext.Container}. The more complex Ext classes use a more complex DOM structure created by their own onRender methods.</p> <p>This is intended to allow the developer to create application-specific utility Components encapsulated by different DOM elements. Example usage:</p><pre><code> { xtype: 'box', autoEl: { tag: 'img', src: 'http://www.example.com/example.jpg' } }, { xtype: 'box', autoEl: { tag: 'blockquote', html: 'autoEl is cool!' } }, { xtype: 'container', autoEl: 'ul', cls: 'ux-unordered-list', items: { xtype: 'box', autoEl: 'li', html: 'First list item' } } </code></pre></summary>
 		public extern object autoEl { get; set; }
 
 		/// <summary>  An optional extra CSS class that will be added to this component's Element (defaults to '').  This can be useful for adding customized styles to the component or any of its children using standard CSS rules.</summary>
@@ -402,13 +441,13 @@ namespace Ext.grid {
 		/// <summary>{Object/Array}  An object or array of objects that will provide custom functionality for this component.  The only requirement for a valid plugin is that it contain an init method that accepts a reference of type Ext.Component. When a component is created, if any plugins are available, the component will call the init method on each plugin, passing a reference to itself.  Each plugin can then call methods or respond to events on the component as needed to provide its functionality.</summary>
 		public extern object plugins { get; set; }
 
-		/// <summary>  The id of the node, a DOM node or an existing Element that will be the container to render this component into. Using this config, a call to render() is not required.</summary>
+		/// <summary>  <p>The id of the element, a DOM element or an existing Element that this component will be rendered into. When using this config, a call to render() is not required.<p> <p>If this Component needs to be managed by a {@link Ext.Container Container}'s {@link Ext.Component#layout layout manager}, do not use this option. It is the responsiblity of the Container's layout manager to perform rendering. See {@link #render}.</p></summary>
 		public extern object renderTo { get; set; }
 
-		/// <summary>  A flag which causes the Component to attempt to restore the state of internal properties from a saved state on startup.<p> For state saving to work, the state manager's provider must have been set to an implementation of {@link Ext.state.Provider} which overrides the {@link Ext.state.Provider#set set} and {@link Ext.state.Provider#get get} methods to save and recall name/value pairs. A built-in implementation, {@link Ext.state.CookieProvider} is available.</p> <p>To set the state provider for the current page:</p> <pre><code> Ext.state.Manager.setProvider(new Ext.state.CookieProvider()); </code></pre> <p>Components attempt to save state when one of the events listed in the {@link #stateEvents} configuration fires.</p> <p>You can perform extra processing on state save and restore by attaching handlers to the {@link #beforestaterestore}, {@link staterestore}, {@link beforestatesave} and {@link statesave} events</p></summary>
+		/// <summary>  <p>A flag which causes the Component to attempt to restore the state of internal properties from a saved state on startup. The component must have either a {@link #stateId} or {@link #id} assigned for state to be managed.  Auto-generated ids are not guaranteed to be stable across page loads and cannot be relied upon to save and restore the same state for a component.<p> For state saving to work, the state manager's provider must have been set to an implementation of {@link Ext.state.Provider} which overrides the {@link Ext.state.Provider#set set} and {@link Ext.state.Provider#get get} methods to save and recall name/value pairs. A built-in implementation, {@link Ext.state.CookieProvider} is available.</p> <p>To set the state provider for the current page:</p> <pre><code> Ext.state.Manager.setProvider(new Ext.state.CookieProvider()); </code></pre> <p>Components attempt to save state when one of the events listed in the {@link #stateEvents} configuration fires.</p> <p>You can perform extra processing on state save and restore by attaching handlers to the {@link #beforestaterestore}, {@link #staterestore}, {@link #beforestatesave} and {@link #statesave} events</p></summary>
 		public extern bool stateful { get; set; }
 
-		/// <summary>  The unique id for this component to use for state management purposes (defaults to the component id). <p>See {@link #stateful} for an explanation of saving and restoring Component state.</p></summary>
+		/// <summary>  The unique id for this component to use for state management purposes (defaults to the component id if one was set, otherwise null if the component is using a generated id). <p>See {@link #stateful} for an explanation of saving and restoring Component state.</p></summary>
 		public extern string stateId { get; set; }
 
 		/// <summary>  CSS class added to the component when it is disabled (defaults to "x-item-disabled").</summary>
@@ -420,13 +459,13 @@ namespace Ext.grid {
 		/// <summary>  True if the component should check for hidden classes (e.g. 'x-hidden' or 'x-hide-display') and remove them on render (defaults to false).</summary>
 		public extern bool autoShow { get; set; }
 
-		/// <summary>  How this component should hidden. Supported values are "visibility" (css visibility), "offsets" (negative offset position) and "display" (css display) - defaults to "display".</summary>
+		/// <summary>  <p>How this component should be hidden. Supported values are "visibility" (css visibility), "offsets" (negative offset position) and "display" (css display) - defaults to "display".</p> <p>For Containers which may be hidden and shown as part of a {@link Ext.layout.CardLayout card layout} Container such as a {@link Ext.TabPanel TabPanel}, it is recommended that hideMode is configured as "offsets". This ensures that hidden Components still have height and width so that layout managers can perform measurements when calculating layouts.</p></summary>
 		public extern string hideMode { get; set; }
 
 		/// <summary>  True to hide and show the component's container when hide/show is called on the component, false to hide and show the component itself (defaults to false).  For example, this can be used as a shortcut for a hide button on a window by setting hide:true on the button when adding it to its parent container.</summary>
 		public extern bool hideParent { get; set; }
 
-		/// <summary> A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
+		/// <summary> (optional) A config object containing one or more event handlers to be added to this object during initialization.  This should be a valid listeners config object as specified in the {@link #addListener} example for attaching multiple handlers at once.</summary>
 		public extern object listeners { get; set; }
 
 	}

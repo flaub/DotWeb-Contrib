@@ -24,7 +24,7 @@ namespace Ext.dd {
 	///     */
 	///     Ext.dd.ScrollManager = function(){
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\dd\ScrollManager.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\dd\ScrollManager.js</jssource>
 	[JsObject]
 	public class ScrollManager  {
 

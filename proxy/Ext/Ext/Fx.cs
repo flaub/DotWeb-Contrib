@@ -50,7 +50,7 @@ namespace Ext {
 	///     */
 	///     Ext.Fx = {
 	/// </summary>
-	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\Fx.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.3\core\Fx.js</jssource>
 	[JsObject]
 	public class Fx  {
 
@@ -365,7 +365,7 @@ namespace Ext {
 		///     el.frame("ff0000", 3, { duration: 3 });
 		///     // common config options shown with default values
 		///     el.frame("C3DAF9", 1, {
-		///     duration: 1 //duration of entire animation (not each individual ripple)
+		///     duration: 1 //duration of each individual ripple.
 		///     // Note: Easing is not configurable and will be ignored if included
 		///     });
 		///     </code></pre>
@@ -383,7 +383,7 @@ namespace Ext {
 		///     el.frame("ff0000", 3, { duration: 3 });
 		///     // common config options shown with default values
 		///     el.frame("C3DAF9", 1, {
-		///     duration: 1 //duration of entire animation (not each individual ripple)
+		///     duration: 1 //duration of each individual ripple.
 		///     // Note: Easing is not configurable and will be ignored if included
 		///     });
 		///     </code></pre>
@@ -402,7 +402,7 @@ namespace Ext {
 		///     el.frame("ff0000", 3, { duration: 3 });
 		///     // common config options shown with default values
 		///     el.frame("C3DAF9", 1, {
-		///     duration: 1 //duration of entire animation (not each individual ripple)
+		///     duration: 1 //duration of each individual ripple.
 		///     // Note: Easing is not configurable and will be ignored if included
 		///     });
 		///     </code></pre>
@@ -422,7 +422,7 @@ namespace Ext {
 		///     el.frame("ff0000", 3, { duration: 3 });
 		///     // common config options shown with default values
 		///     el.frame("C3DAF9", 1, {
-		///     duration: 1 //duration of entire animation (not each individual ripple)
+		///     duration: 1 //duration of each individual ripple.
 		///     // Note: Easing is not configurable and will be ignored if included
 		///     });
 		///     </code></pre>
