@@ -7,7 +7,7 @@ namespace Ext.form {
 	///     /**
 	///     A grouping container for {@link Ext.form.Checkbox} controls.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\CheckboxGroup.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\CheckboxGroup.js</jssource>
 	public class CheckboxGroup : Ext.form.Field {
 
 		/// <summary>Creates a new CheckboxGroup</summary>

@@ -18,8 +18,9 @@ namespace Ext.tree {
 	///     */
 	///     Ext.tree.TreeNodeUI = function(node){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tree\TreeNodeUI.js</jssource>
-	public class TreeNodeUI : System.DotWeb.JsObject {
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tree\TreeNodeUI.js</jssource>
+	[JsObject]
+	public class TreeNodeUI  {
 
 		/// <summary>Auto-generated default constructor</summary>
 		/// <returns></returns>

@@ -11,8 +11,9 @@ namespace Ext.util {
 	///     the keypress events for a certain number of milliseconds, and perform only if they stop
 	///     for that amount of time.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\DelayedTask.js</jssource>
-	public class DelayedTask : System.DotWeb.JsObject {
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\DelayedTask.js</jssource>
+	[JsObject]
+	public class DelayedTask  {
 
 		/// <summary></summary>
 		/// <returns></returns>

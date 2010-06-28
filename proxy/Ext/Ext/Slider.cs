@@ -21,7 +21,7 @@ namespace Ext {
 	///     */
 	///     Ext.Slider = Ext.extend(Ext.BoxComponent, {
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Slider.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Slider.js</jssource>
 	public class Slider : Ext.BoxComponent {
 
 		/// <summary>Auto-generated default constructor</summary>

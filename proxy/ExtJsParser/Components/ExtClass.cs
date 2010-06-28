@@ -44,13 +44,11 @@ namespace SourceConverter.Components
 			sb.AppendFormat("\t/// <jssource>{0}</jssource>\r\n", SourceFile);
 			if (String.IsNullOrEmpty(Namespace)) 
 				sb.AppendLine("\t[JsNamespace()]");
+			if (string.IsNullOrEmpty(SuperClass))
+				sb.AppendLine("\t[JsObject]");
 			sb.AppendFormat("\tpublic class {0} ", newName);
-			if (!String.IsNullOrEmpty(SuperClass)) {
+			if (!String.IsNullOrEmpty(SuperClass))
 				sb.Append(": " + ExtType.ParseType(SuperClass));
-			}
-			else {
-				sb.Append(": System.DotWeb.JsObject");
-			}
 			sb.AppendLine(" {");
 			sb.AppendLine();
 

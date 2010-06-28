@@ -11,7 +11,7 @@ namespace Ext.grid {
 	///     <p>This class does not provide ways to manipulate the underlying data. The data
 	///     model of a Grid is held in an {@link Ext.data.Store}.</p>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\GridView.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\GridView.js</jssource>
 	public class GridView : Ext.util.Observable {
 
 		/// <summary></summary>

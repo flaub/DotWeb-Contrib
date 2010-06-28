@@ -11,8 +11,9 @@ namespace Ext.util {
 	///     */
 	///     Ext.util.JSON = new (function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\JSON.js</jssource>
-	public class JSON : System.DotWeb.JsObject {
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\JSON.js</jssource>
+	[JsObject]
+	public class JSON  {
 
 		/// <summary>Auto-generated default constructor</summary>
 		/// <returns></returns>

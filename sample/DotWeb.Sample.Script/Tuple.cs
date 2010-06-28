@@ -31,7 +31,8 @@ namespace DotWeb.Sample.Script
 	}
 
 	[JsNamespace]
-	public class Tuple : JsObject
+	[JsObject]
+	public class Tuple
 	{
 		public extern Tuple();
 

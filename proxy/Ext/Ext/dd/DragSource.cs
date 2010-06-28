@@ -7,7 +7,7 @@ namespace Ext.dd {
 	///     /**
 	///     A simple class that provides the basic implementation needed to make any element draggable.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\dd\DragSource.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\dd\DragSource.js</jssource>
 	public class DragSource : Ext.dd.DDProxy {
 
 		/// <summary></summary>

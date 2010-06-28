@@ -21,7 +21,7 @@ namespace Ext {
 	///     @cfg {Boolean/Object} repeat True to repeat fire the click event while the mouse is down. This can also be
 	///     an {@link Ext.util.ClickRepeater} config object (defaults to false).
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Button.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Button.js</jssource>
 	public class Button : Ext.Component {
 
 		/// <summary>Create a new button</summary>

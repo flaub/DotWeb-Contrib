@@ -19,7 +19,7 @@ namespace Ext.form {
 	///     @cfg {String} triggerClass An additional CSS class used to style the trigger button.  The trigger will always get the
 	///     class 'x-form-trigger' by default and triggerClass will be <b>appended</b> if specified.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\TriggerField.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\TriggerField.js</jssource>
 	public class TriggerField : Ext.form.TextField {
 
 		/// <summary>

@@ -20,8 +20,9 @@ namespace Ext.util {
 	///     runner.start(task);
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\TaskMgr.js</jssource>
-	public class TaskRunner : System.DotWeb.JsObject {
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\TaskMgr.js</jssource>
+	[JsObject]
+	public class TaskRunner  {
 
 		/// <summary>(defaults to 10)</summary>
 		/// <returns></returns>

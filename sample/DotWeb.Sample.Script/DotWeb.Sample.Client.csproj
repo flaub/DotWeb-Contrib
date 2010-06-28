@@ -22,7 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
-    <NoWarn>824,626</NoWarn>
+    <NoWarn>824,626,444</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -63,14 +63,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\bin\Debug\DotWeb.Client.dll</HintPath>
     </Reference>
+    <Reference Include="DotWeb.Ext, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="DotWeb.System, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\bin\Debug\DotWeb.System.dll</HintPath>
     </Reference>
-    <Reference Include="Ext, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Reference Include="DotWebCoreLib, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\bin\Debug\DotWebCoreLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

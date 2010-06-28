@@ -7,7 +7,7 @@ namespace Ext.menu {
 	///     /**
 	///     A menu item that wraps the {@link Ext.ColorPalette} component.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\ColorItem.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\ColorItem.js</jssource>
 	public class ColorItem : Ext.menu.Adapter {
 
 		/// <summary>Creates a new ColorItem</summary>

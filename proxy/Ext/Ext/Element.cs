@@ -54,8 +54,9 @@ namespace Ext {
 	///     <b> Composite (Collections of) Elements</b><br />
 	///     For working with collections of Elements, see {@link Ext.CompositeElement}
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\Element.js</jssource>
-	public class Element : System.DotWeb.JsObject {
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\Element.js</jssource>
+	[JsObject]
+	public class Element  {
 
 		/// <summary></summary>
 		/// <returns></returns>

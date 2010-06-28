@@ -64,8 +64,9 @@ namespace Ext {
 	///     */
 	///     Ext.DomQuery = function(){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\DomQuery.js</jssource>
-	public class DomQuery : System.DotWeb.JsObject {
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\DomQuery.js</jssource>
+	[JsObject]
+	public class DomQuery  {
 
 		/// <summary>Auto-generated default constructor</summary>
 		/// <returns></returns>

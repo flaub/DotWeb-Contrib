@@ -27,7 +27,7 @@ namespace Ext.tree {
 	///     @cfg {Boolean} isTarget False to not allow this node to act as a drop target (defaults to true)
 	///     @cfg {Boolean} allowChildren False to not allow this node to have child nodes (defaults to true)
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tree\TreeNode.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tree\TreeNode.js</jssource>
 	public class TreeNode : Ext.data.Node {
 
 		/// <summary></summary>

@@ -13,7 +13,7 @@ namespace Ext.dd {
 	///     was created to be dragged in place of all DDProxy elements on the
 	///     page.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\dd\DDCore.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\dd\DDCore.js</jssource>
 	public class DDProxy : Ext.dd.DD {
 
 		/// <summary>

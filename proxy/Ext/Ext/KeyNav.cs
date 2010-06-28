@@ -25,8 +25,9 @@ namespace Ext {
 	///     });
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\KeyNav.js</jssource>
-	public class KeyNav : System.DotWeb.JsObject {
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\util\KeyNav.js</jssource>
+	[JsObject]
+	public class KeyNav  {
 
 		/// <summary></summary>
 		/// <returns></returns>

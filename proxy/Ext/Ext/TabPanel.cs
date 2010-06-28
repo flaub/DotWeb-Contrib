@@ -128,7 +128,7 @@ namespace Ext {
 	///     &lt;div id="tab2" class="x-hide-display">Another one&lt;/div>
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\TabPanel.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\TabPanel.js</jssource>
 	public class TabPanel : Ext.Panel {
 
 		/// <summary></summary>

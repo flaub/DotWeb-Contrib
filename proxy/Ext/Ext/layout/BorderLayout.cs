@@ -44,7 +44,7 @@ namespace Ext.layout {
 	///     */
 	///     Ext.layout.BorderLayout = Ext.extend(Ext.layout.ContainerLayout, {
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\layout\BorderLayout.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\layout\BorderLayout.js</jssource>
 	public class BorderLayoutClass : Ext.layout.ContainerLayout {
 
 		/// <summary>Auto-generated default constructor</summary>

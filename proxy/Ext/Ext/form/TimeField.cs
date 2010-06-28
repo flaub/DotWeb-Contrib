@@ -14,7 +14,7 @@ namespace Ext.form {
 	///     });
 	///     </code></pre>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\TimeField.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\form\TimeField.js</jssource>
 	public class TimeField : Ext.form.ComboBox {
 
 		/// <summary>Create a new TimeField</summary>

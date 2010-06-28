@@ -8,7 +8,7 @@ namespace Ext.menu {
 	///     Adds a separator bar to a menu, used to divide logical groups of menu items. Generally you will
 	///     add one of these by using "-" in you call to add() or in your items config rather than creating one directly.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\Separator.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\Separator.js</jssource>
 	public class Separator : Ext.menu.BaseItem {
 
 		/// <summary></summary>

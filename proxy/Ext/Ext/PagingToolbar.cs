@@ -7,7 +7,7 @@ namespace Ext {
 	///     /**
 	///     A specialized toolbar that is bound to a {@link Ext.data.Store} and provides automatic paging controls.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\PagingToolbar.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\PagingToolbar.js</jssource>
 	public class PagingToolbar : Ext.ToolbarClass {
 
 		/// <summary>Create a new PagingToolbar</summary>

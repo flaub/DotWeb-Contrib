@@ -7,7 +7,7 @@ namespace Ext.menu {
 	///     /**
 	///     Adds a static text string to a menu, usually used as either a heading or group separator.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\TextItem.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\TextItem.js</jssource>
 	public class TextItem : Ext.menu.BaseItem {
 
 		/// <summary>

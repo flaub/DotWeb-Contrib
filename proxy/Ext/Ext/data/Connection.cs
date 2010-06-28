@@ -28,7 +28,7 @@ namespace Ext.data {
 	///     and some server technologies (notably JEE) may require some custom processing in order to
 	///     retrieve parameter names and parameter values from the packet content.</p>
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\Connection.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\Connection.js</jssource>
 	public class Connection : Ext.util.Observable {
 
 		/// <summary></summary>

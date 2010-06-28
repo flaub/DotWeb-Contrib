@@ -8,7 +8,7 @@ namespace Ext {
 	///     Basic Toolbar class. Toolbar elements can be created explicitly via their constructors, or implicitly
 	///     via their xtypes.  Some items also have shortcut strings for creation.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Toolbar.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Toolbar.js</jssource>
 	public class ToolbarClass : Ext.BoxComponent {
 
 		/// <summary>Creates a new Toolbar</summary>

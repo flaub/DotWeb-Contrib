@@ -7,7 +7,7 @@ namespace Ext.menu {
 	///     /**
 	///     A menu containing a {@link Ext.menu.ColorItem} component (which provides a basic color picker).
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\ColorMenu.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\ColorMenu.js</jssource>
 	public class ColorMenu : Ext.menu.Menu {
 
 		/// <summary>Creates a new ColorMenu</summary>

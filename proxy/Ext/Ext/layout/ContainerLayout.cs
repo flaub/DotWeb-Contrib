@@ -12,8 +12,9 @@ namespace Ext.layout {
 	///     */
 	///     Ext.layout.ContainerLayout = function(config){
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\layout\ContainerLayout.js</jssource>
-	public class ContainerLayout : System.DotWeb.JsObject {
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\layout\ContainerLayout.js</jssource>
+	[JsObject]
+	public class ContainerLayout  {
 
 		/// <summary>Auto-generated default constructor</summary>
 		/// <returns></returns>

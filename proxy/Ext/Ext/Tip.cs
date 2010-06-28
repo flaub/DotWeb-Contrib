@@ -9,7 +9,7 @@ namespace Ext {
 	///     positioning that all tip-based classes require. This class can be used directly for simple, statically-positioned
 	///     tips that are displayed programmatically, or it can be extended to provide custom tip implementations.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tips\Tip.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tips\Tip.js</jssource>
 	public class Tip : Ext.Panel {
 
 		/// <summary>Create a new Tip</summary>

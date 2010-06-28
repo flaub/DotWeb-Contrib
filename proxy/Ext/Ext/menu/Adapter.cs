@@ -8,7 +8,7 @@ namespace Ext.menu {
 	///     A base utility class that adapts a non-menu component so that it can be wrapped by a menu item and added to a menu.
 	///     It provides basic rendering, activation management and enable/disable logic required to work in menus.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\Adapter.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\menu\Adapter.js</jssource>
 	public class Adapter : Ext.menu.BaseItem {
 
 		/// <summary>Creates a new Adapter</summary>

@@ -8,7 +8,7 @@ namespace Ext {
 	///     A specialized tooltip class for tooltips that can be specified in markup and automatically managed by the global
 	///     {@link Ext.QuickTips} instance.  See the QuickTips class header for additional usage details and examples.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tips\QuickTip.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\tips\QuickTip.js</jssource>
 	public class QuickTip : Ext.ToolTip {
 
 		/// <summary>Create a new Tip</summary>

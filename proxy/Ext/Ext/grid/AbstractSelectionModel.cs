@@ -8,7 +8,7 @@ namespace Ext.grid {
 	///     Abstract base class for grid SelectionModels.  It provides the interface that should be
 	///     implemented by descendant classes.  This class should not be directly instantiated.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\AbstractSelectionModel.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\grid\AbstractSelectionModel.js</jssource>
 	public class AbstractSelectionModel : Ext.util.Observable {
 
 		/// <summary></summary>

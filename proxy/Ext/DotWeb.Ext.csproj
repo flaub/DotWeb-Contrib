@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ext</RootNamespace>
-    <AssemblyName>Ext</AssemblyName>
+    <AssemblyName>DotWeb.Ext</AssemblyName>
     <NoStdLib>True</NoStdLib>
     <TemplateFile>Properties\Script.jst</TemplateFile>
     <FileUpgradeFlags>
@@ -25,8 +25,8 @@
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoWarn>0108,0114,1591,1570,626,824</NoWarn>
-    <DocumentationFile>bin\Debug\Ext.xml</DocumentationFile>
+    <NoWarn>0108,0114,1591,1570,626,824,444</NoWarn>
+    <DocumentationFile>..\..\build\bin\Debug\DotWeb.Ext.xml</DocumentationFile>
     <NoStdLib>true</NoStdLib>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -36,7 +36,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0108,0114,1591,1570,626,824</NoWarn>
-    <DocumentationFile>bin\Release\Ext.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\DotWeb.Ext.xml</DocumentationFile>
     <NoStdLib>false</NoStdLib>
   </PropertyGroup>
   <ItemGroup>
@@ -238,6 +238,10 @@
     <Reference Include="DotWeb.System, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\build\bin\Debug\DotWeb.System.dll</HintPath>
+    </Reference>
+    <Reference Include="DotWebCoreLib, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\build\bin\Debug\DotWebCoreLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

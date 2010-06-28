@@ -5,7 +5,8 @@ using DotWeb.Client;
 namespace Ext.data {
 	/// <summary></summary>
 	/// <jssource>custom</jssource>
-	public class DataReader : System.DotWeb.JsObject {
+	[JsObject]
+	public class DataReader  {
 
 		/// <summary>Auto-generated default constructor</summary>
 		/// <returns></returns>

@@ -8,9 +8,10 @@ namespace Ext {
 	///     Ext core utilities and functions.
 	///     */
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\Ext.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\core\Ext.js</jssource>
 	[JsNamespace()]
-	public class ExtClass : System.DotWeb.JsObject {
+	[JsObject]
+	public class ExtClass  {
 
 		/// <summary>Auto-generated default constructor</summary>
 		/// <returns></returns>

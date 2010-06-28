@@ -49,7 +49,7 @@ namespace Ext.data {
 	///     @cfg {String} id The DomQuery path relative from the record element to the element that contains
 	///     a record identifier value.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\XmlReader.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\XmlReader.js</jssource>
 	public class XmlReader : Ext.data.DataReader {
 
 		/// <summary>

@@ -9,7 +9,7 @@ namespace Ext {
 	///     */
 	///     Ext.StoreMgr = Ext.apply(new Ext.util.MixedCollection(), {
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\StoreMgr.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\StoreMgr.js</jssource>
 	public class StoreMgr : Ext.util.MixedCollection {
 
 		/// <summary>Auto-generated default constructor</summary>

@@ -7,12 +7,12 @@ using System.Reflection;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ExtSharp")]
-[assembly: AssemblyDescription("Script# API to program against ExtJS 2.2")]
+[assembly: AssemblyTitle("DotWeb.Ext")]
+[assembly: AssemblyDescription("DotWeb API to program against ExtJS 2.2")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ExtJS Community")]
-[assembly: AssemblyProduct("ExtSharp")]
-[assembly: AssemblyCopyright("Copyright © Teflon 2008")]
+[assembly: AssemblyProduct("DotWeb.Ext")]
+[assembly: AssemblyCopyright("Copyright © Frank Laub 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

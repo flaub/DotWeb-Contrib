@@ -66,7 +66,7 @@ namespace Ext {
 	///     @cfg {Number} minY The minimum allowed page Y for the element (only used for north resizing, defaults to 0)
 	///     @cfg {Boolean} draggable Convenience to initialize drag drop (defaults to false)
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Resizable.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\widgets\Resizable.js</jssource>
 	public class Resizable : Ext.util.Observable {
 
 		/// <summary>Create a new resizable component</summary>

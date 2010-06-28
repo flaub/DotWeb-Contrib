@@ -7,7 +7,7 @@ namespace Ext.data {
 	///     /**
 	///     A specialized store implementation that provides for grouping records by one of the available fields.
 	/// </summary>
-	/// <jssource>F:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\GroupingStore.js</jssource>
+	/// <jssource>D:\src\git\DotWeb\contrib\proxy\ExtJsParser\ext-2.2\source\data\GroupingStore.js</jssource>
 	public class GroupingStore : Ext.data.Store {
 
 		/// <summary>
